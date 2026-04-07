@@ -1687,7 +1687,23 @@ Lv30 血量+150 / 魔量+150 / 魔防+20 / 回魔+7 / 近命+5 / 遠命+5</div>
       若資料填寫錯誤、連結失效或內容不符活動規定，將無法通過審核。
     </div>
 
-   
+    <h3>申請表單（暫未開放）</h3>
+    <div class="form-grid">
+      <input class="input" type="text" placeholder="遊戲帳號">
+      <input class="input" type="text" placeholder="遊戲角色ID">
+      <input class="input" type="text" placeholder="發文連結 / 貼文網址">
+      <textarea class="textarea" placeholder="備註 / 補充說明（選填）"></textarea>
+      <button class="submit-btn" type="button">送出申請</button>
+    </div>
+
+    <h3>活動注意事項</h3>
+    <div class="list">
+      <div>✔ 每位玩家請依活動規則申請，不可重複領取同一活動獎勵</div>
+      <div>✔ 建議正式服角色ID、帳號與申請資料保持一致，避免領獎失敗</div>
+      <div>✔ 發文內容若遭刪除、隱藏、無法查看，視同未完成活動</div>
+      <div>✔ 如有特殊活動規則，請依當期公告內容為主</div>
+      <div>✔ 獎勵發放時間依 GM 審核進度為準，請耐心等候</div>
+    </div>
   </section>
 
   <section id="donate" class="anchor card">
@@ -1702,30 +1718,21 @@ Lv30 血量+150 / 魔量+150 / 魔防+20 / 回魔+7 / 近命+5 / 遠命+5</div>
 
   <div class="footer">天越天堂 官方網站</div>
 </div>
-<div id="reward-float-btn" style="position:fixed;bottom:220px;right:14px;z-index:999999;">
-  <a href="https://weddings-restrict-billy-coverage.trycloudflare.com/reward.php" target="_blank"
-     style="display:block;padding:14px 18px;background:#ffd700;color:#000;font-weight:bold;
-     border-radius:14px;text-decoration:none;box-shadow:0 0 12px rgba(255,215,0,0.9);
-     font-size:18px;border:2px solid #fff;">
-     🎁 推文申請領獎
-  </a>
+
 </div>
+</body>
 
 <script>
-document.body.style.background = "url('https://i.imgur.com/yourbg.jpg')";
+document.body.style.background = "url('https://picsum.photos/1080/1920') center center / cover no-repeat fixed";
 </script>
 
-</body>
 </html>
-</script>
+<script>
 (function () {
   function setBg() {
     var old = document.getElementById("final-bg-force");
     if (old) old.remove();
-</script>
 
-</body>
-</html>
     var bg = document.createElement("div");
     bg.id = "final-bg-force";
     bg.style.position = "fixed";
@@ -2039,7 +2046,7 @@ body{
     </a>
 
     <a class="fixed-download-btn fixed-download-btn-1"
-       href="https://drive.google.com/file/d/10KRQ4b_Q_Fqn3xFm9zR_7NiEmpHu0HV4/view?usp=sharing"
+       href="https://drive.google.com/file/d/18VjaCqEScuUsr3eI001XYJOt0SEndEz_/view?usp=sharing"
        target="_blank" rel="noopener">
        ⬇️ 下載遊戲懶人包
     </a>
@@ -4193,167 +4200,144 @@ window.addEventListener("load", function(){
 
 });
 </script>
-  <!-- ===== 掉落查詢浮動按鈕（JS自動插入版）開始 ===== -->
+  <!-- ===== 掉落查詢入口（大按鈕版）===== -->
+<div style="padding:30px 15px;">
+
+  <div style="
+    text-align:center;
+    font-size:22px;
+    color:#ffd700;
+    margin-bottom:20px;
+    font-weight:bold;
+  ">
+    🔍 掉落查詢系統
+  </div>
+
+  <a href="map-drops.html" style="
+    display:block;
+    width:100%;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(45deg,#ff9800,#ff5722);
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+  ">
+    📜 地圖掉落查詢
+  </a>
+
+  <a href="skill-drops.html" style="
+    display:block;
+    width:100%;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(45deg,#2196f3,#00bcd4);
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+  ">
+    ✨ 技能掉落查詢
+  </a>
+
+</div>
+<!-- ===== 結束 ===== -->
+  <!-- ===== 掉落查詢大按鈕（自動插入版）開始 ===== -->
 <script>
 (function () {
-  function addDropFloatButtons() {
-    if (document.getElementById('drop-float-auto-wrap')) return;
+  function createDropButtons() {
+    if (document.getElementById('drop-entry-auto-box')) return;
 
-    var wrap = document.createElement('div');
-    wrap.id = 'drop-float-auto-wrap';
-    wrap.style.position = 'fixed';
-    wrap.style.left = '15px';
-    wrap.style.bottom = '150px';
-    wrap.style.zIndex = '99999999';
-    wrap.style.display = 'flex';
-    wrap.style.flexDirection = 'column';
-    wrap.style.gap = '10px';
+    var box = document.createElement('div');
+    box.id = 'drop-entry-auto-box';
+    box.style.width = '100%';
+    box.style.maxWidth = '760px';
+    box.style.margin = '20px auto 25px auto';
+    box.style.padding = '0 15px';
+    box.style.boxSizing = 'border-box';
+
+    var title = document.createElement('div');
+    title.innerText = '🔍 掉落查詢系統';
+    title.style.textAlign = 'center';
+    title.style.fontSize = '22px';
+    title.style.fontWeight = 'bold';
+    title.style.color = '#ffd700';
+    title.style.marginBottom = '15px';
+    title.style.textShadow = '0 0 8px rgba(0,0,0,0.5)';
+    box.appendChild(title);
 
     var mapBtn = document.createElement('a');
     mapBtn.href = 'map-drops.html';
-    mapBtn.innerText = '📜 地圖掉落';
-    mapBtn.style.display = 'flex';
-    mapBtn.style.alignItems = 'center';
-    mapBtn.style.justifyContent = 'center';
-    mapBtn.style.width = '150px';
-    mapBtn.style.height = '50px';
-    mapBtn.style.borderRadius = '18px';
-    mapBtn.style.fontSize = '16px';
+    mapBtn.innerText = '📜 地圖掉落查詢';
+    mapBtn.style.display = 'block';
+    mapBtn.style.width = '100%';
+    mapBtn.style.padding = '18px';
+    mapBtn.style.marginBottom = '15px';
+    mapBtn.style.borderRadius = '14px';
+    mapBtn.style.textAlign = 'center';
+    mapBtn.style.fontSize = '18px';
     mapBtn.style.fontWeight = 'bold';
     mapBtn.style.color = '#fff';
     mapBtn.style.textDecoration = 'none';
     mapBtn.style.background = 'linear-gradient(45deg,#ff9800,#ff5722)';
     mapBtn.style.boxShadow = '0 0 12px rgba(0,0,0,0.5)';
+    box.appendChild(mapBtn);
 
     var skillBtn = document.createElement('a');
     skillBtn.href = 'skill-drops.html';
-    skillBtn.innerText = '✨ 技能掉落';
-    skillBtn.style.display = 'flex';
-    skillBtn.style.alignItems = 'center';
-    skillBtn.style.justifyContent = 'center';
-    skillBtn.style.width = '150px';
-    skillBtn.style.height = '50px';
-    skillBtn.style.borderRadius = '18px';
-    skillBtn.style.fontSize = '16px';
+    skillBtn.innerText = '✨ 技能掉落查詢';
+    skillBtn.style.display = 'block';
+    skillBtn.style.width = '100%';
+    skillBtn.style.padding = '18px';
+    skillBtn.style.borderRadius = '14px';
+    skillBtn.style.textAlign = 'center';
+    skillBtn.style.fontSize = '18px';
     skillBtn.style.fontWeight = 'bold';
     skillBtn.style.color = '#fff';
     skillBtn.style.textDecoration = 'none';
     skillBtn.style.background = 'linear-gradient(45deg,#2196f3,#00bcd4)';
     skillBtn.style.boxShadow = '0 0 12px rgba(0,0,0,0.5)';
+    box.appendChild(skillBtn);
 
-    wrap.appendChild(mapBtn);
-    wrap.appendChild(skillBtn);
-    document.body.appendChild(wrap);
+    var inserted = false;
+
+    var texts = document.querySelectorAll('div, section, article');
+    for (var i = 0; i < texts.length; i++) {
+      var t = (texts[i].innerText || '').trim();
+      if (t.indexOf('返回首頁') !== -1 || t.indexOf('回首頁') !== -1) {
+        texts[i].parentNode.insertBefore(box, texts[i]);
+        inserted = true;
+        break;
+      }
+    }
+
+    if (!inserted) {
+      document.body.appendChild(box);
+    }
   }
 
-  function runDropFloat() {
-    addDropFloatButtons();
-    setTimeout(addDropFloatButtons, 500);
-    setTimeout(addDropFloatButtons, 1500);
-    setTimeout(addDropFloatButtons, 3000);
+  function tryInsert() {
+    createDropButtons();
+    setTimeout(createDropButtons, 500);
+    setTimeout(createDropButtons, 1500);
+    setTimeout(createDropButtons, 3000);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', runDropFloat);
+    document.addEventListener('DOMContentLoaded', tryInsert);
   } else {
-    runDropFloat();
+    tryInsert();
   }
 })();
 </script>
-<!-- ===== 掉落查詢浮動按鈕（JS自動插入版）結束 ===== -->
-  <!-- 🔥 推文領獎固定入口（新增） -->
-<div style="margin-top:40px;text-align:center;">
-
-    <h2 style="color:#ffd700;">🎁 推文獎勵領取</h2>
-
-    <p style="color:#ccc;font-size:16px;">
-        完成推文任務後，點擊下方按鈕領取獎勵
-    </p>
-
-    <a href="https://miscellaneous-pounds-taken-bizarre.trycloudflare.com/reward.php" target="_blank"
-       style="display:inline-block;
-       padding:15px 30px;
-       background:linear-gradient(45deg,#ffd700,#ff9900);
-       color:#000;
-       font-size:20px;
-       font-weight:bold;
-       border-radius:12px;
-       text-decoration:none;
-       box-shadow:0 0 10px rgba(255,215,0,0.6);">
-
-       🎁 點我領取推文獎勵 🎁
-
-    </a>
-
-</div>
-
-（你原本的所有程式碼都保留）
-
-<!-- 🔥 推文領獎浮動按鈕 -->
-<div style="
-position: fixed;
-bottom: 260px;
-right: 12px;
-z-index: 99999;
-">
-</script>
- <!-- ✅ 修正背景 + 防止JS被當文字顯示 -->
-<script>
-(function () {
-
-    // 🔥 強制清除畫面上被印出來的JS文字（關鍵）
-    function removeBrokenText() {
-        var all = document.body.getElementsByTagName("*");
-        for (var i = 0; i < all.length; i++) {
-            var el = all[i];
-
-            if (el.innerText && el.innerText.indexOf("function setBg") !== -1) {
-                el.innerHTML = ""; // 直接清掉
-            }
-        }
-    }
-
-    // 🔥 正常背景
-    function setBg() {
-        var old = document.getElementById("final-bg-force");
-        if (old) old.remove();
-
-        var bg = document.createElement("div");
-        bg.id = "final-bg-force";
-
-        bg.style.position = "fixed";
-        bg.style.left = "0";
-        bg.style.top = "0";
-        bg.style.width = "100vw";
-        bg.style.height = "100vh";
-        bg.style.zIndex = "-1";
-        bg.style.pointerEvents = "none";
-
-        bg.style.backgroundImage =
-            "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)), url('https://krng8150-ctrl.github.io/IMG_3682.png?v=999')";
-
-        bg.style.backgroundSize = "cover";
-        bg.style.backgroundPosition = "center";
-        bg.style.backgroundRepeat = "no-repeat";
-        bg.style.backgroundAttachment = "fixed";
-
-        document.body.appendChild(bg);
-    }
-
-    // 🔥 啟動
-    function init() {
-        removeBrokenText(); // 先清錯誤文字
-        setBg();            // 再套背景
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init);
-    } else {
-        setTimeout(init, 300);
-    }
-
-})();
-</script> 
-  
-</body>
+ </body>
 </html>
+  
+
+
