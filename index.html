@@ -4297,6 +4297,63 @@ right: 12px;
 z-index: 99999;
 ">
 </script>
+ <!-- ✅ 修正背景 + 防止JS被當文字顯示 -->
+<script>
+(function () {
+
+    // 🔥 強制清除畫面上被印出來的JS文字（關鍵）
+    function removeBrokenText() {
+        var all = document.body.getElementsByTagName("*");
+        for (var i = 0; i < all.length; i++) {
+            var el = all[i];
+
+            if (el.innerText && el.innerText.indexOf("function setBg") !== -1) {
+                el.innerHTML = ""; // 直接清掉
+            }
+        }
+    }
+
+    // 🔥 正常背景
+    function setBg() {
+        var old = document.getElementById("final-bg-force");
+        if (old) old.remove();
+
+        var bg = document.createElement("div");
+        bg.id = "final-bg-force";
+
+        bg.style.position = "fixed";
+        bg.style.left = "0";
+        bg.style.top = "0";
+        bg.style.width = "100vw";
+        bg.style.height = "100vh";
+        bg.style.zIndex = "-1";
+        bg.style.pointerEvents = "none";
+
+        bg.style.backgroundImage =
+            "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)), url('https://krng8150-ctrl.github.io/IMG_3682.png?v=999')";
+
+        bg.style.backgroundSize = "cover";
+        bg.style.backgroundPosition = "center";
+        bg.style.backgroundRepeat = "no-repeat";
+        bg.style.backgroundAttachment = "fixed";
+
+        document.body.appendChild(bg);
+    }
+
+    // 🔥 啟動
+    function init() {
+        removeBrokenText(); // 先清錯誤文字
+        setBg();            // 再套背景
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        setTimeout(init, 300);
+    }
+
+})();
+</script> 
   
 </body>
 </html>
