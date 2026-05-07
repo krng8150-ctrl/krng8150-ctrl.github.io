@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>永翼天堂｜陣營系統</title>
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #f6e7b5;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    .page {
+      width: 1280px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 44px;
+      color: #ffd36a;
+      letter-spacing: 5px;
+      text-shadow: 0 0 18px #8a5a00;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #d7bd78;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      border: 1px solid #8a6a2a;
+      background: linear-gradient(180deg, #16100a, #070707);
+      padding: 26px;
+      margin-bottom: 35px;
+      line-height: 2;
+      font-size: 17px;
+      box-shadow: 0 0 25px rgba(255, 190, 70, 0.15);
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: #ffd36a;
+      border-left: 6px solid #c99a35;
+      padding-left: 14px;
+      margin: 35px 0 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0b0b0b;
+      font-size: 14px;
+    }
+
+    th {
+      background: linear-gradient(180deg, #6f4c12, #2a1b05);
+      color: #ffe6a3;
+      border: 1px solid #8a6a2a;
+      padding: 10px 6px;
+      white-space: nowrap;
+    }
+
+    td {
+      border: 1px solid #3a2b12;
+      padding: 9px 6px;
+      text-align: center;
+      color: #f2e2b8;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) {
+      background: #14110b;
+    }
+
+    tr:hover {
+      background: #2b1f0d;
+    }
+
+    .rank {
+      color: #ffd36a;
+      font-weight: bold;
+    }
+
+    .note {
+      color: #d9c17f;
+      font-size: 15px;
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 12px 30px;
+      border: 1px solid #c99a35;
+      color: #ffd36a;
+      text-decoration: none;
+      background: #120d05;
+    }
+
+    .back:hover {
+      background: #2a1b05;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <h1 class="title">陣營階級系統</h1>
+  <div class="subtitle">累積陣營貢獻，提升軍階，獲得永久能力加成</div>
+
+  <div class="box">
+    <p>
+      永翼天堂陣營系統採用軍階養成玩法，玩家可透過遊戲內陣營相關內容累積分數，
+      逐步提升自己的軍階。
+    </p>
+    <p>
+      軍階提升後，可獲得血量、魔量、近戰傷害、遠程傷害、近戰命中、遠程命中、
+      魔法防禦、魔法攻擊與角色六大能力值加成。
+    </p>
+    <p>
+      階級越高，代表角色在陣營中的地位越高，也能獲得更強大的永久能力。
+    </p>
+  </div>
+
+  <h2 class="section-title">陣營完整能力表</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>軍階名稱</th>
+        <th>血量</th>
+        <th>魔量</th>
+        <th>近戰傷害</th>
+        <th>遠程傷害</th>
+        <th>近戰命中</th>
+        <th>遠程命中</th>
+        <th>魔法防禦</th>
+        <th>魔法攻擊</th>
+        <th>力量</th>
+        <th>敏捷</th>
+        <th>體質</th>
+        <th>精神</th>
+        <th>智力</th>
+        <th>魅力</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr><td class="rank">V2｜新兵</td><td>+50</td><td>+20</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      <tr><td class="rank">V2｜二兵</td><td>+70</td><td>+30</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+2</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td></tr>
+      <tr><td class="rank">V2｜一兵</td><td>+80</td><td>+40</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+3</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td></tr>
+
+      <tr><td class="rank">V4｜上兵</td><td>+100</td><td>+50</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+4</td><td>+1</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td></tr>
+      <tr><td class="rank">V4｜下士</td><td>+150</td><td>+60</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+5</td><td>+1</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td></tr>
+      <tr><td class="rank">V4｜中士</td><td>+180</td><td>+70</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+6</td><td>+2</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td></tr>
+      <tr><td class="rank">V4｜上士</td><td>+250</td><td>+100</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+7</td><td>+2</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td></tr>
+      <tr><td class="rank">V4｜士官長</td><td>+300</td><td>+120</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+8</td><td>+2</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td></tr>
+      <tr><td class="rank">V4｜少尉</td><td>+400</td><td>+150</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+9</td><td>+2</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td></tr>
+
+      <tr><td class="rank">V-f｜中尉</td><td>+450</td><td>+200</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+10</td><td>+2</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td></tr>
+      <tr><td class="rank">V-f｜上尉</td><td>+500</td><td>+250</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+11</td><td>+3</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td></tr>
+      <tr><td class="rank">V-f｜少校</td><td>+600</td><td>+300</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+12</td><td>+3</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td></tr>
+      <tr><td class="rank">V-f｜中校</td><td>+700</td><td>+400</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+13</td><td>+4</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td></tr>
+      <tr><td class="rank">V-f｜上校</td><td>+800</td><td>+500</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+14</td><td>+4</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td></tr>
+      <tr><td class="rank">V-f｜將軍</td><td>+900</td><td>+600</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+15</td><td>+5</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td></tr>
+      <tr><td class="rank">V-f｜五星上將</td><td>+1000</td><td>+800</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+16</td><td>+6</td><td>+8</td><td>+8</td><td>+8</td><td>+8</td><td>+8</td><td>+8</td></tr>
+
+      <tr><td class="rank">V3｜三軍統帥</td><td>+3000</td><td>+1500</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td><td>+18</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    ※ 表格僅顯示有實際加成的能力。<br>
+    ※ 軍階能力以遊戲內實際設定為準。<br>
+    ※ 後續若有調整，將依官方公告內容更新。
+  </div>
+
+  <h2 class="section-title">能力說明</h2>
+
+  <div class="box">
+    <p>血量：提升角色最大 HP。</p>
+    <p>魔量：提升角色最大 MP。</p>
+    <p>近戰傷害：提升近戰攻擊造成的傷害。</p>
+    <p>遠程傷害：提升弓箭與遠距離攻擊造成的傷害。</p>
+    <p>近戰命中：提升近戰攻擊命中率。</p>
+    <p>遠程命中：提升遠距離攻擊命中率。</p>
+    <p>魔法防禦：提升角色對魔法攻擊的防禦能力。</p>
+    <p>魔法攻擊：提升魔法傷害與法術威力。</p>
+    <p>力量、敏捷、體質、精神、智力、魅力：提升角色基礎能力值。</p>
+  </div>
+
+  <a class="back" href="index.html">返回官方首頁</a>
+
+</div>
+
+</body>
+</html>
