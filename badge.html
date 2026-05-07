@@ -3,151 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>永翼天堂｜徽章系統</title>
+
+<title>永翼天堂｜徽章圖鑑</title>
+
 <style>
-body{margin:0;background:#050505;color:#f5e6b8;font-family:"Microsoft JhengHei",Arial,sans-serif;}
-.page{max-width:1280px;margin:0 auto;padding:50px 20px 90px;}
-.main-title{text-align:center;font-size:46px;color:#ffd36a;letter-spacing:5px;text-shadow:0 0 18px #8a5a00;}
-.sub-title{text-align:center;color:#d6bc76;font-size:18px;margin:15px 0 40px;}
-.info-box{background:linear-gradient(180deg,#181109,#090909);border:1px solid #8a6a2a;padding:26px;line-height:2;margin-bottom:38px;box-shadow:0 0 25px rgba(255,190,70,.15);font-size:17px;}
-.section-title{font-size:30px;color:#ffd36a;border-left:6px solid #c99a35;padding-left:15px;margin:42px 0 22px;}
-.table-wrap{overflow-x:auto;border:1px solid #8a6a2a;box-shadow:0 0 25px rgba(255,190,70,.12);}
-table{width:100%;border-collapse:collapse;min-width:1080px;background:#0b0b0b;}
-th{background:linear-gradient(180deg,#6f4c12,#2a1b05);color:#ffe6a3;border:1px solid #8a6a2a;padding:11px 8px;white-space:nowrap;}
-td{border:1px solid #3a2b12;padding:10px 8px;text-align:center;color:#f2e2b8;white-space:nowrap;}
-tr:nth-child(even){background:#14110b;}
-tr:hover{background:#2b1f0d;}
-.name{color:#ffd36a;font-weight:bold;}
-.note{color:#d9c17f;font-size:15px;margin-top:16px;line-height:1.8;}
-.back-btn{display:inline-block;margin-top:40px;padding:12px 30px;border:1px solid #c99a35;color:#ffd36a;text-decoration:none;background:#120d05;}
-.back-btn:hover{background:#2a1b05;}
-@media screen and (max-width:768px){
-.page{padding:35px 14px 70px;}
-.main-title{font-size:34px;letter-spacing:3px;}
-.sub-title{font-size:15px;line-height:1.8;}
-.info-box{font-size:15px;padding:18px;}
-.section-title{font-size:24px;}
-table{min-width:1050px;}
-.back-btn{width:100%;text-align:center;box-sizing:border-box;}
+
+body{
+    margin:0;
+    background:#040404;
+    color:#f5e6b8;
+    font-family:"Microsoft JhengHei",sans-serif;
 }
+
+.page{
+    max-width:1400px;
+    margin:auto;
+    padding:50px 20px 100px;
+}
+
+.main-title{
+    text-align:center;
+    font-size:54px;
+    color:#ffd36a;
+    letter-spacing:8px;
+    margin-bottom:15px;
+    text-shadow:0 0 25px #ff8800;
+}
+
+.sub-title{
+    text-align:center;
+    color:#d6bc76;
+    font-size:18px;
+    margin-bottom:55px;
+    line-height:1.8;
+}
+
+.info-box{
+    background:linear-gradient(180deg,#191109,#090909);
+    border:1px solid #8a6a2a;
+    padding:30px;
+    line-height:2;
+    margin-bottom:50px;
+    box-shadow:0 0 30px rgba(255,190,70,.15);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:linear-gradient(180deg,#181109,#090909);
+    border:1px solid #8a6a2a;
+    padding:28px;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(255,190,70,.08);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#ffcc66;
+    box-shadow:0 0 30px rgba(255,190,70,.25);
+}
+
+.card-title{
+    font-size:28px;
+    color:#ffd36a;
+    margin-bottom:15px;
+}
+
+.card-desc{
+    color:#d6bc76;
+    line-height:1.9;
+    min-height:120px;
+}
+
+.enter-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 26px;
+    border:1px solid #c99a35;
+    color:#ffd36a;
+    text-decoration:none;
+    background:#120d05;
+}
+
+.enter-btn:hover{
+    background:#2a1b05;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:60px;
+    padding:14px 32px;
+    border:1px solid #c99a35;
+    color:#ffd36a;
+    text-decoration:none;
+    background:#120d05;
+}
+
+.back-btn:hover{
+    background:#2a1b05;
+}
+
+@media screen and (max-width:768px){
+
+.page{
+    padding:35px 14px 70px;
+}
+
+.main-title{
+    font-size:36px;
+    letter-spacing:4px;
+}
+
+.sub-title{
+    font-size:15px;
+}
+
+.card-title{
+    font-size:24px;
+}
+
+.card-desc{
+    min-height:auto;
+}
+
+.back-btn{
+    width:100%;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="page">
 
-<div class="main-title">徽章系統</div>
-<div class="sub-title">挑戰地圖、收集徽章、提升角色永久能力</div>
+<div class="main-title">
+徽章圖鑑
+</div>
+
+<div class="sub-title">
+永翼天堂完整徽章、符石、魔法符圖鑑系統<br>
+提供各系列完整能力與成長介紹
+</div>
 
 <div class="info-box">
-<p>永翼天堂徽章系統為角色長期養成內容之一，玩家可透過不同地圖、區域挑戰與 Boss 玩法取得各式徽章。</p>
-<p>徽章可提供血量、魔量、回血、回魔、近戰傷害、遠程傷害、傷害減免、魔法攻擊、經驗加成等能力。</p>
-<p>Boss徽章屬於高階成長型徽章，可額外提升命中、魔法防禦與更高階戰鬥能力。</p>
-</div>
 
-<div class="section-title">一般徽章完整能力表</div>
+<p>
+徽章系統為永翼天堂核心養成內容之一，
+玩家可透過狩獵、副本、Boss、活動、推廣與特殊玩法獲得不同系列徽章。
+</p>
 
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>徽章名稱</th>
-<th>血量</th>
-<th>魔量</th>
-<th>回血</th>
-<th>回魔</th>
-<th>近戰傷害</th>
-<th>遠程傷害</th>
-<th>傷害減免</th>
-<th>魔法攻擊</th>
-<th>經驗加成</th>
-</tr>
-</thead>
-<tbody>
-<tr><td class="name">戰場徽章</td><td>+10</td><td>+5</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+5%</td></tr>
-<tr><td class="name">螞蟻徽章</td><td>+20</td><td>+10</td><td>+2</td><td>+2</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+10%</td></tr>
-<tr><td class="name">騎士徽章</td><td>+30</td><td>+15</td><td>+3</td><td>+3</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+15%</td></tr>
-<tr><td class="name">海音徽章</td><td>+50</td><td>+25</td><td>+4</td><td>+4</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+20%</td></tr>
-<tr><td class="name">水晶徽章</td><td>+70</td><td>+35</td><td>+5</td><td>+5</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+25%</td></tr>
-<tr><td class="name">奇岩徽章</td><td>+90</td><td>+45</td><td>+6</td><td>+6</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+30%</td></tr>
-<tr><td class="name">龍之谷徽章</td><td>+110</td><td>+55</td><td>+7</td><td>+7</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+35%</td></tr>
-<tr><td class="name">火窟徽章</td><td>+130</td><td>+65</td><td>+8</td><td>+8</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+40%</td></tr>
-<tr><td class="name">遺忘徽章</td><td>+150</td><td>+75</td><td>+9</td><td>+9</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+45%</td></tr>
-<tr><td class="name">傲慢徽章</td><td>+180</td><td>+85</td><td>+10</td><td>+10</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+50%</td></tr>
-<tr><td class="name">夢島徽章</td><td>+225</td><td>+125</td><td>+11</td><td>+11</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+55%</td></tr>
-<tr><td class="name">精靈徽章</td><td>+250</td><td>+150</td><td>+12</td><td>+12</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+60%</td></tr>
-</tbody>
-</table>
-</div>
+<p>
+不同系列擁有不同定位，
+包含基礎養成、Boss戰鬥、PVP、PVE、生存、防禦、命中、魔法與全能力提升。
+</p>
 
-<div class="section-title">Boss徽章完整能力表</div>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th>徽章名稱</th>
-<th>武器傷害</th>
-<th>武器發動</th>
-<th>血量</th>
-<th>魔量</th>
-<th>回血</th>
-<th>回魔</th>
-<th>近戰傷害</th>
-<th>近戰命中</th>
-<th>遠程傷害</th>
-<th>遠程命中</th>
-<th>傷害減免</th>
-<th>魔法防禦</th>
-<th>魔法攻擊</th>
-<th>經驗加成</th>
-<th>特殊稱號</th>
-</tr>
-</thead>
-<tbody>
-<tr><td class="name">Boss徽章Lv1</td><td>+1</td><td>+1</td><td>+20</td><td>+10</td><td>+50</td><td>+20</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>+5%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv2</td><td>+2</td><td>+2</td><td>+30</td><td>+20</td><td>+60</td><td>+30</td><td>+1</td><td>+2</td><td>+1</td><td>+2</td><td>+2</td><td>+2</td><td>+2</td><td>+6%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv3</td><td>+3</td><td>+3</td><td>+50</td><td>+30</td><td>+70</td><td>+40</td><td>+2</td><td>+3</td><td>+2</td><td>+3</td><td>+3</td><td>+3</td><td>+3</td><td>+7%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv4</td><td>+4</td><td>+4</td><td>+70</td><td>+30</td><td>+80</td><td>+50</td><td>+2</td><td>+4</td><td>+2</td><td>+4</td><td>+4</td><td>+4</td><td>+4</td><td>+8%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv5</td><td>+5</td><td>+5</td><td>+100</td><td>+30</td><td>+90</td><td>+60</td><td>+3</td><td>+5</td><td>+3</td><td>+5</td><td>+5</td><td>+5</td><td>+5</td><td>+9%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv6</td><td>+6</td><td>+6</td><td>+125</td><td>+30</td><td>+100</td><td>+70</td><td>+3</td><td>+6</td><td>+3</td><td>+6</td><td>+6</td><td>+6</td><td>+6</td><td>+10%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv7</td><td>+7</td><td>+7</td><td>+140</td><td>+30</td><td>+110</td><td>+80</td><td>+4</td><td>+7</td><td>+4</td><td>+7</td><td>+7</td><td>+7</td><td>+7</td><td>+15%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv8</td><td>+8</td><td>+8</td><td>+155</td><td>+30</td><td>+120</td><td>+90</td><td>+4</td><td>+8</td><td>+4</td><td>+8</td><td>+8</td><td>+8</td><td>+8</td><td>+20%</td><td>-</td></tr>
-<tr><td class="name">Boss徽章Lv9</td><td>+9</td><td>+9</td><td>+170</td><td>+30</td><td>+130</td><td>+100</td><td>+5</td><td>+9</td><td>+5</td><td>+9</td><td>+9</td><td>+9</td><td>+9</td><td>+25%</td><td>BOSS屠殺</td></tr>
-<tr><td class="name">Boss徽章Lv10</td><td>+10</td><td>+10</td><td>+200</td><td>+30</td><td>+140</td><td>+110</td><td>+5</td><td>+10</td><td>+5</td><td>+10</td><td>+10</td><td>+10</td><td>+10</td><td>+30%</td><td>BOSS屠殺</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="note">
-※ 本頁已排除血盟徽章。<br>
-※ 0能力未顯示，只列出實際有加成的能力。<br>
-※ 手機觀看時可左右滑動表格。<br>
-※ 實際效果以遊戲內設定為準。
-</div>
-
-<div class="section-title">能力說明</div>
-
-<div class="info-box">
-<p>血量：提升角色最大 HP。</p>
-<p>魔量：提升角色最大 MP。</p>
-<p>回血：提升角色 HP 自然恢復量。</p>
-<p>回魔：提升角色 MP 自然恢復量。</p>
-<p>近戰傷害：提升近戰攻擊造成的傷害。</p>
-<p>近戰命中：提升近戰攻擊命中率。</p>
-<p>遠程傷害：提升弓箭與遠距離攻擊造成的傷害。</p>
-<p>遠程命中：提升弓箭與遠距離攻擊命中率。</p>
-<p>傷害減免：降低角色受到的傷害。</p>
-<p>魔法防禦：提升角色魔法防禦能力。</p>
-<p>魔法攻擊：提升魔法傷害與法術威力。</p>
-<p>經驗加成：提升角色狩獵時獲得的經驗值。</p>
-<p>武器傷害：Boss徽章額外提供的武器傷害能力。</p>
-<p>武器發動：Boss徽章額外提供的武器發動能力。</p>
-<p>特殊稱號：部分高階 Boss徽章可顯示特殊稱號。</p>
-</div>
-
-<a class="back-btn" href="index.html">返回官方首頁</a>
+<p>
+高階徽章與符石將成為後期玩家的重要戰力來源。
+</p>
 
 </div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-title">一般徽章</div>
+<div class="card-desc">
+基礎成長型徽章，提供血量、傷害、經驗與基礎能力提升。
+</div>
+<a class="enter-btn" href="normal.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">Boss徽章</div>
+<div class="card-desc">
+高階Boss成長徽章，提供命中、PVP、防禦與大量戰鬥能力。
+</div>
+<a class="enter-btn" href="boss.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">古神的榮耀</div>
+<div class="card-desc">
+頂級終極徽章，擁有PVP、PVE、爆擊與高階雙防能力。
+</div>
+<a class="enter-btn" href="god.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">VIP徽章</div>
+<div class="card-desc">
+VIP成長型徽章，提供經驗、掉寶與全能力加成。
+</div>
+<a class="enter-btn" href="vip.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">六芒星魔法符</div>
+<div class="card-desc">
+魔法符成長系統，提供命中、魔攻、傷害與基礎能力提升。
+</div>
+<a class="enter-btn" href="hexagram.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">超能符石</div>
+<div class="card-desc">
+全職業通用型符石，提供防禦、血量與命中能力。
+</div>
+<a class="enter-btn" href="superstone.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">赫卡特符文</div>
+<div class="card-desc">
+攻擊與防禦雙系列符文，可大幅提升角色戰鬥能力。
+</div>
+<a class="enter-btn" href="murmur.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">古代魔石祝福</div>
+<div class="card-desc">
+遠古魔石祝福系統，提供命中、防禦與生存能力。
+</div>
+<a class="enter-btn" href="ancient.html">進入圖鑑</a>
+</div>
+
+<div class="card">
+<div class="card-title">推廣水晶</div>
+<div class="card-desc">
+透過推廣與活動取得的成長型水晶，可長期提升角色能力。
+</div>
+<a class="enter-btn" href="crystal.html">進入圖鑑</a>
+</div>
+
+</div>
+
+<a class="back-btn" href="index.html">
+返回官方首頁
+</a>
+
+</div>
+
 </body>
 </html>
