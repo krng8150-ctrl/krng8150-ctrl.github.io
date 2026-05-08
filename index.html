@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>永翼天堂｜官方網站</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -18,503 +15,478 @@
 html,body{
     width:100%;
     min-height:100%;
-    overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#06101f;
+    color:#ffffff;
 }
 
 body{
-    font-family:"Microsoft JhengHei",sans-serif;
-    color:#ffffff;
-
     background:
-    linear-gradient(
-    rgba(5,10,25,0.25),
-    rgba(5,10,25,0.72)
-    ),
-
+    linear-gradient(rgba(5,12,30,0.25),rgba(5,12,30,0.88)),
     url("0EEA40A4-FBCB-4CDC-BE43-D48939B227FD.png");
-
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
     background-attachment:fixed;
-
-    position:relative;
+    overflow-x:hidden;
 }
 
-/* =========================
-   微微流光
-========================= */
-
-body::before{
-
+/* 微微流光 */
+body:before{
     content:"";
-
     position:fixed;
-
     top:0;
     left:-40%;
-
-    width:30%;
+    width:35%;
     height:100%;
-
-    background:
-    linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255,255,255,0.02) 30%,
-    rgba(170,220,255,0.18) 50%,
-    rgba(255,255,255,0.02) 70%,
-    transparent 100%
-    );
-
-    animation:lightMove 12s linear infinite;
-
+    background:linear-gradient(120deg,transparent,rgba(180,230,255,0.20),transparent);
+    animation:lightFlow 12s linear infinite;
     pointer-events:none;
-
     z-index:1;
 }
 
-@keyframes lightMove{
-
-    0%{
-        left:-40%;
-    }
-
-    100%{
-        left:140%;
-    }
+@keyframes lightFlow{
+    0%{left:-40%;}
+    100%{left:140%;}
 }
 
-/* =========================
-   主內容
-========================= */
-
-.main{
-
+.wrapper{
     position:relative;
-    z-index:5;
-
+    z-index:2;
     width:100%;
+}
 
-    min-height:100vh;
+/* 上方導覽列 */
+.nav{
+    width:100%;
+    background:rgba(3,10,24,0.78);
+    border-bottom:1px solid rgba(180,220,255,0.35);
+    box-shadow:0 0 18px rgba(120,190,255,0.25);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
 
+.nav-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 20px;
+}
+
+.nav-logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#eaf7ff;
+    text-shadow:0 0 12px #7ec7ff;
+}
+
+.nav-links a{
+    color:#eaf7ff;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:#9fdcff;
+}
+
+/* 主視覺 */
+.hero{
+    min-height:520px;
     display:flex;
     justify-content:center;
     align-items:center;
-
-    padding:60px 20px;
-}
-
-.container{
-
-    width:100%;
-    max-width:1280px;
-
     text-align:center;
+    padding:80px 20px 60px;
 }
 
-/* =========================
-   標題
-========================= */
-
-.top-title{
-
-    font-size:20px;
-
-    margin-bottom:25px;
-
-    color:#e8f5ff;
-
-    text-shadow:
-    0 0 10px rgba(120,200,255,0.8);
+.hero-box{
+    max-width:1000px;
 }
 
-.logo{
-
+.server-title{
     font-size:92px;
     font-weight:bold;
-
     letter-spacing:10px;
-
-    margin-bottom:18px;
-
-    color:#f3fbff;
-
+    color:#f4fbff;
     text-shadow:
     0 0 10px #ffffff,
-    0 0 25px #9fd6ff,
-    0 0 45px #3c84ff;
+    0 0 25px #8ed2ff,
+    0 0 50px #2578ff;
 }
 
-.sub{
-
-    font-size:30px;
-
+.server-sub{
+    margin-top:18px;
+    font-size:28px;
     letter-spacing:5px;
-
-    margin-bottom:65px;
-
     color:#ffffff;
-
-    text-shadow:
-    0 0 12px rgba(120,200,255,0.8);
+    text-shadow:0 0 15px #4aa3ff;
 }
 
-/* =========================
-   選單
-========================= */
+.hero-buttons{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
 
-.menu{
+.hero-btn{
+    display:inline-block;
+    min-width:180px;
+    padding:16px 26px;
+    border-radius:12px;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    background:linear-gradient(to bottom,rgba(60,95,155,0.95),rgba(10,24,55,0.96));
+    border:1px solid rgba(210,235,255,0.9);
+    box-shadow:0 0 18px rgba(120,190,255,0.5), inset 0 0 16px rgba(255,255,255,0.12);
+}
 
-    width:100%;
+.hero-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 28px rgba(170,225,255,0.85);
+}
 
+/* 區塊 */
+.section{
+    max-width:1200px;
+    margin:0 auto 36px;
+    padding:0 20px;
+}
+
+.panel{
+    background:rgba(3,10,24,0.78);
+    border:1px solid rgba(170,220,255,0.38);
+    border-radius:18px;
+    box-shadow:0 0 24px rgba(80,160,255,0.25), inset 0 0 18px rgba(255,255,255,0.05);
+    padding:28px;
+    backdrop-filter:blur(3px);
+}
+
+.section-title{
+    font-size:30px;
+    color:#eaf7ff;
+    text-shadow:0 0 12px #65bfff;
+    margin-bottom:20px;
+    border-bottom:1px solid rgba(180,220,255,0.25);
+    padding-bottom:12px;
+}
+
+/* 公告 */
+.news-list{
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:32px;
-
-    max-width:1150px;
-
-    margin:0 auto;
+    gap:12px;
 }
 
-/* =========================
-   天堂按鈕
-========================= */
+.news-item{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 16px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(180,220,255,0.18);
+}
 
-.btn{
+.news-item span{
+    color:#b9ddff;
+}
 
+/* 特色 */
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature-card{
+    padding:22px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(180,220,255,0.22);
+    min-height:140px;
+}
+
+.feature-card h3{
+    font-size:23px;
+    margin-bottom:10px;
+    color:#eaf7ff;
+    text-shadow:0 0 10px #5bbcff;
+}
+
+.feature-card p{
+    font-size:16px;
+    line-height:1.7;
+    color:#dcefff;
+}
+
+/* 系統入口 */
+.system-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.system-btn{
     position:relative;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    min-height:88px;
-
+    min-height:72px;
     text-decoration:none;
-
-    color:#f5fbff;
-
-    font-size:32px;
+    color:#ffffff;
+    font-size:22px;
     font-weight:bold;
-
-    border-radius:18px;
-
-    background:
-    linear-gradient(
-    to bottom,
-    rgba(40,65,120,0.90),
-    rgba(10,18,38,0.95)
-    );
-
-    border:1px solid rgba(200,230,255,0.95);
-
-    box-shadow:
-    0 0 22px rgba(120,180,255,0.55),
-    inset 0 0 20px rgba(255,255,255,0.10);
-
-    overflow:visible;
-
-    transition:0.3s;
-
-    text-shadow:
-    0 0 10px rgba(130,210,255,1);
+    border-radius:14px;
+    background:linear-gradient(to bottom,rgba(42,70,120,0.92),rgba(8,20,45,0.96));
+    border:1px solid rgba(210,235,255,0.85);
+    box-shadow:0 0 14px rgba(120,190,255,0.45), inset 0 0 14px rgba(255,255,255,0.10);
+    overflow:hidden;
 }
 
-/* 按鈕流光 */
-
-.btn::before{
-
+.system-btn:before{
     content:"";
-
     position:absolute;
-
-    top:0;
     left:-120%;
-
+    top:0;
     width:60%;
     height:100%;
-
-    background:
-    linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.25),
-    transparent
-    );
-
-    animation:btnFlow 6s linear infinite;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.22),transparent);
+    animation:btnFlow 7s linear infinite;
 }
 
 @keyframes btnFlow{
-
-    0%{
-        left:-120%;
-    }
-
-    100%{
-        left:150%;
-    }
+    0%{left:-120%;}
+    100%{left:150%;}
 }
 
-/* Hover */
-
-.btn:hover{
-
-    transform:
-    translateY(-4px)
-    scale(1.02);
-
-    box-shadow:
-    0 0 35px rgba(170,220,255,0.95),
-    inset 0 0 30px rgba(255,255,255,0.15);
+.system-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 24px rgba(170,225,255,0.85);
 }
 
-/* =========================
-   翅膀
-========================= */
-
-.wing-left,
-.wing-right{
-
-    position:absolute;
-
-    top:50%;
-
-    width:78px;
-    height:78px;
-
-    transform:translateY(-50%);
-
-    background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Angel_wings_white.svg/512px-Angel_wings_white.svg.png");
-
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-
-    filter:
-    drop-shadow(0 0 10px rgba(180,220,255,1));
-
-    pointer-events:none;
+/* 下載區 */
+.download-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.wing-left{
-    left:-50px;
+.big-link{
+    display:block;
+    text-align:center;
+    padding:24px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#ffffff;
+    font-size:24px;
+    font-weight:bold;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(180,220,255,0.24);
+    box-shadow:0 0 14px rgba(120,190,255,0.25);
 }
 
-.wing-right{
-
-    right:-50px;
-
-    transform:
-    translateY(-50%)
-    scaleX(-1);
+.big-link:hover{
+    background:rgba(120,190,255,0.16);
 }
-
-/* =========================
-   Footer
-========================= */
 
 .footer{
-
-    margin-top:70px;
-
-    font-size:16px;
-
-    color:#d9edff;
-
-    text-shadow:
-    0 0 10px rgba(120,200,255,0.8);
+    text-align:center;
+    padding:34px 20px 50px;
+    color:#d7eaff;
+    text-shadow:0 0 8px #3fa2ff;
 }
 
-/* =========================
-   平板
-========================= */
-
-@media(max-width:1000px){
-
-    .logo{
-        font-size:70px;
+/* 平板 */
+@media(max-width:900px){
+    .server-title{
+        font-size:66px;
     }
 
-    .sub{
-        font-size:22px;
+    .features{
+        grid-template-columns:1fr;
     }
 
-    .menu{
+    .system-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-        grid-template-columns:
-        repeat(2,1fr);
+    .download-row{
+        grid-template-columns:1fr;
+    }
 
-        max-width:760px;
+    .nav-inner{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .nav-links a{
+        margin:0 8px;
     }
 }
 
-/* =========================
-   手機版
-========================= */
-
-@media(max-width:640px){
-
+/* 手機 */
+@media(max-width:560px){
     body{
         background-attachment:scroll;
     }
 
-    .main{
-        padding:40px 18px;
+    .hero{
+        min-height:430px;
+        padding:60px 16px 40px;
     }
 
-    .top-title{
-        font-size:16px;
-    }
-
-    .logo{
-
-        font-size:54px;
-
+    .server-title{
+        font-size:46px;
         letter-spacing:4px;
     }
 
-    .sub{
-
-        font-size:20px;
-
+    .server-sub{
+        font-size:19px;
         letter-spacing:2px;
-
-        margin-bottom:40px;
     }
 
-    .menu{
+    .hero-btn{
+        width:100%;
+        max-width:300px;
+    }
 
+    .section-title{
+        font-size:25px;
+    }
+
+    .system-grid{
         grid-template-columns:1fr;
-
-        gap:18px;
-
-        max-width:360px;
     }
 
-    .btn{
-
-        min-height:72px;
-
-        font-size:26px;
+    .news-item{
+        flex-direction:column;
+        gap:6px;
     }
 
-    .wing-left,
-    .wing-right{
-
-        width:56px;
-        height:56px;
-    }
-
-    .wing-left{
-        left:-30px;
-    }
-
-    .wing-right{
-        right:-30px;
+    .nav-links{
+        text-align:center;
+        line-height:2;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="main">
+<div class="wrapper">
 
-<div class="container">
+    <div class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">永翼天堂</div>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="notice.html">公告</a>
+                <a href="download.html">下載</a>
+                <a href="intro.html">介紹</a>
+                <a href="donate.html">贊助</a>
+            </div>
+        </div>
+    </div>
 
-<div class="top-title">
-永翼天堂｜官方網站
-</div>
+    <div class="hero">
+        <div class="hero-box">
+            <div class="server-title">永翼天堂</div>
+            <div class="server-sub">經典重生・榮耀再臨</div>
 
-<div class="logo">
-永翼天堂
-</div>
+            <div class="hero-buttons">
+                <a class="hero-btn" href="download.html">遊戲下載</a>
+                <a class="hero-btn" href="notice.html">最新公告</a>
+                <a class="hero-btn" href="intro.html">遊戲介紹</a>
+            </div>
+        </div>
+    </div>
 
-<div class="sub">
-經典重生・榮耀再臨
-</div>
+    <div class="section">
+        <div class="panel">
+            <div class="section-title">最新公告</div>
 
-<div class="menu">
+            <div class="news-list">
+                <div class="news-item">
+                    <strong>永翼天堂官方網站建置中</strong>
+                    <span>2026 / 最新</span>
+                </div>
 
-<a class="btn" href="notice.html">
-<div class="wing-left"></div>
-最新公告
-<div class="wing-right"></div>
-</a>
+                <div class="news-item">
+                    <strong>遊戲下載、系統介紹、活動頁面將陸續開放</strong>
+                    <span>更新中</span>
+                </div>
 
-<a class="btn" href="intro.html">
-<div class="wing-left"></div>
-遊戲介紹
-<div class="wing-right"></div>
-</a>
+                <div class="news-item">
+                    <strong>詳細轉生、紋樣、徽章、武器資料將持續補完</strong>
+                    <span>資料建置</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<a class="btn" href="download.html">
-<div class="wing-left"></div>
-遊戲下載
-<div class="wing-right"></div>
-</a>
+    <div class="section">
+        <div class="panel">
+            <div class="section-title">遊戲特色</div>
 
-<a class="btn" href="poly.html">
-<div class="wing-left"></div>
-天M變身
-<div class="wing-right"></div>
-</a>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>天M變身</h3>
+                    <p>免抽卡、依照角色成長逐步開放，讓玩家靠努力取得變身目標。</p>
+                </div>
 
-<a class="btn" href="rebirth.html">
-<div class="wing-left"></div>
-轉生系統
-<div class="wing-right"></div>
-</a>
+                <div class="feature-card">
+                    <h3>轉生系統</h3>
+                    <p>透過轉生累積能力，打造長期養成目標，讓角色越玩越強。</p>
+                </div>
 
-<a class="btn" href="pattern.html">
-<div class="wing-left"></div>
-紋樣系統
-<div class="wing-right"></div>
-</a>
+                <div class="feature-card">
+                    <h3>多元裝備養成</h3>
+                    <p>武器、裝備、紋樣、徽章等系統，搭配完整數值介紹與成長路線。</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<a class="btn" href="badge.html">
-<div class="wing-left"></div>
-徽章系統
-<div class="wing-right"></div>
-</a>
+    <div class="section">
+        <div class="panel">
+            <div class="section-title">系統入口</div>
 
-<a class="btn" href="weapon.html">
-<div class="wing-left"></div>
-武器介紹
-<div class="wing-right"></div>
-</a>
+            <div class="system-grid">
+                <a class="system-btn" href="poly.html">天M變身</a>
+                <a class="system-btn" href="rebirth.html">轉生系統</a>
+                <a class="system-btn" href="pattern.html">紋樣系統</a>
+                <a class="system-btn" href="badge.html">徽章系統</a>
+                <a class="system-btn" href="weapon.html">武器介紹</a>
+                <a class="system-btn" href="armor.html">裝備介紹</a>
+                <a class="system-btn" href="share.html">推文獎勵</a>
+                <a class="system-btn" href="donate.html">贊助系統</a>
+            </div>
+        </div>
+    </div>
 
-<a class="btn" href="armor.html">
-<div class="wing-left"></div>
-裝備介紹
-<div class="wing-right"></div>
-</a>
+    <div class="section">
+        <div class="panel">
+            <div class="section-title">快速入口</div>
 
-<a class="btn" href="share.html">
-<div class="wing-left"></div>
-推文獎勵
-<div class="wing-right"></div>
-</a>
+            <div class="download-row">
+                <a class="big-link" href="download.html">遊戲下載</a>
+                <a class="big-link" href="notice.html">最新公告</a>
+                <a class="big-link" href="share.html">推文獎勵</a>
+            </div>
+        </div>
+    </div>
 
-<a class="btn" href="donate.html">
-<div class="wing-left"></div>
-贊助系統
-<div class="wing-right"></div>
-</a>
-
-</div>
-
-<div class="footer">
-© 2026 永翼天堂
-</div>
-
-</div>
+    <div class="footer">
+        © 2026 永翼天堂
+    </div>
 
 </div>
 
