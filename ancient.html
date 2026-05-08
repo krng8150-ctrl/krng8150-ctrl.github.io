@@ -108,6 +108,247 @@ tr:hover{background:#221c40;}
 <a class="back-btn" href="badge.html">返回徽章總入口</a>
 
 </div>
+<!-- 星空背景特效開始 -->
+<style>
 
+/* 背景 */
+body{
+    background:
+    linear-gradient(
+        rgba(3,10,22,0.20),
+        rgba(3,10,22,0.88)
+    ),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* 柔和流光 */
+.glow-layer{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    background:
+    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.12), transparent 20%),
+    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.08), transparent 24%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 22%);
+
+    animation:softGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes softGlow{
+
+    0%{
+        opacity:0.28;
+    }
+
+    100%{
+        opacity:0.60;
+    }
+}
+
+/* 流星 */
+.meteor{
+    position:fixed;
+
+    width:140px;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0.95),
+        rgba(120,200,255,0.55),
+        transparent
+    );
+
+    box-shadow:
+    0 0 10px rgba(160,220,255,0.9);
+
+    transform:rotate(-28deg);
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:0;
+}
+
+.meteor1{
+    top:14%;
+    left:85%;
+    animation:meteorMove 7s linear infinite;
+}
+
+.meteor2{
+    top:32%;
+    left:95%;
+    animation:meteorMove 10s linear infinite 2.5s;
+}
+
+.meteor3{
+    top:58%;
+    left:90%;
+    animation:meteorMove 12s linear infinite 5s;
+}
+
+@keyframes meteorMove{
+
+    0%{
+        transform:translate(0,0) rotate(-28deg);
+        opacity:0;
+    }
+
+    8%{
+        opacity:0.9;
+    }
+
+    22%{
+        opacity:0.75;
+    }
+
+    38%{
+        transform:translate(-760px,380px) rotate(-28deg);
+        opacity:0;
+    }
+
+    100%{
+        transform:translate(-760px,380px) rotate(-28deg);
+        opacity:0;
+    }
+}
+
+/* 小流光粒子 */
+.light{
+    position:fixed;
+
+    bottom:-30px;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.9);
+
+    box-shadow:
+    0 0 8px rgba(180,230,255,0.95),
+    0 0 18px rgba(120,190,255,0.7);
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:0;
+}
+
+.light1{
+    left:10%;
+    animation:floatLight 8s linear infinite;
+}
+
+.light2{
+    left:22%;
+    animation:floatLight 11s linear infinite 2s;
+}
+
+.light3{
+    left:38%;
+    animation:floatLight 9s linear infinite 1s;
+}
+
+.light4{
+    left:52%;
+    animation:floatLight 13s linear infinite 4s;
+}
+
+.light5{
+    left:68%;
+    animation:floatLight 10s linear infinite 3s;
+}
+
+.light6{
+    left:84%;
+    animation:floatLight 12s linear infinite 5s;
+}
+
+@keyframes floatLight{
+
+    0%{
+        transform:translateY(0px) scale(0.4);
+        opacity:0;
+    }
+
+    10%{
+        opacity:0.9;
+    }
+
+    50%{
+        opacity:0.45;
+    }
+
+    100%{
+        transform:translateY(-950px) scale(1);
+        opacity:0;
+    }
+}
+
+/* 手機版 */
+@media(max-width:560px){
+
+    body{
+        background-attachment:scroll;
+    }
+
+    .meteor{
+        width:95px;
+    }
+
+    @keyframes meteorMove{
+
+        0%{
+            transform:translate(0,0) rotate(-28deg);
+            opacity:0;
+        }
+
+        8%{
+            opacity:0.75;
+        }
+
+        34%{
+            transform:translate(-360px,210px) rotate(-28deg);
+            opacity:0;
+        }
+
+        100%{
+            transform:translate(-360px,210px) rotate(-28deg);
+            opacity:0;
+        }
+    }
+}
+
+</style>
+
+<div class="glow-layer"></div>
+
+<div class="meteor meteor1"></div>
+<div class="meteor meteor2"></div>
+<div class="meteor meteor3"></div>
+
+<div class="light light1"></div>
+<div class="light light2"></div>
+<div class="light light3"></div>
+<div class="light light4"></div>
+<div class="light light5"></div>
+<div class="light light6"></div>
+
+<!-- 星空背景特效結束 -->
 </body>
 </html>
