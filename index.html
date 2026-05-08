@@ -16,19 +16,23 @@ html,body{
     width:100%;
     min-height:100%;
     font-family:"Microsoft JhengHei", Arial, sans-serif;
-    background:#06101f;
-    color:#ffffff;
+    color:#eef7ff;
+    background:#07111f;
+    overflow-x:hidden;
 }
 
 body{
     background:
-    linear-gradient(rgba(5,12,30,0.25),rgba(5,12,30,0.88)),
-    url("0EEA40A4-FBCB-4CDC-BE43-D48939B227FD.png");
+    linear-gradient(
+        rgba(3,10,22,0.18),
+        rgba(3,10,22,0.88)
+    ),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
     background-attachment:fixed;
-    overflow-x:hidden;
 }
 
 /* 微微流光 */
@@ -36,57 +40,61 @@ body:before{
     content:"";
     position:fixed;
     top:0;
-    left:-40%;
+    left:-45%;
     width:35%;
     height:100%;
-    background:linear-gradient(120deg,transparent,rgba(180,230,255,0.20),transparent);
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(190,230,255,0.18),
+        transparent
+    );
     animation:lightFlow 12s linear infinite;
     pointer-events:none;
     z-index:1;
 }
 
 @keyframes lightFlow{
-    0%{left:-40%;}
+    0%{left:-45%;}
     100%{left:140%;}
 }
 
 .wrapper{
     position:relative;
     z-index:2;
-    width:100%;
 }
 
-/* 上方導覽列 */
+/* 上方導覽 */
 .nav{
     width:100%;
-    background:rgba(3,10,24,0.78);
-    border-bottom:1px solid rgba(180,220,255,0.35);
-    box-shadow:0 0 18px rgba(120,190,255,0.25);
+    background:rgba(4,12,28,0.82);
+    border-bottom:1px solid rgba(180,220,255,0.28);
+    box-shadow:0 0 20px rgba(80,160,255,0.20);
     position:sticky;
     top:0;
     z-index:10;
 }
 
 .nav-inner{
-    max-width:1200px;
+    max-width:1180px;
     margin:0 auto;
+    padding:15px 22px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:14px 20px;
+    justify-content:space-between;
 }
 
 .nav-logo{
-    font-size:26px;
+    font-size:27px;
     font-weight:bold;
-    color:#eaf7ff;
-    text-shadow:0 0 12px #7ec7ff;
+    color:#f2fbff;
+    text-shadow:0 0 12px #7cc8ff;
 }
 
 .nav-links a{
-    color:#eaf7ff;
+    color:#eaf6ff;
     text-decoration:none;
-    margin-left:18px;
+    margin-left:20px;
     font-size:16px;
 }
 
@@ -98,85 +106,55 @@ body:before{
 .hero{
     min-height:520px;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px 60px;
+    padding:85px 20px 55px;
 }
 
-.hero-box{
-    max-width:1000px;
-}
-
-.server-title{
-    font-size:92px;
+.logo-title{
+    font-size:88px;
     font-weight:bold;
     letter-spacing:10px;
-    color:#f4fbff;
+    color:#f5fbff;
     text-shadow:
-    0 0 10px #ffffff,
-    0 0 25px #8ed2ff,
-    0 0 50px #2578ff;
+        0 0 10px #ffffff,
+        0 0 25px #8fd2ff,
+        0 0 50px #2d7dff;
 }
 
-.server-sub{
+.subtitle{
     margin-top:18px;
     font-size:28px;
     letter-spacing:5px;
     color:#ffffff;
-    text-shadow:0 0 15px #4aa3ff;
-}
-
-.hero-buttons{
-    margin-top:45px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
-}
-
-.hero-btn{
-    display:inline-block;
-    min-width:180px;
-    padding:16px 26px;
-    border-radius:12px;
-    color:#ffffff;
-    text-decoration:none;
-    font-size:20px;
-    font-weight:bold;
-    background:linear-gradient(to bottom,rgba(60,95,155,0.95),rgba(10,24,55,0.96));
-    border:1px solid rgba(210,235,255,0.9);
-    box-shadow:0 0 18px rgba(120,190,255,0.5), inset 0 0 16px rgba(255,255,255,0.12);
-}
-
-.hero-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 28px rgba(170,225,255,0.85);
+    text-shadow:0 0 14px #4aa3ff;
 }
 
 /* 區塊 */
 .section{
-    max-width:1200px;
-    margin:0 auto 36px;
+    max-width:1180px;
+    margin:0 auto 34px;
     padding:0 20px;
 }
 
 .panel{
-    background:rgba(3,10,24,0.78);
-    border:1px solid rgba(170,220,255,0.38);
-    border-radius:18px;
-    box-shadow:0 0 24px rgba(80,160,255,0.25), inset 0 0 18px rgba(255,255,255,0.05);
-    padding:28px;
-    backdrop-filter:blur(3px);
+    background:rgba(4,12,28,0.78);
+    border:1px solid rgba(180,220,255,0.34);
+    border-radius:16px;
+    padding:26px;
+    box-shadow:
+        0 0 26px rgba(80,160,255,0.22),
+        inset 0 0 18px rgba(255,255,255,0.04);
 }
 
 .section-title{
     font-size:30px;
-    color:#eaf7ff;
-    text-shadow:0 0 12px #65bfff;
-    margin-bottom:20px;
-    border-bottom:1px solid rgba(180,220,255,0.25);
+    color:#f1fbff;
+    text-shadow:0 0 12px #70c4ff;
+    margin-bottom:18px;
     padding-bottom:12px;
+    border-bottom:1px solid rgba(180,220,255,0.25);
 }
 
 /* 公告 */
@@ -188,11 +166,12 @@ body:before{
 .news-item{
     display:flex;
     justify-content:space-between;
-    gap:20px;
+    gap:18px;
     padding:14px 16px;
     border-radius:10px;
-    background:rgba(255,255,255,0.06);
+    background:rgba(255,255,255,0.055);
     border:1px solid rgba(180,220,255,0.18);
+    line-height:1.6;
 }
 
 .news-item span{
@@ -207,128 +186,140 @@ body:before{
 }
 
 .feature-card{
+    min-height:145px;
     padding:22px;
     border-radius:14px;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(180,220,255,0.22);
-    min-height:140px;
+    background:rgba(255,255,255,0.055);
+    border:1px solid rgba(180,220,255,0.20);
 }
 
 .feature-card h3{
     font-size:23px;
     margin-bottom:10px;
-    color:#eaf7ff;
+    color:#ffffff;
     text-shadow:0 0 10px #5bbcff;
 }
 
 .feature-card p{
     font-size:16px;
-    line-height:1.7;
+    line-height:1.8;
     color:#dcefff;
 }
 
-/* 系統入口 */
-.system-grid{
+/* 系統入口：不要大按鈕感，改成小圖示區塊 */
+.entry-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:14px;
 }
 
-.system-btn{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:72px;
+.entry{
+    display:block;
     text-decoration:none;
-    color:#ffffff;
-    font-size:22px;
+    color:#eaf7ff;
+    text-align:center;
+    padding:18px 10px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(180,220,255,0.20);
+    box-shadow:inset 0 0 14px rgba(255,255,255,0.035);
+    transition:0.25s;
+}
+
+.entry:hover{
+    background:rgba(120,190,255,0.12);
+    box-shadow:0 0 18px rgba(120,190,255,0.38);
+    transform:translateY(-2px);
+}
+
+.entry-icon{
+    font-size:32px;
+    margin-bottom:8px;
+    text-shadow:0 0 12px #8fd2ff;
+}
+
+.entry-title{
+    font-size:18px;
     font-weight:bold;
-    border-radius:14px;
-    background:linear-gradient(to bottom,rgba(42,70,120,0.92),rgba(8,20,45,0.96));
-    border:1px solid rgba(210,235,255,0.85);
-    box-shadow:0 0 14px rgba(120,190,255,0.45), inset 0 0 14px rgba(255,255,255,0.10);
-    overflow:hidden;
 }
 
-.system-btn:before{
-    content:"";
-    position:absolute;
-    left:-120%;
-    top:0;
-    width:60%;
-    height:100%;
-    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.22),transparent);
-    animation:btnFlow 7s linear infinite;
-}
-
-@keyframes btnFlow{
-    0%{left:-120%;}
-    100%{left:150%;}
-}
-
-.system-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 24px rgba(170,225,255,0.85);
-}
-
-/* 下載區 */
-.download-row{
+/* 快速入口 */
+.quick{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
 
-.big-link{
+.quick-card{
     display:block;
-    text-align:center;
-    padding:24px;
-    border-radius:14px;
     text-decoration:none;
     color:#ffffff;
-    font-size:24px;
-    font-weight:bold;
-    background:rgba(255,255,255,0.07);
-    border:1px solid rgba(180,220,255,0.24);
-    box-shadow:0 0 14px rgba(120,190,255,0.25);
+    padding:22px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.055);
+    border:1px solid rgba(180,220,255,0.22);
+    text-align:center;
+    transition:0.25s;
 }
 
-.big-link:hover{
-    background:rgba(120,190,255,0.16);
+.quick-card:hover{
+    background:rgba(120,190,255,0.13);
+    box-shadow:0 0 18px rgba(120,190,255,0.35);
+}
+
+.quick-card h3{
+    font-size:24px;
+    margin-bottom:8px;
+    text-shadow:0 0 10px #6fc8ff;
+}
+
+.quick-card p{
+    color:#dcefff;
+    font-size:15px;
+    line-height:1.7;
 }
 
 .footer{
     text-align:center;
-    padding:34px 20px 50px;
+    padding:38px 20px 55px;
     color:#d7eaff;
     text-shadow:0 0 8px #3fa2ff;
 }
 
 /* 平板 */
 @media(max-width:900px){
-    .server-title{
+    .nav-inner{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links{
+        text-align:center;
+        line-height:2;
+    }
+
+    .nav-links a{
+        margin:0 8px;
+    }
+
+    .logo-title{
         font-size:66px;
+    }
+
+    .subtitle{
+        font-size:22px;
     }
 
     .features{
         grid-template-columns:1fr;
     }
 
-    .system-grid{
+    .entry-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .download-row{
+    .quick{
         grid-template-columns:1fr;
-    }
-
-    .nav-inner{
-        flex-direction:column;
-        gap:12px;
-    }
-
-    .nav-links a{
-        margin:0 8px;
     }
 }
 
@@ -336,44 +327,53 @@ body:before{
 @media(max-width:560px){
     body{
         background-attachment:scroll;
+        background-position:center top;
     }
 
     .hero{
-        min-height:430px;
-        padding:60px 16px 40px;
+        min-height:390px;
+        padding:62px 16px 38px;
     }
 
-    .server-title{
+    .logo-title{
         font-size:46px;
         letter-spacing:4px;
     }
 
-    .server-sub{
+    .subtitle{
         font-size:19px;
         letter-spacing:2px;
     }
 
-    .hero-btn{
-        width:100%;
-        max-width:300px;
+    .section{
+        padding:0 14px;
+        margin-bottom:24px;
+    }
+
+    .panel{
+        padding:20px;
     }
 
     .section-title{
         font-size:25px;
     }
 
-    .system-grid{
-        grid-template-columns:1fr;
-    }
-
     .news-item{
         flex-direction:column;
-        gap:6px;
+        gap:5px;
     }
 
-    .nav-links{
-        text-align:center;
-        line-height:2;
+    .entry-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .entry-icon{
+        font-size:28px;
+    }
+
+    .entry-title{
+        font-size:16px;
     }
 }
 </style>
@@ -397,15 +397,9 @@ body:before{
     </div>
 
     <div class="hero">
-        <div class="hero-box">
-            <div class="server-title">永翼天堂</div>
-            <div class="server-sub">經典重生・榮耀再臨</div>
-
-            <div class="hero-buttons">
-                <a class="hero-btn" href="download.html">遊戲下載</a>
-                <a class="hero-btn" href="notice.html">最新公告</a>
-                <a class="hero-btn" href="intro.html">遊戲介紹</a>
-            </div>
+        <div>
+            <div class="logo-title">永翼天堂</div>
+            <div class="subtitle">經典重生・榮耀再臨</div>
         </div>
     </div>
 
@@ -425,7 +419,7 @@ body:before{
                 </div>
 
                 <div class="news-item">
-                    <strong>詳細轉生、紋樣、徽章、武器資料將持續補完</strong>
+                    <strong>轉生、紋樣、徽章、武器資料將持續補完</strong>
                     <span>資料建置</span>
                 </div>
             </div>
@@ -444,11 +438,11 @@ body:before{
 
                 <div class="feature-card">
                     <h3>轉生系統</h3>
-                    <p>透過轉生累積能力，打造長期養成目標，讓角色越玩越強。</p>
+                    <p>透過轉生累積能力，打造長期養成目標，角色越玩越強。</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>多元裝備養成</h3>
+                    <h3>完整養成路線</h3>
                     <p>武器、裝備、紋樣、徽章等系統，搭配完整數值介紹與成長路線。</p>
                 </div>
             </div>
@@ -459,15 +453,46 @@ body:before{
         <div class="panel">
             <div class="section-title">系統入口</div>
 
-            <div class="system-grid">
-                <a class="system-btn" href="poly.html">天M變身</a>
-                <a class="system-btn" href="rebirth.html">轉生系統</a>
-                <a class="system-btn" href="pattern.html">紋樣系統</a>
-                <a class="system-btn" href="badge.html">徽章系統</a>
-                <a class="system-btn" href="weapon.html">武器介紹</a>
-                <a class="system-btn" href="armor.html">裝備介紹</a>
-                <a class="system-btn" href="share.html">推文獎勵</a>
-                <a class="system-btn" href="donate.html">贊助系統</a>
+            <div class="entry-grid">
+                <a class="entry" href="poly.html">
+                    <div class="entry-icon">🪽</div>
+                    <div class="entry-title">天M變身</div>
+                </a>
+
+                <a class="entry" href="rebirth.html">
+                    <div class="entry-icon">✦</div>
+                    <div class="entry-title">轉生系統</div>
+                </a>
+
+                <a class="entry" href="pattern.html">
+                    <div class="entry-icon">✧</div>
+                    <div class="entry-title">紋樣系統</div>
+                </a>
+
+                <a class="entry" href="badge.html">
+                    <div class="entry-icon">◇</div>
+                    <div class="entry-title">徽章系統</div>
+                </a>
+
+                <a class="entry" href="weapon.html">
+                    <div class="entry-icon">⚔</div>
+                    <div class="entry-title">武器介紹</div>
+                </a>
+
+                <a class="entry" href="armor.html">
+                    <div class="entry-icon">🛡</div>
+                    <div class="entry-title">裝備介紹</div>
+                </a>
+
+                <a class="entry" href="share.html">
+                    <div class="entry-icon">🎁</div>
+                    <div class="entry-title">推文獎勵</div>
+                </a>
+
+                <a class="entry" href="donate.html">
+                    <div class="entry-icon">◆</div>
+                    <div class="entry-title">贊助系統</div>
+                </a>
             </div>
         </div>
     </div>
@@ -476,16 +501,27 @@ body:before{
         <div class="panel">
             <div class="section-title">快速入口</div>
 
-            <div class="download-row">
-                <a class="big-link" href="download.html">遊戲下載</a>
-                <a class="big-link" href="notice.html">最新公告</a>
-                <a class="big-link" href="share.html">推文獎勵</a>
+            <div class="quick">
+                <a class="quick-card" href="download.html">
+                    <h3>遊戲下載</h3>
+                    <p>主程式、登入器、更新檔與安裝教學。</p>
+                </a>
+
+                <a class="quick-card" href="notice.html">
+                    <h3>最新公告</h3>
+                    <p>開服資訊、活動公告、系統更新。</p>
+                </a>
+
+                <a class="quick-card" href="share.html">
+                    <h3>推文獎勵</h3>
+                    <p>推廣活動、分享規則與領獎說明。</p>
+                </a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        © 2026 永翼天堂
+        © 2026 永翼天堂｜本伺服器僅供遊戲交流與免費試玩
     </div>
 
 </div>
