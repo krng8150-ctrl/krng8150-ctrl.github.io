@@ -6,7 +6,6 @@
 <title>永翼天堂｜官方網站</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -36,222 +35,98 @@ body{
     background-attachment:fixed;
 }
 
-/* =========================
-   柔和流光
-========================= */
-
+/* 柔和流光 */
 .glow-layer{
     position:fixed;
     inset:0;
-
     pointer-events:none;
-
     z-index:1;
-
     background:
     radial-gradient(circle at 25% 20%, rgba(150,210,255,0.12), transparent 20%),
     radial-gradient(circle at 75% 45%, rgba(180,230,255,0.08), transparent 24%),
     radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 22%);
-
     animation:softGlow 6s ease-in-out infinite alternate;
 }
 
 @keyframes softGlow{
-
-    0%{
-        opacity:0.28;
-    }
-
-    100%{
-        opacity:0.60;
-    }
+    0%{opacity:0.28;}
+    100%{opacity:0.60;}
 }
 
-/* =========================
-   流星
-========================= */
-
+/* 流星 */
 .meteor{
     position:fixed;
-
     width:140px;
     height:2px;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,0.95),
-        rgba(120,200,255,0.55),
-        transparent
-    );
-
-    box-shadow:
-    0 0 10px rgba(160,220,255,0.9);
-
+    background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(120,200,255,0.55), transparent);
+    box-shadow:0 0 10px rgba(160,220,255,0.9);
     transform:rotate(-28deg);
-
     pointer-events:none;
-
     z-index:2;
-
     opacity:0;
 }
 
-.meteor1{
-    top:14%;
-    left:85%;
-    animation:meteorMove 7s linear infinite;
-}
-
-.meteor2{
-    top:32%;
-    left:95%;
-    animation:meteorMove 10s linear infinite 2.5s;
-}
-
-.meteor3{
-    top:58%;
-    left:90%;
-    animation:meteorMove 12s linear infinite 5s;
-}
+.meteor1{top:14%;left:85%;animation:meteorMove 7s linear infinite;}
+.meteor2{top:32%;left:95%;animation:meteorMove 10s linear infinite 2.5s;}
+.meteor3{top:58%;left:90%;animation:meteorMove 12s linear infinite 5s;}
 
 @keyframes meteorMove{
-
-    0%{
-        transform:translate(0,0) rotate(-28deg);
-        opacity:0;
-    }
-
-    8%{
-        opacity:0.9;
-    }
-
-    22%{
-        opacity:0.75;
-    }
-
-    38%{
-        transform:translate(-760px,380px) rotate(-28deg);
-        opacity:0;
-    }
-
-    100%{
-        transform:translate(-760px,380px) rotate(-28deg);
-        opacity:0;
-    }
+    0%{transform:translate(0,0) rotate(-28deg);opacity:0;}
+    8%{opacity:0.9;}
+    22%{opacity:0.75;}
+    38%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
+    100%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
 }
 
-/* =========================
-   小流光粒子
-========================= */
-
+/* 小流光粒子 */
 .light{
     position:fixed;
-
     bottom:-30px;
-
     width:4px;
     height:4px;
-
     border-radius:50%;
-
     background:rgba(255,255,255,0.9);
-
     box-shadow:
     0 0 8px rgba(180,230,255,0.95),
     0 0 18px rgba(120,190,255,0.7);
-
     pointer-events:none;
-
     z-index:2;
-
     opacity:0;
 }
 
-.light1{
-    left:10%;
-    animation:floatLight 8s linear infinite;
-}
-
-.light2{
-    left:22%;
-    animation:floatLight 11s linear infinite 2s;
-}
-
-.light3{
-    left:38%;
-    animation:floatLight 9s linear infinite 1s;
-}
-
-.light4{
-    left:52%;
-    animation:floatLight 13s linear infinite 4s;
-}
-
-.light5{
-    left:68%;
-    animation:floatLight 10s linear infinite 3s;
-}
-
-.light6{
-    left:84%;
-    animation:floatLight 12s linear infinite 5s;
-}
+.light1{left:10%;animation:floatLight 8s linear infinite;}
+.light2{left:22%;animation:floatLight 11s linear infinite 2s;}
+.light3{left:38%;animation:floatLight 9s linear infinite 1s;}
+.light4{left:52%;animation:floatLight 13s linear infinite 4s;}
+.light5{left:68%;animation:floatLight 10s linear infinite 3s;}
+.light6{left:84%;animation:floatLight 12s linear infinite 5s;}
 
 @keyframes floatLight{
-
-    0%{
-        transform:translateY(0px) scale(0.4);
-        opacity:0;
-    }
-
-    10%{
-        opacity:0.9;
-    }
-
-    50%{
-        opacity:0.45;
-    }
-
-    100%{
-        transform:translateY(-950px) scale(1);
-        opacity:0;
-    }
+    0%{transform:translateY(0px) scale(0.4);opacity:0;}
+    10%{opacity:0.9;}
+    50%{opacity:0.45;}
+    100%{transform:translateY(-950px) scale(1);opacity:0;}
 }
-
-/* =========================
-   主內容
-========================= */
 
 .wrapper{
     position:relative;
     z-index:3;
 }
 
-/* =========================
-   導覽列
-========================= */
-
+/* 導覽列 */
 .nav{
     width:100%;
-
     background:rgba(4,12,28,0.72);
-
     border-bottom:1px solid rgba(180,220,255,0.22);
-
     position:sticky;
     top:0;
-
     z-index:10;
 }
 
 .nav-inner{
     max-width:1180px;
-
     margin:0 auto;
-
     padding:16px 22px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -260,9 +135,7 @@ body{
 .nav-logo{
     font-size:28px;
     font-weight:bold;
-
     color:#f3fbff;
-
     text-shadow:
     0 0 10px #7cc8ff,
     0 0 22px #4aa3ff;
@@ -270,38 +143,30 @@ body{
 
 .nav-links a{
     color:#eaf6ff;
-
     text-decoration:none;
-
     margin-left:22px;
-
     font-size:16px;
 }
 
-/* =========================
-   主視覺
-========================= */
+.nav-links a:hover{
+    color:#9fdcff;
+}
 
+/* 主視覺 */
 .hero{
     min-height:520px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     padding:90px 20px 55px;
 }
 
 .logo-title{
     font-size:92px;
     font-weight:bold;
-
     letter-spacing:10px;
-
     color:#f5fbff;
-
     text-shadow:
     0 0 10px #ffffff,
     0 0 28px #8fd2ff,
@@ -310,38 +175,24 @@ body{
 
 .subtitle{
     margin-top:18px;
-
     font-size:28px;
-
     letter-spacing:5px;
-
     color:#ffffff;
-
-    text-shadow:
-    0 0 10px #5ebdff;
+    text-shadow:0 0 10px #5ebdff;
 }
 
-/* =========================
-   區塊
-========================= */
-
+/* 區塊 */
 .section{
     max-width:1180px;
-
     margin:0 auto 34px;
-
     padding:0 20px;
 }
 
 .panel{
     background:rgba(4,12,28,0.62);
-
     border:1px solid rgba(180,220,255,0.22);
-
     border-radius:18px;
-
     padding:28px;
-
     box-shadow:
     0 0 22px rgba(80,160,255,0.12),
     inset 0 0 20px rgba(255,255,255,0.03);
@@ -349,23 +200,14 @@ body{
 
 .section-title{
     font-size:30px;
-
     color:#f1fbff;
-
-    text-shadow:
-    0 0 10px #70c4ff;
-
+    text-shadow:0 0 10px #70c4ff;
     margin-bottom:18px;
-
     padding-bottom:12px;
-
     border-bottom:1px solid rgba(180,220,255,0.18);
 }
 
-/* =========================
-   公告
-========================= */
-
+/* 公告 */
 .news-list{
     display:grid;
     gap:12px;
@@ -374,17 +216,11 @@ body{
 .news-item{
     display:flex;
     justify-content:space-between;
-
     gap:18px;
-
     padding:15px 16px;
-
     border-radius:12px;
-
     background:rgba(255,255,255,0.035);
-
     border:1px solid rgba(180,220,255,0.10);
-
     line-height:1.6;
 }
 
@@ -392,96 +228,63 @@ body{
     color:#b9ddff;
 }
 
-/* =========================
-   遊戲特色
-========================= */
-
+/* 遊戲特色 */
 .features{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
 }
 
 .feature-card{
     min-height:150px;
-
     padding:22px;
-
     border-radius:14px;
-
     background:rgba(255,255,255,0.035);
-
     border:1px solid rgba(180,220,255,0.10);
 }
 
 .feature-card h3{
     font-size:23px;
-
     margin-bottom:10px;
-
     color:#ffffff;
-
-    text-shadow:
-    0 0 8px #5bbcff;
+    text-shadow:0 0 8px #5bbcff;
 }
 
 .feature-card p{
     font-size:16px;
-
     line-height:1.8;
-
     color:#dcefff;
 }
 
-/* =========================
-   系統入口
-========================= */
-
+/* 系統入口 */
 .entry-grid{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:14px;
 }
 
 .entry{
     display:block;
-
     text-decoration:none;
-
     color:#eaf7ff;
-
     text-align:center;
-
     padding:18px 10px;
-
     border-radius:14px;
-
     background:rgba(255,255,255,0.03);
-
     border:1px solid rgba(180,220,255,0.10);
-
     transition:0.25s;
 }
 
 .entry:hover{
     background:rgba(120,190,255,0.08);
-
-    box-shadow:
-    0 0 15px rgba(120,190,255,0.18);
-
+    box-shadow:0 0 15px rgba(120,190,255,0.18);
     transform:translateY(-2px);
 }
 
 .entry-icon{
     font-size:32px;
-
     margin-bottom:8px;
-
-    text-shadow:
-    0 0 10px #8fd2ff;
+    text-shadow:0 0 10px #8fd2ff;
 }
 
 .entry-title{
@@ -489,83 +292,51 @@ body{
     font-weight:bold;
 }
 
-/* =========================
-   快速入口
-========================= */
-
+/* 快速入口 */
 .quick{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
 }
 
 .quick-card{
     display:block;
-
     text-decoration:none;
-
     color:#ffffff;
-
     padding:22px;
-
     border-radius:14px;
-
     background:rgba(255,255,255,0.03);
-
     border:1px solid rgba(180,220,255,0.10);
-
     text-align:center;
-
     transition:0.25s;
 }
 
 .quick-card:hover{
     background:rgba(120,190,255,0.08);
-
-    box-shadow:
-    0 0 16px rgba(120,190,255,0.18);
+    box-shadow:0 0 16px rgba(120,190,255,0.18);
 }
 
 .quick-card h3{
     font-size:24px;
-
     margin-bottom:8px;
-
-    text-shadow:
-    0 0 8px #6fc8ff;
+    text-shadow:0 0 8px #6fc8ff;
 }
 
 .quick-card p{
     color:#dcefff;
-
     font-size:15px;
-
     line-height:1.7;
 }
 
-/* =========================
-   Footer
-========================= */
-
 .footer{
     text-align:center;
-
     padding:40px 20px 55px;
-
     color:#d7eaff;
-
-    text-shadow:
-    0 0 6px #3fa2ff;
+    text-shadow:0 0 6px #3fa2ff;
 }
 
-/* =========================
-   平板
-========================= */
-
+/* 平板 */
 @media(max-width:900px){
-
     .nav-inner{
         flex-direction:column;
         gap:10px;
@@ -601,12 +372,8 @@ body{
     }
 }
 
-/* =========================
-   手機版
-========================= */
-
+/* 手機 */
 @media(max-width:560px){
-
     body{
         background-attachment:scroll;
         background-position:center top;
@@ -617,25 +384,10 @@ body{
     }
 
     @keyframes meteorMove{
-
-        0%{
-            transform:translate(0,0) rotate(-28deg);
-            opacity:0;
-        }
-
-        8%{
-            opacity:0.75;
-        }
-
-        34%{
-            transform:translate(-360px,210px) rotate(-28deg);
-            opacity:0;
-        }
-
-        100%{
-            transform:translate(-360px,210px) rotate(-28deg);
-            opacity:0;
-        }
+        0%{transform:translate(0,0) rotate(-28deg);opacity:0;}
+        8%{opacity:0.75;}
+        34%{transform:translate(-360px,210px) rotate(-28deg);opacity:0;}
+        100%{transform:translate(-360px,210px) rotate(-28deg);opacity:0;}
     }
 
     .hero{
@@ -684,7 +436,6 @@ body{
         font-size:16px;
     }
 }
-
 </style>
 </head>
 
@@ -705,218 +456,176 @@ body{
 
 <div class="wrapper">
 
-<div class="nav">
+    <div class="nav">
+        <div class="nav-inner">
 
-<div class="nav-inner">
+            <div class="nav-logo">永翼天堂</div>
 
-<div class="nav-logo">
-永翼天堂
-</div>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="notice.html">公告</a>
+                <a href="download.html">下載</a>
+                <a href="intro.html">介紹</a>
+                <a href="map-drops.html">掉落</a>
+                <a href="donate.html">贊助</a>
+            </div>
 
-<div class="nav-links">
-<a href="index.html">首頁</a>
-<a href="notice.html">公告</a>
-<a href="download.html">下載</a>
-<a href="intro.html">介紹</a>
-<a href="donate.html">贊助</a>
-</div>
+        </div>
+    </div>
 
-</div>
+    <div class="hero">
+        <div>
+            <div class="logo-title">永翼天堂</div>
+            <div class="subtitle">經典重生・榮耀再臨</div>
+        </div>
+    </div>
 
-</div>
+    <div class="section">
+        <div class="panel">
 
-<div class="hero">
+            <div class="section-title">最新公告</div>
 
-<div>
+            <div class="news-list">
 
-<div class="logo-title">
-永翼天堂
-</div>
+                <div class="news-item">
+                    <strong>永翼天堂官方網站建置中</strong>
+                    <span>2026 / 最新</span>
+                </div>
 
-<div class="subtitle">
-經典重生・榮耀再臨
-</div>
+                <div class="news-item">
+                    <strong>遊戲下載、系統介紹、活動頁面將陸續開放</strong>
+                    <span>更新中</span>
+                </div>
 
-</div>
+                <div class="news-item">
+                    <strong>轉生、紋樣、徽章、武器資料將持續補完</strong>
+                    <span>資料建置</span>
+                </div>
 
-</div>
+            </div>
 
-<div class="section">
+        </div>
+    </div>
 
-<div class="panel">
+    <div class="section">
+        <div class="panel">
 
-<div class="section-title">
-最新公告
-</div>
+            <div class="section-title">遊戲特色</div>
 
-<div class="news-list">
+            <div class="features">
 
-<div class="news-item">
-<strong>永翼天堂官方網站建置中</strong>
-<span>2026 / 最新</span>
-</div>
+                <div class="feature-card">
+                    <h3>天M變身</h3>
+                    <p>免抽卡、依照角色成長逐步開放，讓玩家靠努力取得變身目標。</p>
+                </div>
 
-<div class="news-item">
-<strong>遊戲下載、系統介紹、活動頁面將陸續開放</strong>
-<span>更新中</span>
-</div>
+                <div class="feature-card">
+                    <h3>轉生系統</h3>
+                    <p>透過轉生累積能力，打造長期養成目標，角色越玩越強。</p>
+                </div>
 
-<div class="news-item">
-<strong>轉生、紋樣、徽章、武器資料將持續補完</strong>
-<span>資料建置</span>
-</div>
+                <div class="feature-card">
+                    <h3>完整養成路線</h3>
+                    <p>武器、裝備、紋樣、徽章等系統，搭配完整數值介紹與成長路線。</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
+    </div>
 
-</div>
+    <div class="section">
+        <div class="panel">
 
-<div class="section">
+            <div class="section-title">系統入口</div>
 
-<div class="panel">
+            <div class="entry-grid">
 
-<div class="section-title">
-遊戲特色
-</div>
+                <a class="entry" href="poly.html">
+                    <div class="entry-icon">🪽</div>
+                    <div class="entry-title">天M變身</div>
+                </a>
 
-<div class="features">
+                <a class="entry" href="rebirth.html">
+                    <div class="entry-icon">✦</div>
+                    <div class="entry-title">轉生系統</div>
+                </a>
 
-<div class="feature-card">
-<h3>天M變身</h3>
-<p>
-免抽卡、依照角色成長逐步開放，
-讓玩家靠努力取得變身目標。
-</p>
-</div>
+                <a class="entry" href="pattern.html">
+                    <div class="entry-icon">✧</div>
+                    <div class="entry-title">紋樣系統</div>
+                </a>
 
-<div class="feature-card">
-<h3>轉生系統</h3>
-<p>
-透過轉生累積能力，
-打造長期養成目標，
-角色越玩越強。
-</p>
-</div>
+                <a class="entry" href="badge.html">
+                    <div class="entry-icon">◇</div>
+                    <div class="entry-title">徽章系統</div>
+                </a>
 
-<div class="feature-card">
-<h3>完整養成路線</h3>
-<p>
-武器、裝備、紋樣、徽章等系統，
-搭配完整數值介紹與成長路線。
-</p>
-</div>
+                <a class="entry" href="weapon.html">
+                    <div class="entry-icon">⚔</div>
+                    <div class="entry-title">武器介紹</div>
+                </a>
 
-</div>
+                <a class="entry" href="armor.html">
+                    <div class="entry-icon">🛡</div>
+                    <div class="entry-title">裝備介紹</div>
+                </a>
 
-</div>
+                <a class="entry" href="map-drops.html">
+                    <div class="entry-icon">💎</div>
+                    <div class="entry-title">地圖掉落查詢</div>
+                </a>
 
-</div>
+                <a class="entry" href="skill-drops.html">
+                    <div class="entry-icon">📘</div>
+                    <div class="entry-title">技能書掉落</div>
+                </a>
 
-<div class="section">
+                <a class="entry" href="share.html">
+                    <div class="entry-icon">🎁</div>
+                    <div class="entry-title">推文獎勵</div>
+                </a>
 
-<div class="panel">
+                <a class="entry" href="donate.html">
+                    <div class="entry-icon">◆</div>
+                    <div class="entry-title">贊助系統</div>
+                </a>
 
-<div class="section-title">
-系統入口
-</div>
+            </div>
 
-<div class="entry-grid">
+        </div>
+    </div>
 
-<a class="entry" href="poly.html">
-<div class="entry-icon">🪽</div>
-<div class="entry-title">天M變身</div>
-</a>
+    <div class="section">
+        <div class="panel">
 
-<a class="entry" href="rebirth.html">
-<div class="entry-icon">✦</div>
-<div class="entry-title">轉生系統</div>
-</a>
+            <div class="section-title">快速入口</div>
 
-<a class="entry" href="pattern.html">
-<div class="entry-icon">✧</div>
-<div class="entry-title">紋樣系統</div>
-</a>
+            <div class="quick">
 
-<a class="entry" href="badge.html">
-<div class="entry-icon">◇</div>
-<div class="entry-title">徽章系統</div>
-</a>
+                <a class="quick-card" href="download.html">
+                    <h3>遊戲下載</h3>
+                    <p>主程式、登入器、更新檔與安裝教學。</p>
+                </a>
 
-<a class="entry" href="weapon.html">
-<div class="entry-icon">⚔</div>
-<div class="entry-title">武器介紹</div>
-</a>
+                <a class="quick-card" href="notice.html">
+                    <h3>最新公告</h3>
+                    <p>開服資訊、活動公告、系統更新。</p>
+                </a>
 
-<a class="entry" href="armor.html">
-<div class="entry-icon">🛡</div>
-<div class="entry-title">裝備介紹</div>
-</a>
+                <a class="quick-card" href="share.html">
+                    <h3>推文獎勵</h3>
+                    <p>推廣活動、分享規則與領獎說明。</p>
+                </a>
 
-<a class="entry" href="share.html">
-<div class="entry-icon">🎁</div>
-<div class="entry-title">推文獎勵</div>
-</a>
+            </div>
 
-<a class="entry" href="donate.html">
-<div class="entry-icon">◆</div>
-<div class="entry-title">贊助系統</div>
-</a> 
-    <a class="entry" href="map-drops.html">
-<div class="entry-icon">💎</div>
-<div class="entry-title">掉落查詢</div>
-</a>
- <a class="entry" href="skill-drops.html">
-<div class="entry-icon">📘</div>
-<div class="entry-title">技能掉落查詢</div>
-</a>   
+        </div>
+    </div>
 
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<div class="panel">
-
-<div class="section-title">
-快速入口
-</div>
-
-<div class="quick">
-
-<a class="quick-card" href="download.html">
-<h3>遊戲下載</h3>
-<p>
-主程式、登入器、更新檔與安裝教學。
-</p>
-</a>
-
-<a class="quick-card" href="notice.html">
-<h3>最新公告</h3>
-<p>
-開服資訊、活動公告、系統更新。
-</p>
-</a>
-
-<a class="quick-card" href="share.html">
-<h3>推文獎勵</h3>
-<p>
-推廣活動、分享規則與領獎說明。
-</p>
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-© 2026 永翼天堂｜打造最純粹的天堂世界
-</div>
+    <div class="footer">
+        © 2026 永翼天堂｜打造最純粹的天堂世界
+    </div>
 
 </div>
 
