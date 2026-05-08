@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>永翼天堂｜官方網站</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -15,164 +13,164 @@
 }
 
 body{
-    font-family:"Microsoft JhengHei",sans-serif;
-    background:url('https://raw.githubusercontent.com/krng8150-ctrl/krng8150-ctrl.github.io/refs/heads/main/026AF631-4F86-4F4E-B158-561B2E193C5B.png');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    color:#fff;
     min-height:100vh;
-    color:white;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+        url("https://raw.githubusercontent.com/krng8150-ctrl/krng8150-ctrl.github.io/refs/heads/main/026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+    background-size:cover;
+    background-position:center center;
+    background-attachment:fixed;
 }
 
-.overlay{
-    width:100%;
+.main{
     min-height:100vh;
-    background:rgba(0,0,0,0.50);
+    width:100%;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.box{
+    width:100%;
+    max-width:1200px;
     text-align:center;
-    padding:30px 20px;
 }
 
 .logo{
-    font-size:60px;
+    font-size:72px;
     font-weight:bold;
-    color:#f5d67b;
-    text-shadow:
-    0 0 10px #000,
-    0 0 20px #000,
-    0 0 30px #000;
-    margin-bottom:15px;
+    color:#f7d98b;
+    letter-spacing:8px;
+    text-shadow:0 0 10px #000,0 0 25px #000,0 0 35px #000;
+    margin-bottom:12px;
 }
 
 .sub{
-    font-size:20px;
-    color:#ffffff;
+    font-size:24px;
+    color:#fff;
     text-shadow:0 0 10px #000;
     margin-bottom:45px;
 }
 
 .menu{
     width:100%;
-    max-width:340px;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+    max-width:1000px;
+    margin:0 auto;
 }
 
 .btn{
     display:block;
-    width:100%;
-    padding:16px;
+    padding:18px 10px;
     border-radius:14px;
     text-decoration:none;
-    color:white;
+    color:#fff;
     font-size:20px;
     font-weight:bold;
-
-    background:
-    linear-gradient(
-    to bottom,
-    #d4af37,
-    #8b6b1d
-    );
-
+    background:linear-gradient(to bottom,#e0bd55,#80601a);
     border:2px solid #f5d67b;
-
-    box-shadow:
-    0 0 15px rgba(255,215,120,0.5),
-    inset 0 0 10px rgba(255,255,255,0.3);
-
-    transition:0.3s;
+    box-shadow:0 0 15px rgba(255,215,120,0.45), inset 0 0 10px rgba(255,255,255,0.28);
+    text-shadow:0 0 6px #000;
 }
 
 .btn:hover{
-    transform:scale(1.05);
-
-    background:
-    linear-gradient(
-    to bottom,
-    #f5d67b,
-    #a67c22
-    );
+    transform:scale(1.04);
+    background:linear-gradient(to bottom,#ffe08a,#a67c22);
 }
 
 .footer{
-    margin-top:50px;
+    margin-top:45px;
     font-size:14px;
-    color:#dddddd;
+    color:#ddd;
     text-shadow:0 0 5px #000;
 }
 
+/* 平板 */
+@media (max-width:900px){
+    .logo{
+        font-size:56px;
+        letter-spacing:5px;
+    }
+
+    .sub{
+        font-size:20px;
+    }
+
+    .menu{
+        grid-template-columns:repeat(2, 1fr);
+        max-width:620px;
+    }
+}
+
+/* 手機 */
+@media (max-width:520px){
+    body{
+        background-attachment:scroll;
+    }
+
+    .main{
+        align-items:flex-start;
+        padding:45px 18px;
+    }
+
+    .logo{
+        font-size:42px;
+        letter-spacing:3px;
+    }
+
+    .sub{
+        font-size:17px;
+        margin-bottom:30px;
+    }
+
+    .menu{
+        grid-template-columns:1fr;
+        gap:14px;
+        max-width:340px;
+    }
+
+    .btn{
+        font-size:18px;
+        padding:15px;
+    }
+
+    .footer{
+        margin-top:35px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
+<div class="main">
+    <div class="box">
 
-<div class="logo">
-永翼天堂
-</div>
+        <div class="logo">永翼天堂</div>
+        <div class="sub">經典重生・榮耀再臨</div>
 
-<div class="sub">
-經典重生・榮耀再臨
-</div>
+        <div class="menu">
+            <a class="btn" href="#">最新公告</a>
+            <a class="btn" href="#">遊戲介紹</a>
+            <a class="btn" href="#">遊戲下載</a>
+            <a class="btn" href="#">天M變身</a>
+            <a class="btn" href="#">轉生系統</a>
+            <a class="btn" href="#">紋樣系統</a>
+            <a class="btn" href="#">徽章系統</a>
+            <a class="btn" href="#">武器介紹</a>
+            <a class="btn" href="#">裝備介紹</a>
+            <a class="btn" href="#">推文獎勵</a>
+            <a class="btn" href="#">贊助系統</a>
+        </div>
 
-<div class="menu">
+        <div class="footer">© 2026 永翼天堂 Eternal Wings</div>
 
-<a class="btn" href="#">
-最新公告
-</a>
-
-<a class="btn" href="#">
-遊戲介紹
-</a>
-
-<a class="btn" href="#">
-遊戲下載
-</a>
-
-<a class="btn" href="#">
-天M變身
-</a>
-
-<a class="btn" href="#">
-轉生系統
-</a>
-
-<a class="btn" href="#">
-紋樣系統
-</a>
-
-<a class="btn" href="#">
-徽章系統
-</a>
-
-<a class="btn" href="#">
-武器介紹
-</a>
-
-<a class="btn" href="#">
-裝備介紹
-</a>
-
-<a class="btn" href="#">
-推文獎勵
-</a>
-
-<a class="btn" href="#">
-贊助系統
-</a>
-
-</div>
-
-<div class="footer">
-© 2026 永翼天堂 Eternal Wings
-</div>
-
+    </div>
 </div>
 
 </body>
