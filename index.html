@@ -1,163 +1,144 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>永翼天堂｜官方網站</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", Arial, sans-serif;
-      background: #080808;
-      color: #f5f5f5;
-    }
+<title>永翼天堂｜官方網站</title>
 
-    .hero {
-      background: linear-gradient(to bottom, #1b1b1b, #080808);
-      text-align: center;
-      padding: 70px 20px 50px;
-      border-bottom: 1px solid #333;
-    }
+<style>
 
-    .hero h1 {
-      font-size: 46px;
-      color: #ffd36a;
-      margin: 0 0 15px;
-      letter-spacing: 4px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #ddd;
-      margin: 8px 0;
-    }
+body{
+    font-family:"Microsoft JhengHei",sans-serif;
+    background:url('https://raw.githubusercontent.com/krng8150-ctrl/krng8150-ctrl.github.io/refs/heads/main/026AF631-4F86-4F4E-B158-561B2E193C5B.png');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    min-height:100vh;
+    color:white;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 25px 15px 60px;
-    }
+.overlay{
+    width:100%;
+    min-height:100vh;
+    background:rgba(0,0,0,0.45);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
 
-    .section {
-      background: #121212;
-      border: 1px solid #333;
-      border-radius: 10px;
-      margin-bottom: 22px;
-      padding: 22px;
-    }
+.logo{
+    font-size:58px;
+    font-weight:bold;
+    color:#f7d98b;
+    text-shadow:
+    0 0 10px #000,
+    0 0 20px #000,
+    0 0 30px #000;
+    margin-bottom:10px;
+}
 
-    .section h2 {
-      color: #ffd36a;
-      margin-top: 0;
-      border-bottom: 1px solid #333;
-      padding-bottom: 10px;
-    }
+.sub{
+    font-size:20px;
+    color:#ffffff;
+    margin-bottom:50px;
+    text-shadow:0 0 10px #000;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 12px;
-    }
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    width:100%;
+    max-width:320px;
+}
 
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 14px 10px;
-      background: #1f1f1f;
-      color: #ffd36a;
-      text-decoration: none;
-      border: 1px solid #555;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+.btn{
+    display:block;
+    width:100%;
+    padding:16px;
+    border-radius:14px;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    background:linear-gradient(to bottom,#d4af37,#8b6b1d);
+    border:2px solid #f5d67b;
+    box-shadow:
+    0 0 15px rgba(255,215,120,0.5),
+    inset 0 0 10px rgba(255,255,255,0.3);
+    transition:0.3s;
+}
 
-    .btn:hover {
-      background: #2c2c2c;
-    }
+.btn:hover{
+    transform:scale(1.05);
+    background:linear-gradient(to bottom,#f5d67b,#a67c22);
+}
 
-    ul {
-      line-height: 1.9;
-      padding-left: 22px;
-    }
+.footer{
+    margin-top:50px;
+    font-size:14px;
+    color:#cccccc;
+    text-shadow:0 0 5px #000;
+}
 
-    .notice {
-      color: #ccc;
-      line-height: 1.8;
-    }
-
-    .footer {
-      text-align: center;
-      color: #888;
-      padding: 25px;
-      border-top: 1px solid #222;
-      font-size: 14px;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>永翼天堂</h1>
-    <p>經典天堂｜長期經營｜打寶成長｜多階裝備</p>
-    <p>天M變身・轉生養成・陣營系統・自動掛機</p>
-  </div>
+<div class="overlay">
 
-  <div class="container">
+<div class="logo">
+永翼天堂
+</div>
 
-    <div class="section">
-      <h2>網站入口</h2>
-      <div class="grid">
-        <a class="btn" href="download.html">遊戲下載</a>
-        <a class="btn" href="news.html">最新公告</a>
-        <a class="btn" href="weapon.html">武器介紹</a>
-        <a class="btn" href="armor.html">防具介紹</a>
-        <a class="btn" href="badge.html">徽章介紹</a>
-        <a class="btn" href="pattern.html">紋樣介紹</a>
-       <a class="btn" href="faction.html">陣營介紹</a>
-        <a class="btn" href="poly.html">變身介紹</a>
-        <a class="btn" href="rebirth.html">轉生介紹</a>
-        <a class="btn" href="reward.html">推文獎勵</a>
-        <a class="btn" href="sponsor.html">贊助專區</a>
-        <a class="btn" href="line.html">加入社群</a>
-      </div>
-    </div>
+<div class="sub">
+經典重生・榮耀永恆
+</div>
 
-    <div class="section">
-      <h2>遊戲特色</h2>
-      <ul>
-        <li>天M變身系統，免抽卡，依照等級與轉生條件開放。</li>
-        <li>多階裝備成長，從一般、1階、2階一路進階至極系列。</li>
-        <li>武器、防具、徽章、紋樣、天賦符皆有完整能力介紹。</li>
-        <li>內掛輔助，上班族也能輕鬆成長。</li>
-        <li>打寶取得核心資源，裝備靠努力養成。</li>
-        <li>轉生系統提供長期目標，讓角色持續變強。</li>
-      </ul>
-    </div>
+<div class="menu">
 
-    <div class="section">
-      <h2>最新公告</h2>
-      <div class="notice">
-        <p>2026/05/07　永翼天堂官方網站架構建立中。</p>
-        <p>2026/05/07　防具、武器、徽章、紋樣、天賦符介紹頁陸續新增。</p>
-        <p>2026/05/07　遊戲下載連結、社群連結將於後續補上。</p>
-      </div>
-    </div>
+<a class="btn" href="#">
+開始遊戲
+</a>
 
-    <div class="section">
-      <h2>伺服器說明</h2>
-      <div class="notice">
-        <p>本伺服器以長期經營為目標，提供玩家穩定成長、打寶養成、裝備進階與轉生挑戰。</p>
-        <p>所有介紹內容將依照遊戲內實際資料逐步更新，若有調整，以遊戲內設定為準。</p>
-      </div>
-    </div>
+<a class="btn" href="#">
+遊戲介紹
+</a>
 
-  </div>
+<a class="btn" href="#">
+最新公告
+</a>
 
-  <div class="footer">
-    永翼天堂 © 2026｜本網站僅供遊戲資訊介紹與玩家交流使用
-  </div>
+<a class="btn" href="#">
+下載專區
+</a>
+
+<a class="btn" href="#">
+玩家贊助
+</a>
+
+<a class="btn" href="#">
+LINE官方群
+</a>
+
+</div>
+
+<div class="footer">
+© 2026 永翼天堂 Eternal Wings
+</div>
+
+</div>
 
 </body>
 </html>
