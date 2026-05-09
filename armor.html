@@ -1,185 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>永翼天堂｜防具介紹</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永翼天堂｜防具系列</title>
 
 <style>
-
-body{
+*{
     margin:0;
-    background:#0b0b0b;
-    color:#f5f5f5;
-    font-family:"Microsoft JhengHei", Arial;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.header{
-    background:linear-gradient(to bottom,#1c1c1c,#0b0b0b);
-    padding:50px 20px;
-    text-align:center;
-    border-bottom:1px solid #333;
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#07111f;
+    color:#eef7ff;
 }
 
-.header h1{
-    margin:0;
-    color:#ffd36a;
-    font-size:42px;
-    letter-spacing:3px;
-}
-
-.header p{
-    color:#ccc;
-    margin-top:12px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:30px 15px;
-}
-
-.box{
-    background:#151515;
-    border:1px solid #333;
-    border-radius:10px;
-    padding:25px;
-    margin-bottom:25px;
-}
-
-.box h2{
-    margin-top:0;
-    color:#ffd36a;
-    border-bottom:1px solid #333;
-    padding-bottom:10px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
-
-.card{
-    background:#1d1d1d;
-    border:1px solid #444;
-    border-radius:8px;
-    padding:20px;
-    text-align:center;
-}
-
-.card h3{
-    margin-top:0;
-    color:#ffd36a;
-}
-
-.card p{
-    color:#ccc;
-    line-height:1.8;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:12px;
-    padding:10px 18px;
-    background:#2b2b2b;
-    color:#ffd36a;
-    text-decoration:none;
-    border-radius:6px;
-    border:1px solid #555;
-}
-
-.btn:hover{
-    background:#3a3a3a;
-}
-
-.footer{
-    text-align:center;
-    padding:25px;
-    color:#777;
-    border-top:1px solid #222;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="header">
-    <h1>防具介紹</h1>
-    <p>永翼天堂｜多階防具成長系統</p>
-</div>
-
-<div class="container">
-
-    <div class="box">
-        <h2>防具系列介紹</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>亞斯克雷系列</h3>
-
-                <p>
-                分為近戰、遠攻、魔法系列。<br>
-                裝備可從一般階級一路提升至極系列。
-                </p>
-
-                <a class="btn" href="#">查看系列</a>
-            </div>
-
-            <div class="card">
-                <h3>死亡騎士系列</h3>
-
-                <p>
-                高階進化型防具系列。<br>
-                提供更強大的能力與特殊效果。
-                </p>
-
-                <a class="btn" href="#">查看系列</a>
-            </div>
-
-            <div class="card">
-                <h3>聖者金龍盔甲系列</h3>
-
-                <p>
-                強化輸出與生存能力。<br>
-                適合高階長期養成玩家。
-                </p>
-
-                <a class="btn" href="#">查看系列</a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="box">
-        <h2>防具說明</h2>
-
-        <p style="line-height:2;color:#ccc;">
-        永翼天堂防具皆採用階級成長設計。<br>
-        玩家可透過打寶、製作、升階等方式持續提升裝備能力。<br><br>
-
-        每個系列皆擁有不同方向：
-        近戰、遠攻、魔法、防禦型等多種玩法。
-        </p>
-
-        <a class="btn" href="index.html">返回首頁</a>
-    </div>
-
-</div>
-
-<div class="footer">
-永翼天堂 © 2026
-</div>
-<!-- 星空背景特效開始 -->
-<style>
-
-/* 背景 */
 body{
     background:
     linear-gradient(
-        rgba(3,10,22,0.20),
+        rgba(3,10,22,0.22),
         rgba(3,10,22,0.88)
     ),
     url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
@@ -190,215 +35,341 @@ body{
     background-attachment:fixed;
 }
 
-/* 柔和流光 */
+/* 背景柔光 */
 .glow-layer{
     position:fixed;
     inset:0;
-
     pointer-events:none;
-
     z-index:1;
-
     background:
-    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.12), transparent 20%),
-    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.08), transparent 24%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 22%);
-
+    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.10), transparent 20%),
+    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.06), transparent 24%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.04), transparent 22%);
     animation:softGlow 6s ease-in-out infinite alternate;
 }
 
 @keyframes softGlow{
-
-    0%{
-        opacity:0.28;
-    }
-
-    100%{
-        opacity:0.60;
-    }
+    0%{opacity:0.25;}
+    100%{opacity:0.60;}
 }
 
 /* 流星 */
 .meteor{
     position:fixed;
-
     width:140px;
     height:2px;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,0.95),
-        rgba(120,200,255,0.55),
-        transparent
-    );
-
-    box-shadow:
-    0 0 10px rgba(160,220,255,0.9);
-
+    background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(120,200,255,0.55), transparent);
+    box-shadow:0 0 10px rgba(160,220,255,0.9);
     transform:rotate(-28deg);
-
     pointer-events:none;
-
     z-index:2;
-
     opacity:0;
 }
 
-.meteor1{
-    top:14%;
-    left:85%;
-    animation:meteorMove 7s linear infinite;
-}
-
-.meteor2{
-    top:32%;
-    left:95%;
-    animation:meteorMove 10s linear infinite 2.5s;
-}
-
-.meteor3{
-    top:58%;
-    left:90%;
-    animation:meteorMove 12s linear infinite 5s;
-}
+.meteor1{top:14%;left:85%;animation:meteorMove 7s linear infinite;}
+.meteor2{top:32%;left:95%;animation:meteorMove 10s linear infinite 2.5s;}
+.meteor3{top:58%;left:90%;animation:meteorMove 12s linear infinite 5s;}
 
 @keyframes meteorMove{
-
-    0%{
-        transform:translate(0,0) rotate(-28deg);
-        opacity:0;
-    }
-
-    8%{
-        opacity:0.9;
-    }
-
-    22%{
-        opacity:0.75;
-    }
-
-    38%{
-        transform:translate(-760px,380px) rotate(-28deg);
-        opacity:0;
-    }
-
-    100%{
-        transform:translate(-760px,380px) rotate(-28deg);
-        opacity:0;
-    }
+    0%{transform:translate(0,0) rotate(-28deg);opacity:0;}
+    8%{opacity:0.9;}
+    22%{opacity:0.75;}
+    38%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
+    100%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
 }
 
-/* 小流光粒子 */
+/* 小流光 */
 .light{
     position:fixed;
-
     bottom:-30px;
-
     width:4px;
     height:4px;
-
     border-radius:50%;
-
     background:rgba(255,255,255,0.9);
-
     box-shadow:
     0 0 8px rgba(180,230,255,0.95),
     0 0 18px rgba(120,190,255,0.7);
-
     pointer-events:none;
-
     z-index:2;
-
     opacity:0;
 }
 
-.light1{
-    left:10%;
-    animation:floatLight 8s linear infinite;
-}
-
-.light2{
-    left:22%;
-    animation:floatLight 11s linear infinite 2s;
-}
-
-.light3{
-    left:38%;
-    animation:floatLight 9s linear infinite 1s;
-}
-
-.light4{
-    left:52%;
-    animation:floatLight 13s linear infinite 4s;
-}
-
-.light5{
-    left:68%;
-    animation:floatLight 10s linear infinite 3s;
-}
-
-.light6{
-    left:84%;
-    animation:floatLight 12s linear infinite 5s;
-}
+.light1{left:10%;animation:floatLight 8s linear infinite;}
+.light2{left:22%;animation:floatLight 11s linear infinite 2s;}
+.light3{left:38%;animation:floatLight 9s linear infinite 1s;}
+.light4{left:52%;animation:floatLight 13s linear infinite 4s;}
+.light5{left:68%;animation:floatLight 10s linear infinite 3s;}
+.light6{left:84%;animation:floatLight 12s linear infinite 5s;}
 
 @keyframes floatLight{
+    0%{transform:translateY(0px) scale(0.4);opacity:0;}
+    10%{opacity:0.9;}
+    50%{opacity:0.45;}
+    100%{transform:translateY(-950px) scale(1);opacity:0;}
+}
 
-    0%{
-        transform:translateY(0px) scale(0.4);
-        opacity:0;
+.wrapper{
+    position:relative;
+    z-index:3;
+}
+
+/* 導覽列 */
+.nav{
+    width:100%;
+    background:rgba(4,12,28,0.68);
+    border-bottom:1px solid rgba(180,220,255,0.18);
+    position:sticky;
+    top:0;
+    z-index:10;
+    backdrop-filter:blur(6px);
+}
+
+.nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.nav-logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#f3fbff;
+    text-shadow:
+    0 0 10px #7cc8ff,
+    0 0 22px #4aa3ff;
+}
+
+.nav-links a{
+    color:#eaf6ff;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:#8fd8ff;
+}
+
+/* 主標題 */
+.hero{
+    min-height:360px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px 45px;
+}
+
+.logo-title{
+    font-size:72px;
+    font-weight:bold;
+    letter-spacing:8px;
+    color:#f5fbff;
+    text-shadow:
+    0 0 10px #ffffff,
+    0 0 28px #8fd2ff,
+    0 0 55px #2d7dff;
+}
+
+.subtitle{
+    margin-top:16px;
+    font-size:24px;
+    letter-spacing:4px;
+    color:#ffffff;
+    text-shadow:0 0 10px #5ebdff;
+}
+
+/* 區塊 */
+.section{
+    max-width:1180px;
+    margin:0 auto 34px;
+    padding:0 20px;
+}
+
+.panel{
+    background:rgba(4,12,28,0.50);
+    border:1px solid rgba(180,220,255,0.14);
+    border-radius:20px;
+    padding:28px;
+    backdrop-filter:blur(6px);
+    box-shadow:
+    0 0 22px rgba(80,160,255,0.08),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.section-title{
+    font-size:30px;
+    color:#f1fbff;
+    text-shadow:0 0 10px #70c4ff;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(180,220,255,0.14);
+}
+
+.note{
+    font-size:16px;
+    line-height:1.8;
+    color:#dcefff;
+    margin-bottom:20px;
+}
+
+/* 系列卡片 */
+.series-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.series-card{
+    display:block;
+    text-decoration:none;
+    color:#eaf7ff;
+    min-height:130px;
+    padding:22px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.035);
+    border:1px solid rgba(180,220,255,0.10);
+    transition:0.25s;
+}
+
+.series-card:hover{
+    background:rgba(120,190,255,0.08);
+    box-shadow:0 0 18px rgba(120,190,255,0.18);
+    transform:translateY(-3px);
+}
+
+.series-card h3{
+    font-size:23px;
+    margin-bottom:10px;
+    color:#ffffff;
+    text-shadow:0 0 8px #5bbcff;
+}
+
+.series-card p{
+    font-size:15px;
+    line-height:1.7;
+    color:#dcefff;
+}
+
+.tag{
+    display:inline-block;
+    margin-bottom:10px;
+    padding:4px 10px;
+    font-size:13px;
+    border-radius:999px;
+    background:rgba(120,190,255,0.10);
+    border:1px solid rgba(180,220,255,0.14);
+    color:#b9ddff;
+}
+
+/* 返回按鈕 */
+.back-wrap{
+    text-align:center;
+    margin-top:28px;
+}
+
+.back-btn{
+    display:inline-block;
+    padding:13px 34px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#ffffff;
+    background:rgba(120,190,255,0.10);
+    border:1px solid rgba(180,220,255,0.18);
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+.back-btn:hover{
+    background:rgba(120,190,255,0.18);
+}
+
+.footer{
+    text-align:center;
+    padding:40px 20px 55px;
+    color:#d7eaff;
+    text-shadow:0 0 6px #3fa2ff;
+}
+
+/* 平板 */
+@media(max-width:900px){
+    .nav-inner{
+        flex-direction:column;
+        gap:10px;
     }
 
-    10%{
-        opacity:0.9;
+    .nav-links{
+        text-align:center;
+        line-height:2;
     }
 
-    50%{
-        opacity:0.45;
+    .nav-links a{
+        margin:0 8px;
     }
 
-    100%{
-        transform:translateY(-950px) scale(1);
-        opacity:0;
+    .logo-title{
+        font-size:56px;
+    }
+
+    .subtitle{
+        font-size:20px;
+    }
+
+    .series-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-/* 手機版 */
+/* 手機 */
 @media(max-width:560px){
-
     body{
         background-attachment:scroll;
+        background-position:center top;
     }
 
-    .meteor{
-        width:95px;
+    .hero{
+        min-height:300px;
+        padding:60px 16px 35px;
     }
 
-    @keyframes meteorMove{
+    .logo-title{
+        font-size:38px;
+        letter-spacing:3px;
+    }
 
-        0%{
-            transform:translate(0,0) rotate(-28deg);
-            opacity:0;
-        }
+    .subtitle{
+        font-size:17px;
+        letter-spacing:1px;
+    }
 
-        8%{
-            opacity:0.75;
-        }
+    .section{
+        padding:0 14px;
+        margin-bottom:24px;
+    }
 
-        34%{
-            transform:translate(-360px,210px) rotate(-28deg);
-            opacity:0;
-        }
+    .panel{
+        padding:20px;
+    }
 
-        100%{
-            transform:translate(-360px,210px) rotate(-28deg);
-            opacity:0;
-        }
+    .section-title{
+        font-size:25px;
+    }
+
+    .series-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .series-card h3{
+        font-size:21px;
     }
 }
-
 </style>
+</head>
+
+<body>
 
 <div class="glow-layer"></div>
 
@@ -413,6 +384,132 @@ body{
 <div class="light light5"></div>
 <div class="light light6"></div>
 
-<!-- 星空背景特效結束 -->
+<div class="wrapper">
+
+    <div class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">永翼天堂</div>
+
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="notice.html">公告</a>
+                <a href="download.html">下載</a>
+                <a href="intro.html">介紹</a>
+                <a href="map-drops.html">掉落</a>
+                <a href="donate.html">贊助</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div>
+            <div class="logo-title">防具系列</div>
+            <div class="subtitle">永翼天堂｜裝備養成入口</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+
+            <div class="section-title">基礎系列</div>
+
+            <div class="note">
+                基礎系列為玩家主要成長裝備，各部位提供不同能力，可作為後續進階、魔化、特殊系列的養成基礎。
+            </div>
+
+            <div class="series-grid">
+
+                <a class="series-card" href="armor-ascley.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>亞斯克雷系列</h3>
+                    <p>基礎防具系列之一，適合作為角色前中期養成裝備。</p>
+                </a>
+
+                <a class="series-card" href="armor-berserk.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>狂戰臂甲系列</h3>
+                    <p>臂甲類裝備系列，偏向戰鬥能力與近戰成長。</p>
+                </a>
+
+                <a class="series-card" href="armor-grankein.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>格蘭肯戰盔系列</h3>
+                    <p>戰盔類裝備系列，提供角色防禦與能力提升。</p>
+                </a>
+
+                <a class="series-card" href="armor-shadow-blood.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>獵影之痕T血系列</h3>
+                    <p>T血系列裝備，適合追求血量與穩定生存的玩家。</p>
+                </a>
+
+                <a class="series-card" href="armor-golden-dragon.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>聖者金龍盔甲系列</h3>
+                    <p>盔甲類裝備系列，具備防禦與生命成長定位。</p>
+                </a>
+
+                <a class="series-card" href="armor-einhasad-belt.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>光之殷海薩腰帶系列</h3>
+                    <p>腰帶類裝備系列，適合補足角色續戰與輔助能力。</p>
+                </a>
+
+                <a class="series-card" href="armor-dk-greaves.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>死亡騎士脛甲系列</h3>
+                    <p>脛甲類裝備系列，為後續真・死亡騎士脛甲的基礎。</p>
+                </a>
+
+                <a class="series-card" href="armor-hades-cloak.html">
+                    <span class="tag">基礎系列</span>
+                    <h3>黑帝斯斗蓬系列</h3>
+                    <p>斗蓬類裝備系列，可作為魔化黑帝斯斗蓬的養成基礎。</p>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+
+            <div class="section-title">進階系列</div>
+
+            <div class="note">
+                進階系列為高階成長裝備，適合中後期玩家追求更高防禦、血量、減傷與特殊能力。
+            </div>
+
+            <div class="series-grid">
+
+                <a class="series-card" href="armor-true-dk-greaves.html">
+                    <span class="tag">進階系列</span>
+                    <h3>真・死亡騎士脛甲系列</h3>
+                    <p>死亡騎士脛甲的進階版本，具備更高階的能力成長。</p>
+                </a>
+
+                <a class="series-card" href="armor-demon-hades-cloak.html">
+                    <span class="tag">進階系列</span>
+                    <h3>魔化黑帝斯斗蓬系列</h3>
+                    <p>黑帝斯斗蓬的魔化進階版本，適合追求高階斗蓬能力。</p>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="back-wrap">
+        <a class="back-btn" href="index.html">返回官方首頁</a>
+    </div>
+
+    <div class="footer">
+        © 2026 永翼天堂｜打造最純粹的天堂世界
+    </div>
+
+</div>
+
 </body>
 </html>
