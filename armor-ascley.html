@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永翼天堂｜亞斯克雷系列</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#07111f;
+    color:#eef7ff;
+}
+
+body{
+    background:
+    linear-gradient(rgba(3,10,22,0.22),rgba(3,10,22,0.88)),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.glow-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    background:
+    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.10), transparent 20%),
+    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.06), transparent 24%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.04), transparent 22%);
+    animation:softGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes softGlow{
+    0%{opacity:0.25;}
+    100%{opacity:0.60;}
+}
+
+.meteor{
+    position:fixed;
+    width:140px;
+    height:2px;
+    background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(120,200,255,0.55),transparent);
+    box-shadow:0 0 10px rgba(160,220,255,0.9);
+    transform:rotate(-28deg);
+    pointer-events:none;
+    z-index:2;
+    opacity:0;
+}
+
+.meteor1{top:14%;left:85%;animation:meteorMove 7s linear infinite;}
+.meteor2{top:32%;left:95%;animation:meteorMove 10s linear infinite 2.5s;}
+.meteor3{top:58%;left:90%;animation:meteorMove 12s linear infinite 5s;}
+
+@keyframes meteorMove{
+    0%{transform:translate(0,0) rotate(-28deg);opacity:0;}
+    8%{opacity:0.9;}
+    22%{opacity:0.75;}
+    38%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
+    100%{transform:translate(-760px,380px) rotate(-28deg);opacity:0;}
+}
+
+.light{
+    position:fixed;
+    bottom:-30px;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    box-shadow:0 0 8px rgba(180,230,255,0.95),0 0 18px rgba(120,190,255,0.7);
+    pointer-events:none;
+    z-index:2;
+    opacity:0;
+}
+
+.light1{left:10%;animation:floatLight 8s linear infinite;}
+.light2{left:22%;animation:floatLight 11s linear infinite 2s;}
+.light3{left:38%;animation:floatLight 9s linear infinite 1s;}
+.light4{left:52%;animation:floatLight 13s linear infinite 4s;}
+.light5{left:68%;animation:floatLight 10s linear infinite 3s;}
+.light6{left:84%;animation:floatLight 12s linear infinite 5s;}
+
+@keyframes floatLight{
+    0%{transform:translateY(0px) scale(0.4);opacity:0;}
+    10%{opacity:0.9;}
+    50%{opacity:0.45;}
+    100%{transform:translateY(-950px) scale(1);opacity:0;}
+}
+
+.wrapper{
+    position:relative;
+    z-index:3;
+}
+
+.nav{
+    width:100%;
+    background:rgba(4,12,28,0.68);
+    border-bottom:1px solid rgba(180,220,255,0.18);
+    position:sticky;
+    top:0;
+    z-index:10;
+    backdrop-filter:blur(6px);
+}
+
+.nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.nav-logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#f3fbff;
+    text-shadow:0 0 10px #7cc8ff,0 0 22px #4aa3ff;
+}
+
+.nav-links a{
+    color:#eaf6ff;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:#8fd8ff;
+}
+
+.hero{
+    min-height:340px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:75px 20px 40px;
+}
+
+.logo-title{
+    font-size:66px;
+    font-weight:bold;
+    letter-spacing:6px;
+    color:#f5fbff;
+    text-shadow:0 0 10px #ffffff,0 0 28px #8fd2ff,0 0 55px #2d7dff;
+}
+
+.subtitle{
+    margin-top:16px;
+    font-size:23px;
+    letter-spacing:3px;
+    color:#ffffff;
+    text-shadow:0 0 10px #5ebdff;
+}
+
+.section{
+    max-width:1180px;
+    margin:0 auto 34px;
+    padding:0 20px;
+}
+
+.panel{
+    background:rgba(4,12,28,0.52);
+    border:1px solid rgba(180,220,255,0.14);
+    border-radius:20px;
+    padding:28px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 0 22px rgba(80,160,255,0.08),inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.section-title{
+    font-size:30px;
+    color:#f1fbff;
+    text-shadow:0 0 10px #70c4ff;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(180,220,255,0.14);
+}
+
+.note{
+    font-size:16px;
+    line-height:1.9;
+    color:#dcefff;
+    margin-bottom:20px;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:780px;
+    background:rgba(255,255,255,0.025);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:13px 12px;
+    border:1px solid rgba(180,220,255,0.10);
+    text-align:center;
+    font-size:15px;
+    line-height:1.5;
+}
+
+th{
+    color:#ffffff;
+    background:rgba(120,190,255,0.10);
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+td{
+    color:#e6f4ff;
+}
+
+.item-name{
+    text-align:left;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.info-card{
+    padding:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(180,220,255,0.10);
+}
+
+.info-card h3{
+    font-size:22px;
+    margin-bottom:10px;
+    color:#ffffff;
+    text-shadow:0 0 8px #5bbcff;
+}
+
+.info-card p{
+    font-size:15px;
+    line-height:1.8;
+    color:#dcefff;
+}
+
+.back-wrap{
+    text-align:center;
+    margin:26px 0 10px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin:6px;
+    padding:13px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#ffffff;
+    background:rgba(120,190,255,0.10);
+    border:1px solid rgba(180,220,255,0.18);
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+.back-btn:hover{
+    background:rgba(120,190,255,0.18);
+}
+
+.footer{
+    text-align:center;
+    padding:40px 20px 55px;
+    color:#d7eaff;
+    text-shadow:0 0 6px #3fa2ff;
+}
+
+@media(max-width:900px){
+    .nav-inner{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links{
+        text-align:center;
+        line-height:2;
+    }
+
+    .nav-links a{
+        margin:0 8px;
+    }
+
+    .logo-title{
+        font-size:52px;
+    }
+
+    .subtitle{
+        font-size:20px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:560px){
+    body{
+        background-attachment:scroll;
+        background-position:center top;
+    }
+
+    .hero{
+        min-height:290px;
+        padding:58px 16px 35px;
+    }
+
+    .logo-title{
+        font-size:36px;
+        letter-spacing:3px;
+    }
+
+    .subtitle{
+        font-size:16px;
+        letter-spacing:1px;
+    }
+
+    .section{
+        padding:0 14px;
+        margin-bottom:24px;
+    }
+
+    .panel{
+        padding:20px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+
+    th,td{
+        font-size:14px;
+        padding:10px 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow-layer"></div>
+
+<div class="meteor meteor1"></div>
+<div class="meteor meteor2"></div>
+<div class="meteor meteor3"></div>
+
+<div class="light light1"></div>
+<div class="light light2"></div>
+<div class="light light3"></div>
+<div class="light light4"></div>
+<div class="light light5"></div>
+<div class="light light6"></div>
+
+<div class="wrapper">
+
+    <div class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">永翼天堂</div>
+
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="armor.html">防具入口</a>
+                <a href="download.html">下載</a>
+                <a href="map-drops.html">掉落</a>
+                <a href="donate.html">贊助</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div>
+            <div class="logo-title">亞斯克雷系列</div>
+            <div class="subtitle">永翼天堂｜手套與靴子成長型防具</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+            <div class="section-title">系列說明</div>
+
+            <div class="note">
+                亞斯克雷系列目前包含「亞斯克雷之手套」與「亞斯克雷之靴」。<br>
+                此系列屬於穩定成長型防具，階級越高，血量、魔量與生存能力越明顯。
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>亞斯克雷之手套</h3>
+                    <p>
+                        定位：PVP成長型手套。<br>
+                        特色：每階穩定增加 HP / MP，5階開始出現回血，PVP額外傷害與PVP傷害減免逐階提升。
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>亞斯克雷之靴</h3>
+                    <p>
+                        定位：功能型生存靴子。<br>
+                        特色：每階穩定增加 HP / MP，5階開始出現傷害減免，偏向續戰與生存強化。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+
+            <div class="section-title">亞斯克雷之手套｜完整階級能力</div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>階級</th>
+                            <th>裝備名稱</th>
+                            <th>防禦</th>
+                            <th>HP</th>
+                            <th>MP</th>
+                            <th>回血</th>
+                            <th>PVP額外傷害</th>
+                            <th>PVP傷害減免</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>一般</td>
+                            <td class="item-name">亞斯克雷之手套</td>
+                            <td>-1</td>
+                            <td>+5</td>
+                            <td>+5</td>
+                            <td>0</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <td>1階</td>
+                            <td class="item-name">(1階)亞斯克雷之手套</td>
+                            <td>-1</td>
+                            <td>+10</td>
+                            <td>+10</td>
+                            <td>0</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <td>2階</td>
+                            <td class="item-name">(2階)亞斯克雷之手套</td>
+                            <td>-2</td>
+                            <td>+15</td>
+                            <td>+15</td>
+                            <td>0</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <td>3階</td>
+                            <td class="item-name">(3階)亞斯克雷之手套</td>
+                            <td>-2</td>
+                            <td>+20</td>
+                            <td>+20</td>
+                            <td>0</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <td>4階</td>
+                            <td class="item-name">(4階)亞斯克雷之手套</td>
+                            <td>-3</td>
+                            <td>+25</td>
+                            <td>+25</td>
+                            <td>0</td>
+                            <td>+2</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <td>5階</td>
+                            <td class="item-name">(5階)亞斯克雷之手套</td>
+                            <td>-3</td>
+                            <td>+30</td>
+                            <td>+30</td>
+                            <td>+10</td>
+                            <td>+3</td>
+                            <td>+3</td>
+                        </tr>
+                        <tr>
+                            <td>6階</td>
+                            <td class="item-name">(6階)亞斯克雷之手套</td>
+                            <td>-4</td>
+                            <td>+35</td>
+                            <td>+35</td>
+                            <td>+20</td>
+                            <td>+4</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <td>7階</td>
+                            <td class="item-name">(7階)亞斯克雷之手套</td>
+                            <td>-4</td>
+                            <td>+40</td>
+                            <td>+40</td>
+                            <td>+30</td>
+                            <td>+5</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <td>8階</td>
+                            <td class="item-name">(8階)亞斯克雷之手套</td>
+                            <td>-5</td>
+                            <td>+45</td>
+                            <td>+45</td>
+                            <td>+40</td>
+                            <td>+6</td>
+                            <td>+6</td>
+                        </tr>
+                        <tr>
+                            <td>極</td>
+                            <td class="item-name">極・亞斯克雷之手套</td>
+                            <td>-5</td>
+                            <td>+50</td>
+                            <td>+50</td>
+                            <td>+50</td>
+                            <td>+7</td>
+                            <td>+7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+
+            <div class="section-title">亞斯克雷之靴｜完整階級能力</div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>階級</th>
+                            <th>裝備名稱</th>
+                            <th>防禦</th>
+                            <th>HP</th>
+                            <th>MP</th>
+                            <th>傷害減免</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>一般</td>
+                            <td class="item-name">亞斯克雷之靴</td>
+                            <td>-2</td>
+                            <td>+5</td>
+                            <td>+5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1階</td>
+                            <td class="item-name">(1階)亞斯克雷之靴</td>
+                            <td>-2</td>
+                            <td>+10</td>
+                            <td>+10</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2階</td>
+                            <td class="item-name">(2階)亞斯克雷之靴</td>
+                            <td>-2</td>
+                            <td>+15</td>
+                            <td>+15</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>3階</td>
+                            <td class="item-name">(3階)亞斯克雷之靴</td>
+                            <td>-3</td>
+                            <td>+20</td>
+                            <td>+20</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4階</td>
+                            <td class="item-name">(4階)亞斯克雷之靴</td>
+                            <td>-3</td>
+                            <td>+25</td>
+                            <td>+25</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>5階</td>
+                            <td class="item-name">(5階)亞斯克雷之靴</td>
+                            <td>-4</td>
+                            <td>+30</td>
+                            <td>+30</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <td>6階</td>
+                            <td class="item-name">(6階)亞斯克雷之靴</td>
+                            <td>-4</td>
+                            <td>+35</td>
+                            <td>+35</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <td>7階</td>
+                            <td class="item-name">(7階)亞斯克雷之靴</td>
+                            <td>-5</td>
+                            <td>+40</td>
+                            <td>+40</td>
+                            <td>+3</td>
+                        </tr>
+                        <tr>
+                            <td>8階</td>
+                            <td class="item-name">(8階)亞斯克雷之靴</td>
+                            <td>-5</td>
+                            <td>+45</td>
+                            <td>+45</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <td>極</td>
+                            <td class="item-name">極・亞斯克雷之靴</td>
+                            <td>-6</td>
+                            <td>+50</td>
+                            <td>+50</td>
+                            <td>+5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="panel">
+
+            <div class="section-title">裝備特色與重點整理</div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>亞斯克雷之手套</h3>
+                    <p>
+                        ✔ 每階固定 +5 HP / MP 成長。<br>
+                        ✔ 5階開始出現回血。<br>
+                        ✔ 4階開始 PVP能力明顯提升。<br>
+                        ✔ 極階為完整畢業能力。
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>亞斯克雷之靴</h3>
+                    <p>
+                        ✔ 前期升階也有 HP / MP 成長。<br>
+                        ✔ 5階開始出現傷害減免。<br>
+                        ✔ 7階以上生存差距明顯。<br>
+                        ✔ 極階為完整畢業能力。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="back-wrap">
+        <a class="back-btn" href="armor.html">返回防具入口</a>
+        <a class="back-btn" href="index.html">返回官方首頁</a>
+    </div>
+
+    <div class="footer">
+        © 2026 永翼天堂｜打造最純粹的天堂世界
+    </div>
+
+</div>
+
+</body>
+</html>
