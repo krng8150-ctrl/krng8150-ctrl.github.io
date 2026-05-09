@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>永翼天堂｜永恆戒指介紹</title>
+
+<title>永恆戒指介紹｜永翼天堂</title>
 
 <style>
 
@@ -13,47 +14,66 @@
     box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    min-height:100%;
-    overflow-x:hidden;
-    font-family:"Microsoft JhengHei", Arial, sans-serif;
-    background:#07111f;
-    color:#eef7ff;
-}
-
 body{
+
+    font-family:"Microsoft JhengHei";
+
+    color:#ffffff;
+
     background:
-    linear-gradient(rgba(3,10,22,0.22),rgba(3,10,22,0.90)),
+    linear-gradient(
+        rgba(5,10,25,0.55),
+        rgba(5,10,25,0.82)
+    ),
     url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
 
     background-size:cover;
-    background-position:center top;
-    background-repeat:no-repeat;
+    background-position:center;
     background-attachment:fixed;
+
+    overflow-x:hidden;
 }
 
-.glow-layer{
+/* =========================
+   流光背景
+========================= */
+
+.glow-bg{
+
     position:fixed;
     inset:0;
+
     pointer-events:none;
-    z-index:1;
+
+    z-index:0;
 
     background:
-    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.10), transparent 20%),
-    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.06), transparent 24%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.04), transparent 22%);
+    radial-gradient(circle at 20% 20%, rgba(120,180,255,0.10), transparent 25%),
+    radial-gradient(circle at 80% 35%, rgba(255,255,255,0.06), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(120,180,255,0.08), transparent 30%);
 
-    animation:softGlow 6s ease-in-out infinite alternate;
+    animation:glowMove 8s ease-in-out infinite alternate;
 }
 
-@keyframes softGlow{
-    0%{opacity:0.25;}
-    100%{opacity:0.60;}
+@keyframes glowMove{
+
+    0%{
+        opacity:0.35;
+    }
+
+    100%{
+        opacity:0.75;
+    }
 }
+
+/* =========================
+   流星
+========================= */
 
 .meteor{
+
     position:fixed;
+
     width:140px;
     height:2px;
 
@@ -65,33 +85,28 @@ body{
         transparent
     );
 
-    box-shadow:0 0 10px rgba(160,220,255,0.9);
+    box-shadow:
+    0 0 12px rgba(120,200,255,0.8);
 
     transform:rotate(-28deg);
 
     pointer-events:none;
 
-    z-index:2;
+    z-index:1;
 
     opacity:0;
 }
 
 .meteor1{
-    top:14%;
-    left:85%;
+    top:10%;
+    left:90%;
     animation:meteorMove 7s linear infinite;
 }
 
 .meteor2{
-    top:32%;
-    left:95%;
-    animation:meteorMove 10s linear infinite 2.5s;
-}
-
-.meteor3{
-    top:58%;
-    left:90%;
-    animation:meteorMove 12s linear infinite 5s;
+    top:35%;
+    left:100%;
+    animation:meteorMove 10s linear infinite 3s;
 }
 
 @keyframes meteorMove{
@@ -101,54 +116,70 @@ body{
         opacity:0;
     }
 
-    8%{
-        opacity:0.9;
+    10%{
+        opacity:1;
     }
 
-    22%{
-        opacity:0.75;
-    }
-
-    38%{
-        transform:translate(-760px,380px) rotate(-28deg);
+    35%{
+        transform:translate(-700px,350px) rotate(-28deg);
         opacity:0;
     }
 
     100%{
-        transform:translate(-760px,380px) rotate(-28deg);
         opacity:0;
     }
 }
 
-.light{
-    position:fixed;
+/* =========================
+   流光粒子
+========================= */
 
-    bottom:-30px;
+.light{
+
+    position:fixed;
 
     width:4px;
     height:4px;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,0.9);
+    background:rgba(255,255,255,0.95);
 
     box-shadow:
-    0 0 8px rgba(180,230,255,0.95),
-    0 0 18px rgba(120,190,255,0.7);
+    0 0 10px rgba(120,200,255,0.95),
+    0 0 20px rgba(120,200,255,0.55);
 
-    pointer-events:none;
+    bottom:-20px;
 
-    z-index:2;
+    z-index:1;
 
     opacity:0;
 }
 
-.light1{left:10%;animation:floatLight 8s linear infinite;}
-.light2{left:22%;animation:floatLight 11s linear infinite 2s;}
-.light3{left:38%;animation:floatLight 9s linear infinite 1s;}
-.light4{left:52%;animation:floatLight 13s linear infinite 4s;}
-.light5{left:68%;animation:floatLight 10s linear infinite 3s;}
-.light6{left:84%;animation:floatLight 12s linear infinite 5s;}
+.light1{
+    left:10%;
+    animation:floatLight 8s linear infinite;
+}
+
+.light2{
+    left:28%;
+    animation:floatLight 10s linear infinite 2s;
+}
+
+.light3{
+    left:50%;
+    animation:floatLight 9s linear infinite 1s;
+}
+
+.light4{
+    left:72%;
+    animation:floatLight 12s linear infinite 3s;
+}
+
+.light5{
+    left:88%;
+    animation:floatLight 11s linear infinite 5s;
+}
 
 @keyframes floatLight{
 
@@ -158,11 +189,7 @@ body{
     }
 
     10%{
-        opacity:0.9;
-    }
-
-    50%{
-        opacity:0.45;
+        opacity:1;
     }
 
     100%{
@@ -171,186 +198,222 @@ body{
     }
 }
 
+/* =========================
+   主內容
+========================= */
+
 .wrapper{
+
     position:relative;
-    z-index:3;
+
+    z-index:2;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:60px 20px;
 }
 
-.nav{
-    width:100%;
-    background:rgba(4,12,28,0.68);
-    border-bottom:1px solid rgba(180,220,255,0.18);
-    position:sticky;
-    top:0;
-    z-index:10;
-    backdrop-filter:blur(6px);
-}
+/* =========================
+   標題
+========================= */
 
-.nav-inner{
-    max-width:1180px;
-    margin:0 auto;
-    padding:16px 22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+.main-title{
 
-.nav-logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#f3fbff;
-
-    text-shadow:
-    0 0 10px #7cc8ff,
-    0 0 22px #4aa3ff;
-}
-
-.nav-links a{
-    color:#eaf6ff;
-    text-decoration:none;
-    margin-left:22px;
-    font-size:16px;
-}
-
-.hero{
-    min-height:300px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     text-align:center;
-    padding:80px 20px 50px;
-}
 
-.logo-title{
-    font-size:62px;
-    font-weight:bold;
-    letter-spacing:6px;
-    color:#f5fbff;
-
-    text-shadow:
-    0 0 10px #ffffff,
-    0 0 28px #8fd2ff,
-    0 0 55px #2d7dff;
-}
-
-.subtitle{
-    margin-top:16px;
-    font-size:24px;
-    letter-spacing:3px;
-    color:#ffffff;
-
-    text-shadow:
-    0 0 10px #5ebdff;
-}
-
-.section{
-    max-width:1180px;
-    margin:0 auto 34px;
-    padding:0 20px;
-}
-
-.panel{
-    background:rgba(4,12,28,0.56);
-    border:1px solid rgba(180,220,255,0.14);
-    border-radius:20px;
-    padding:28px;
-    backdrop-filter:blur(6px);
-
-    box-shadow:
-    0 0 22px rgba(80,160,255,0.08),
-    inset 0 0 20px rgba(255,255,255,0.02);
-}
-
-.section-title{
-    font-size:30px;
-    color:#f1fbff;
-
-    text-shadow:
-    0 0 10px #70c4ff;
+    font-size:60px;
 
     margin-bottom:20px;
-    padding-bottom:12px;
 
-    border-bottom:1px solid rgba(180,220,255,0.14);
+    font-weight:bold;
+
+    text-shadow:
+    0 0 12px rgba(120,200,255,0.95),
+    0 0 28px rgba(120,200,255,0.55);
 }
 
+.sub-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+    font-size:22px;
+
+    color:#dceeff;
+}
+
+/* =========================
+   卡片
+========================= */
+
 .series-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:28px;
 }
 
 .series-card{
+
+    position:relative;
+
     padding:26px;
+
     border-radius:18px;
 
-    background:rgba(255,255,255,0.035);
+    background:rgba(8,18,38,0.78);
 
-    border:1px solid rgba(180,220,255,0.10);
+    border:1px solid rgba(180,220,255,0.18);
+
+    backdrop-filter:blur(6px);
+
+    overflow:hidden;
+
+    transition:0.25s;
+
+    box-shadow:
+    0 0 18px rgba(0,0,0,0.35),
+    inset 0 0 12px rgba(255,255,255,0.03);
+}
+
+.series-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.05) 45%,
+        transparent 100%
+    );
+
+    transform:translateX(-120%);
+
+    transition:1s;
+}
+
+.series-card:hover{
+
+    transform:translateY(-4px);
+
+    border:1px solid rgba(120,200,255,0.35);
+
+    box-shadow:
+    0 0 24px rgba(80,160,255,0.28),
+    inset 0 0 16px rgba(255,255,255,0.05);
+}
+
+.series-card:hover::before{
+
+    transform:translateX(120%);
 }
 
 .series-card h3{
-    font-size:28px;
-    margin-bottom:16px;
+
+    font-size:30px;
+
+    margin-bottom:14px;
+
     color:#ffffff;
 
     text-shadow:
-    0 0 10px #69c6ff;
+    0 0 10px rgba(120,200,255,0.65);
 }
 
 .series-card p{
-    font-size:16px;
+
     line-height:2;
-    color:#dcefff;
-}
 
-.highlight{
-    color:#8fd8ff;
-    font-weight:bold;
-}
+    color:#e8f5ff;
 
-.system-box{
-    line-height:2.1;
     font-size:17px;
+}
+
+.series-card ul{
+
+    margin-top:18px;
+
+    padding-left:22px;
+
+    line-height:2;
+
     color:#dcefff;
 }
 
-.back-wrap{
-    text-align:center;
-    margin:26px 0 10px;
+.tag{
+
+    display:inline-block;
+
+    margin-bottom:16px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:rgba(120,180,255,0.12);
+
+    border:1px solid rgba(120,180,255,0.28);
+
+    color:#9fd0ff;
+
+    font-size:14px;
 }
+
+/* =========================
+   返回按鈕
+========================= */
 
 .back-btn{
+
     display:inline-block;
-    margin:6px;
-    padding:13px 30px;
-    border-radius:14px;
-    text-decoration:none;
+
+    margin-top:50px;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    background:rgba(120,180,255,0.12);
+
+    border:1px solid rgba(120,180,255,0.28);
+
     color:#ffffff;
-    background:rgba(120,190,255,0.10);
-    border:1px solid rgba(180,220,255,0.18);
-    text-shadow:0 0 8px #6fc8ff;
+
+    text-decoration:none;
+
+    transition:0.25s;
 }
 
-.footer{
+.back-btn:hover{
+
+    background:rgba(120,180,255,0.22);
+
+    box-shadow:
+    0 0 15px rgba(120,180,255,0.35);
+}
+
+.center{
     text-align:center;
-    padding:40px 20px 55px;
-    color:#d7eaff;
-    text-shadow:0 0 6px #3fa2ff;
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
+
+    .main-title{
+        font-size:42px;
+    }
 
     .series-grid{
         grid-template-columns:1fr;
-    }
-
-    .logo-title{
-        font-size:44px;
-    }
-
-    .subtitle{
-        font-size:18px;
     }
 }
 
@@ -359,211 +422,138 @@ body{
 
 <body>
 
-<div class="glow-layer"></div>
+<div class="glow-bg"></div>
 
 <div class="meteor meteor1"></div>
 <div class="meteor meteor2"></div>
-<div class="meteor meteor3"></div>
 
 <div class="light light1"></div>
 <div class="light light2"></div>
 <div class="light light3"></div>
 <div class="light light4"></div>
 <div class="light light5"></div>
-<div class="light light6"></div>
 
 <div class="wrapper">
 
-<div class="nav">
-
-<div class="nav-inner">
-
-<div class="nav-logo">
-永翼天堂
-</div>
-
-<div class="nav-links">
-<a href="index.html">首頁</a>
-<a href="accessory.html">飾品入口</a>
-<a href="download.html">下載</a>
-<a href="notice.html">公告</a>
-</div>
-
-</div>
-
-</div>
-
-<div class="hero">
-
-<div>
-
-<div class="logo-title">
+<div class="main-title">
 永恆戒指系列
 </div>
 
-<div class="subtitle">
-功能專精型｜流派搭配飾品系列
+<div class="sub-title">
+功能專精型飾品系列｜每一流派皆有明確定位
 </div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<div class="panel">
-
-<div class="section-title">
-系列特色
-</div>
-
-<div class="system-box">
-
-✔ 戒指採「功能專精流」設計<br>
-✔ 每一系列皆有明確定位<br>
-✔ 避免裝備重疊與失衡<br><br>
-
-<span class="highlight">
-戒指 → 功能專精<br>
-項鍊 → 屬性提升<br>
-耳環 → 特效強化
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
 
 <div class="series-grid">
 
+<!-- 回復永恆戒指 -->
+
 <div class="series-card">
 
-<h3>🔴 回復永恆戒指</h3>
+<span class="tag">續航流</span>
+
+<h3>回復永恆戒指</h3>
 
 <p>
-
 ✔ 回血 + 回魔<br>
-✔ 長時間續戰能力強化<br><br>
-
-👉 適合：掛機 / 打王 / 長時間練功<br>
-👉 定位：續航流
-
+✔ 長時間續戰能力強化
 </p>
+
+<ul>
+<li>適合：掛機 / 打王 / 長時間練功</li>
+<li>定位：續航型</li>
+</ul>
 
 </div>
 
+<!-- 集中永恆戒指 -->
+
 <div class="series-card">
 
-<h3>🟡 集中永恆戒指</h3>
+<span class="tag">命中流</span>
+
+<h3>集中永恆戒指</h3>
 
 <p>
-
 ✔ 近戰命中<br>
 ✔ 遠戰命中<br>
-✔ 魔攻提升<br><br>
-
-👉 適合：打高閃怪 / PVP穩定輸出<br>
-👉 定位：命中流
-
+✔ 魔攻提升
 </p>
+
+<ul>
+<li>適合：打高閃怪 / PVP穩定輸出</li>
+<li>定位：命中流</li>
+</ul>
 
 </div>
 
+<!-- 體力永恆戒指 -->
+
 <div class="series-card">
 
-<h3>🟢 體力永恆戒指</h3>
+<span class="tag">血量流</span>
+
+<h3>體力永恆戒指</h3>
 
 <p>
-
 ✔ 血量提升<br>
-✔ 回血效果<br><br>
-
-👉 適合：坦職 / 打王抗傷<br>
-👉 定位：血量流
-
+✔ 回血效果
 </p>
+
+<ul>
+<li>適合：坦職 / 打王抗傷</li>
+<li>定位：高生存型</li>
+</ul>
 
 </div>
 
+<!-- 魔力永恆戒指 -->
+
 <div class="series-card">
 
-<h3>🔵 魔力永恆戒指</h3>
+<span class="tag">回魔流</span>
+
+<h3>魔力永恆戒指</h3>
 
 <p>
-
 ✔ 魔量提升<br>
-✔ 回魔效果<br><br>
-
-👉 適合：法師 / 長時間輸出<br>
-👉 定位：回魔流
-
+✔ 回魔效果
 </p>
 
+<ul>
+<li>適合：法師 / 長時間輸出</li>
+<li>定位：法系續航型</li>
+</ul>
+
 </div>
+
+<!-- 抗魔永恆戒指 -->
 
 <div class="series-card">
 
-<h3>🟣 抗魔永恆戒指</h3>
+<span class="tag">防禦流</span>
+
+<h3>抗魔永恆戒指</h3>
 
 <p>
-
 ✔ 魔防提升<br>
-✔ 傷害減免<br><br>
-
-👉 適合：PVP / 抗法職<br>
-👉 定位：防禦流
-
+✔ 傷害減免
 </p>
 
-</div>
+<ul>
+<li>適合：PVP / 抗法職</li>
+<li>定位：抗性生存型</li>
+</ul>
 
 </div>
 
 </div>
 
-<div class="section">
-
-<div class="panel">
-
-<div class="section-title">
-系統設計重點
-</div>
-
-<div class="system-box">
-
-✔ 每個戒指都有專屬定位<br>
-✔ 不會出現完全沒用途的裝備<br>
-✔ 可自由搭配項鍊與耳環流派<br><br>
-
-⚔ 近戰輸出 → 集中戒指<br>
-🛡 坦克生存 → 體力戒指<br>
-🔮 法系續航 → 魔力戒指<br>
-🔥 長時間打寶 → 回復戒指<br>
-🧿 PVP抗法 → 抗魔戒指
-
-</div>
-
-</div>
-
-</div>
-
-<div class="back-wrap">
+<div class="center">
 
 <a class="back-btn" href="accessory.html">
-返回飾品入口
+← 返回飾品入口
 </a>
 
-<a class="back-btn" href="index.html">
-返回官方首頁
-</a>
-
-</div>
-
-<div class="footer">
-© 2026 永翼天堂｜打造最純粹的天堂世界
 </div>
 
 </div>
