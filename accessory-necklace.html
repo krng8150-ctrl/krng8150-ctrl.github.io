@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永翼天堂｜永恆項鍊系列</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#07111f;
+    color:#eef7ff;
+}
+
+body{
+    background:
+    linear-gradient(rgba(3,10,22,0.22),rgba(3,10,22,0.90)),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* 流光 */
+
+.glow-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+
+    background:
+    radial-gradient(circle at 25% 20%, rgba(150,210,255,0.10), transparent 20%),
+    radial-gradient(circle at 75% 45%, rgba(180,230,255,0.06), transparent 24%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.04), transparent 22%);
+
+    animation:softGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes softGlow{
+    0%{opacity:0.25;}
+    100%{opacity:0.60;}
+}
+
+/* 流星 */
+
+.meteor{
+    position:fixed;
+    width:140px;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0.95),
+        rgba(120,200,255,0.55),
+        transparent
+    );
+
+    box-shadow:0 0 10px rgba(160,220,255,0.9);
+
+    transform:rotate(-28deg);
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:0;
+}
+
+.meteor1{
+    top:14%;
+    left:85%;
+    animation:meteorMove 7s linear infinite;
+}
+
+.meteor2{
+    top:32%;
+    left:95%;
+    animation:meteorMove 10s linear infinite 2.5s;
+}
+
+.meteor3{
+    top:58%;
+    left:90%;
+    animation:meteorMove 12s linear infinite 5s;
+}
+
+@keyframes meteorMove{
+
+    0%{
+        transform:translate(0,0) rotate(-28deg);
+        opacity:0;
+    }
+
+    8%{
+        opacity:0.9;
+    }
+
+    22%{
+        opacity:0.75;
+    }
+
+    38%{
+        transform:translate(-760px,380px) rotate(-28deg);
+        opacity:0;
+    }
+
+    100%{
+        transform:translate(-760px,380px) rotate(-28deg);
+        opacity:0;
+    }
+}
+
+/* 粒子 */
+
+.light{
+    position:fixed;
+
+    bottom:-30px;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.9);
+
+    box-shadow:
+    0 0 8px rgba(180,230,255,0.95),
+    0 0 18px rgba(120,190,255,0.7);
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:0;
+}
+
+.light1{left:10%;animation:floatLight 8s linear infinite;}
+.light2{left:22%;animation:floatLight 11s linear infinite 2s;}
+.light3{left:38%;animation:floatLight 9s linear infinite 1s;}
+.light4{left:52%;animation:floatLight 13s linear infinite 4s;}
+.light5{left:68%;animation:floatLight 10s linear infinite 3s;}
+.light6{left:84%;animation:floatLight 12s linear infinite 5s;}
+
+@keyframes floatLight{
+
+    0%{
+        transform:translateY(0px) scale(0.4);
+        opacity:0;
+    }
+
+    10%{
+        opacity:0.9;
+    }
+
+    50%{
+        opacity:0.45;
+    }
+
+    100%{
+        transform:translateY(-950px) scale(1);
+        opacity:0;
+    }
+}
+
+.wrapper{
+    position:relative;
+    z-index:3;
+}
+
+.nav{
+    width:100%;
+
+    background:rgba(4,12,28,0.68);
+
+    border-bottom:1px solid rgba(180,220,255,0.18);
+
+    position:sticky;
+    top:0;
+
+    z-index:10;
+
+    backdrop-filter:blur(6px);
+}
+
+.nav-inner{
+    max-width:1180px;
+
+    margin:0 auto;
+
+    padding:16px 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.nav-logo{
+    font-size:28px;
+    font-weight:bold;
+
+    color:#f3fbff;
+
+    text-shadow:
+    0 0 10px #7cc8ff,
+    0 0 22px #4aa3ff;
+}
+
+.nav-links a{
+    color:#eaf6ff;
+
+    text-decoration:none;
+
+    margin-left:22px;
+
+    font-size:16px;
+}
+
+.hero{
+    min-height:300px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 20px 50px;
+}
+
+.logo-title{
+    font-size:62px;
+    font-weight:bold;
+
+    letter-spacing:6px;
+
+    color:#f5fbff;
+
+    text-shadow:
+    0 0 10px #ffffff,
+    0 0 28px #8fd2ff,
+    0 0 55px #2d7dff;
+}
+
+.subtitle{
+    margin-top:16px;
+
+    font-size:24px;
+
+    letter-spacing:3px;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px #5ebdff;
+}
+
+.section{
+    max-width:1180px;
+
+    margin:0 auto 34px;
+
+    padding:0 20px;
+}
+
+.panel{
+    background:rgba(4,12,28,0.56);
+
+    border:1px solid rgba(180,220,255,0.14);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:
+    0 0 22px rgba(80,160,255,0.08),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.section-title{
+    font-size:30px;
+
+    color:#f1fbff;
+
+    text-shadow:
+    0 0 10px #70c4ff;
+
+    margin-bottom:20px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid rgba(180,220,255,0.14);
+}
+
+.system-box{
+    line-height:2.1;
+    font-size:17px;
+    color:#dcefff;
+}
+
+.series-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.series-card{
+    padding:26px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.035);
+
+    border:1px solid rgba(180,220,255,0.10);
+}
+
+.series-card h3{
+    font-size:28px;
+    margin-bottom:16px;
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px #69c6ff;
+}
+
+.series-card p{
+    font-size:16px;
+    line-height:2;
+    color:#dcefff;
+}
+
+.highlight{
+    color:#8fd8ff;
+    font-weight:bold;
+}
+
+.back-wrap{
+    text-align:center;
+    margin:26px 0 10px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin:6px;
+    padding:13px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#ffffff;
+    background:rgba(120,190,255,0.10);
+    border:1px solid rgba(180,220,255,0.18);
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+.footer{
+    text-align:center;
+
+    padding:40px 20px 55px;
+
+    color:#d7eaff;
+
+    text-shadow:
+    0 0 6px #3fa2ff;
+}
+
+@media(max-width:900px){
+
+    .series-grid{
+        grid-template-columns:1fr;
+    }
+
+    .logo-title{
+        font-size:44px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow-layer"></div>
+
+<div class="meteor meteor1"></div>
+<div class="meteor meteor2"></div>
+<div class="meteor meteor3"></div>
+
+<div class="light light1"></div>
+<div class="light light2"></div>
+<div class="light light3"></div>
+<div class="light light4"></div>
+<div class="light light5"></div>
+<div class="light light6"></div>
+
+<div class="wrapper">
+
+<div class="nav">
+
+<div class="nav-inner">
+
+<div class="nav-logo">
+永翼天堂
+</div>
+
+<div class="nav-links">
+<a href="index.html">首頁</a>
+<a href="accessory.html">飾品入口</a>
+<a href="download.html">下載</a>
+<a href="notice.html">公告</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero">
+
+<div>
+
+<div class="logo-title">
+永恆項鍊系列
+</div>
+
+<div class="subtitle">
+五大流派｜成長型飾品系列
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="panel">
+
+<div class="section-title">
+系列說明
+</div>
+
+<div class="system-box">
+
+✔ 共五大流派：力量 / 敏捷 / 智力 / 體力 / 魔力<br>
+✔ 裝備可由【一般 → 9階】持續升階<br>
+✔ 階級越高，能力與回復效果越強<br><br>
+
+<span class="highlight">【能力成長統一規則】</span><br><br>
+
+🔹 一般：能力 +0<br>
+🔹 1～4階：能力 +1<br>
+🔹 5～8階：能力 +2<br>
+🔹 9階：能力 +3
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="series-grid">
+
+<div class="series-card">
+
+<h3>⚔ 力量永恆項鍊</h3>
+
+<p>
+
+✔ 力量提升<br>
+✔ 血量提升<br>
+✔ 回血效果<br><br>
+
+👉 適合：騎士 / 黑妖 / 龍騎<br>
+👉 特性：高生存 + 穩定輸出
+
+</p>
+
+</div>
+
+<div class="series-card">
+
+<h3>🏹 敏捷永恆項鍊</h3>
+
+<p>
+
+✔ 敏捷提升<br>
+✔ 血量 / 魔量平均提升<br>
+✔ 回血 / 回魔平均分配<br><br>
+
+👉 適合：妖精 / 全職通用<br>
+👉 特性：最穩定萬用型
+
+</p>
+
+</div>
+
+<div class="series-card">
+
+<h3>🔮 智力永恆項鍊</h3>
+
+<p>
+
+✔ 智力提升<br>
+✔ 魔量提升<br>
+✔ 回魔效果<br><br>
+
+👉 適合：法師 / 幻術師<br>
+👉 特性：高爆發輸出
+
+</p>
+
+</div>
+
+<div class="series-card">
+
+<h3>🛡 體力永恆項鍊</h3>
+
+<p>
+
+✔ 體質提升<br>
+✔ 大量血量<br>
+✔ 高回血效果<br><br>
+
+👉 特性：全系列最硬<br>
+👉 適合：打王 / 前排
+
+</p>
+
+</div>
+
+<div class="series-card">
+
+<h3>🔵 魔力永恆項鍊</h3>
+
+<p>
+
+✔ 精神提升<br>
+✔ 大量魔量<br>
+✔ 高回魔效果<br><br>
+
+👉 特性：長時間不缺魔<br>
+👉 適合：掛機 / 法系續航
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="panel">
+
+<div class="section-title">
+選擇建議
+</div>
+
+<div class="system-box">
+
+⚔ 近戰輸出 → 力量<br>
+🏹 平衡萬用 → 敏捷<br>
+🔮 法術爆發 → 智力<br>
+🛡 高生存 → 體力<br>
+🔵 長時間續航 → 魔力<br><br>
+
+✔ 五系完全分流<br>
+✔ 每條都有用途<br>
+✔ 不會出現廢裝<br><br>
+
+<span class="highlight">
+👉 選對流派，比數值更重要！
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="back-wrap">
+
+<a class="back-btn" href="accessory.html">
+返回飾品入口
+</a>
+
+<a class="back-btn" href="index.html">
+返回官方首頁
+</a>
+
+</div>
+
+<div class="footer">
+© 2026 永翼天堂｜打造最純粹的天堂世界
+</div>
+
+</div>
+
+</body>
+</html>
