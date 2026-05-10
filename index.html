@@ -375,8 +375,15 @@ body{
 /* 手機 */
 @media(max-width:560px){
     body{
-        background-attachment:scroll;
-        background-position:center top;
+        background-size:100% auto !important;
+        background-attachment:scroll !important;
+        background-position:center top !important;
+        background-repeat:no-repeat !important;
+        background-color:#07111f !important;
+    }
+
+    .glow-layer{
+        opacity:0.65;
     }
 
     .meteor{
@@ -570,10 +577,11 @@ body{
                     <div class="entry-icon">🛡</div>
                     <div class="entry-title">裝備介紹</div>
                 </a>
+
                 <a class="entry" href="accessory.html">
-<div class="entry-icon">💍</div>
-<div class="entry-title">飾品系統</div>
-</a>
+                    <div class="entry-icon">💍</div>
+                    <div class="entry-title">飾品系統</div>
+                </a>
 
                 <a class="entry" href="map-drops.html">
                     <div class="entry-icon">💎</div>
@@ -614,7 +622,7 @@ body{
 
                 <a class="quick-card" href="announcement.html">
                     <h3>最新公告</h3>
-                    <p>開服資訊、活動公告、系統更新。</p>
+                    <p>官方資訊、活動公告、系統更新。</p>
                 </a>
 
                 <a class="quick-card" href="share.html">
