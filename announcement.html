@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永翼天堂｜最新公告</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#07111f;
+    color:#eef7ff;
+}
+
+body{
+    background:
+    linear-gradient(rgba(3,10,22,0.25),rgba(3,10,22,0.92)),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.wrapper{
+    max-width:1180px;
+    margin:auto;
+    padding:55px 20px 80px;
+}
+
+.main-title{
+    text-align:center;
+    font-size:58px;
+    font-weight:bold;
+    margin-bottom:15px;
+    text-shadow:0 0 12px #8fd2ff,0 0 28px #2d7dff;
+}
+
+.sub-title{
+    text-align:center;
+    font-size:22px;
+    color:#dcefff;
+    margin-bottom:42px;
+}
+
+.panel{
+    background:rgba(8,18,38,0.82);
+    border:1px solid rgba(180,220,255,0.18);
+    border-radius:20px;
+    padding:28px;
+    margin-bottom:28px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 0 18px rgba(0,0,0,0.35), inset 0 0 12px rgba(255,255,255,0.03);
+}
+
+.section-title{
+    font-size:30px;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(180,220,255,0.18);
+    text-shadow:0 0 10px #70c4ff;
+}
+
+.notice-list{
+    display:grid;
+    gap:16px;
+}
+
+.notice-card{
+    display:block;
+    text-decoration:none;
+    color:#eef7ff;
+    padding:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(180,220,255,0.14);
+    transition:0.25s;
+}
+
+.notice-card:hover{
+    transform:translateY(-3px);
+    background:rgba(120,190,255,0.10);
+    box-shadow:0 0 20px rgba(80,160,255,0.25);
+}
+
+.notice-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+
+.notice-title{
+    font-size:22px;
+    font-weight:bold;
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+.notice-date{
+    color:#b9ddff;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.notice-text{
+    line-height:1.8;
+    font-size:16px;
+    color:#dcefff;
+}
+
+.tag{
+    display:inline-block;
+    margin-right:8px;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.tag-new{
+    background:rgba(255,80,80,0.20);
+    color:#ff9a9a;
+    border:1px solid rgba(255,120,120,0.35);
+}
+
+.tag-open{
+    background:rgba(255,210,90,0.18);
+    color:#ffd36a;
+    border:1px solid rgba(255,210,90,0.35);
+}
+
+.tag-update{
+    background:rgba(90,180,255,0.18);
+    color:#8fd8ff;
+    border:1px solid rgba(90,180,255,0.35);
+}
+
+.tag-event{
+    background:rgba(180,120,255,0.18);
+    color:#d0b5ff;
+    border:1px solid rgba(180,120,255,0.35);
+}
+
+.note{
+    font-size:17px;
+    line-height:2;
+    color:#e8f5ff;
+}
+
+.back-wrap{
+    text-align:center;
+    margin-top:30px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin:6px;
+    padding:13px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#ffffff;
+    background:rgba(120,190,255,0.12);
+    border:1px solid rgba(180,220,255,0.22);
+    text-shadow:0 0 8px #6fc8ff;
+}
+
+.back-btn:hover{
+    background:rgba(120,190,255,0.22);
+}
+
+@media(max-width:768px){
+    .main-title{font-size:40px;}
+    .sub-title{font-size:18px;}
+    .panel{padding:20px;}
+    .notice-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="main-title">最新公告</div>
+<div class="sub-title">永翼天堂｜官方公告・更新資訊・活動消息</div>
+
+<div class="panel">
+<div class="section-title">公告列表</div>
+
+<div class="notice-list">
+
+<a class="notice-card" href="notice-open.html">
+    <div class="notice-top">
+        <div class="notice-title">
+            <span class="tag tag-new">NEW</span>
+            <span class="tag tag-open">開服公告</span>
+            永翼天堂官方網站建置中
+        </div>
+        <div class="notice-date">2026 / 最新</div>
+    </div>
+    <div class="notice-text">
+        官方網站、遊戲下載、系統介紹、裝備資料與活動頁面陸續建置中。
+    </div>
+</a>
+
+<a class="notice-card" href="notice-download.html">
+    <div class="notice-top">
+        <div class="notice-title">
+            <span class="tag tag-update">下載公告</span>
+            遊戲懶人包與 VPN 下載資訊
+        </div>
+        <div class="notice-date">更新中</div>
+    </div>
+    <div class="notice-text">
+        玩家可至下載頁取得主程式、登入器、RADMIN VPN 與加入網路資訊。
+    </div>
+</a>
+
+<a class="notice-card" href="notice-system.html">
+    <div class="notice-top">
+        <div class="notice-title">
+            <span class="tag tag-update">系統公告</span>
+            天M變身與裝備資料持續補完
+        </div>
+        <div class="notice-date">資料建置</div>
+    </div>
+    <div class="notice-text">
+        轉生、變身、防具、飾品、掉落查詢等資料將持續更新，提供玩家完整查詢。
+    </div>
+</a>
+
+<a class="notice-card" href="notice-event.html">
+    <div class="notice-top">
+        <div class="notice-title">
+            <span class="tag tag-event">活動公告</span>
+            推文獎勵活動準備中
+        </div>
+        <div class="notice-date">即將開放</div>
+    </div>
+    <div class="notice-text">
+        推廣分享、活動規則與獎勵領取方式將於官方公告頁公布。
+    </div>
+</a>
+
+</div>
+</div>
+
+<div class="panel">
+<div class="section-title">公告說明</div>
+<div class="note">
+✔ 最新公告會顯示伺服器重要消息。<br>
+✔ 更新公告會顯示系統調整、資料補完與版本更新。<br>
+✔ 活動公告會顯示推文活動、開服活動與獎勵規則。<br>
+✔ 玩家請以官方網站公告內容為準。
+</div>
+</div>
+
+<div class="back-wrap">
+<a class="back-btn" href="index.html">返回官方首頁</a>
+</div>
+
+</div>
+
+</body>
+</html>
