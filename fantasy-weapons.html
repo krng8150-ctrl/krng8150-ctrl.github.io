@@ -3,74 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>永翼天堂｜武器介紹</title>
+<title>永翼天堂｜幻想系列武器</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
     font-family:"Microsoft JhengHei", Arial, sans-serif;
-    background:#07111f;
     color:#eef7ff;
 }
 
+body{
+    background:
+    linear-gradient(
+        rgba(3,10,22,0.72),
+        rgba(3,10,22,0.94)
+    ),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
 .page{
+    width:95%;
     max-width:1200px;
     margin:auto;
-    padding:30px 15px 80px;
+    padding:40px 10px 90px;
 }
 
 .back{
     display:inline-block;
-    margin-bottom:25px;
-    padding:10px 18px;
+    margin-bottom:70px;
+    padding:12px 24px;
     color:#ffd56a;
     border:1px solid #ffd56a;
     border-radius:10px;
     text-decoration:none;
+    background:rgba(0,0,0,0.45);
 }
 
 h1{
     text-align:center;
     color:#ffd56a;
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:42px;
+    margin-bottom:25px;
+    text-shadow:0 0 18px rgba(255,213,106,0.45);
 }
 
 .intro{
     text-align:center;
-    line-height:2;
-    color:#d8e8ff;
-    margin-bottom:30px;
+    line-height:2.1;
+    color:#e5f0ff;
+    font-size:18px;
+    margin-bottom:45px;
 }
 
 .flow{
-    background:rgba(255,213,106,0.08);
+    background:rgba(10,18,25,0.88);
     border:1px solid rgba(255,213,106,0.35);
-    border-radius:16px;
-    padding:20px;
-    margin-bottom:35px;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:45px;
     text-align:center;
-    line-height:2;
-    color:#ffe6a3;
+    line-height:2.2;
+    color:#ffe68a;
+    font-size:18px;
+    box-shadow:0 0 25px rgba(0,0,0,0.45);
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:22px;
+    gap:24px;
 }
 
 .card{
-    background:rgba(10,20,40,0.9);
-    border:1px solid rgba(255,213,106,0.25);
+    background:rgba(8,15,25,0.92);
+    border:1px solid rgba(255,213,106,0.28);
     border-radius:18px;
-    padding:22px;
-    box-shadow:0 0 20px rgba(0,0,0,0.35);
+    padding:24px;
+    box-shadow:0 0 22px rgba(0,0,0,0.5);
 }
 
 .card h2{
     color:#ffd56a;
-    margin-top:0;
+    margin-bottom:12px;
     font-size:24px;
     text-align:center;
 }
@@ -78,7 +104,8 @@ h1{
 .job{
     color:#9fd3ff;
     text-align:center;
-    margin-bottom:15px;
+    margin-bottom:18px;
+    line-height:1.8;
 }
 
 .stats{
@@ -88,7 +115,7 @@ h1{
 }
 
 .stats td{
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.1);
     padding:8px 4px;
 }
 
@@ -103,17 +130,19 @@ h1{
 }
 
 .notice{
-    margin-top:35px;
-    padding:18px;
-    border-radius:14px;
-    background:rgba(255,255,255,0.06);
-    line-height:1.8;
+    margin-top:45px;
+    padding:22px;
+    border-radius:16px;
+    background:rgba(8,15,25,0.9);
+    border:1px solid rgba(255,213,106,0.25);
+    line-height:2;
     color:#dbe9ff;
 }
 </style>
 </head>
 
 <body>
+
 <div class="page">
 
 <a class="back" href="index.html">← 返回官方首頁</a>
@@ -235,7 +264,7 @@ h1{
 <tr><td>血量</td><td>20</td></tr>
 <tr><td>魔量</td><td>20</td></tr>
 <tr><td>回血</td><td>10</td></tr>
-<tr><td>雙刀爪暴擊率</td><td>25</td></tr>
+<tr><td>雙刀暴擊率</td><td>25</td></tr>
 <tr><td>PVP額外傷害</td><td>3</td></tr>
 </table>
 </div>
@@ -284,9 +313,11 @@ h1{
 
 <div class="notice">
 ※ 幻想系列武器為玩家脫離限時體驗武器後，第一把可正式長期使用的成長武器。<br>
-※ 後續可銜接傲慢之塔、新傲慢之塔、武器升階與更高階裝備系統。
+※ 後續可銜接傲慢之塔、新傲慢之塔、武器升階與更高階裝備系統。<br>
+※ 頁面能力以遊戲內資料庫設定為準，若日後版本調整，將同步更新官方介紹。
 </div>
 
 </div>
+
 </body>
 </html>
