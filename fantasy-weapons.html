@@ -318,6 +318,95 @@ h1{
 </div>
 
 </div>
+<!-- 星空流光粒子 -->
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
+<style>
+
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.particles span{
+    position:absolute;
+    display:block;
+    width:2px;
+    height:120px;
+    background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.95),
+        rgba(255,255,255,0)
+    );
+    opacity:0.7;
+    border-radius:999px;
+    animation:meteor 8s linear infinite;
+}
+
+.particles span:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+
+.particles span:nth-child(2){
+    left:25%;
+    animation-delay:2s;
+}
+
+.particles span:nth-child(3){
+    left:40%;
+    animation-delay:4s;
+}
+
+.particles span:nth-child(4){
+    left:60%;
+    animation-delay:1s;
+}
+
+.particles span:nth-child(5){
+    left:75%;
+    animation-delay:5s;
+}
+
+.particles span:nth-child(6){
+    left:90%;
+    animation-delay:3s;
+}
+
+@keyframes meteor{
+    0%{
+        transform:
+        translateY(-200px)
+        translateX(0)
+        rotate(25deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(1400px)
+        translateX(250px)
+        rotate(25deg);
+
+        opacity:0;
+    }
+}
+
+</style>
 </body>
 </html>
