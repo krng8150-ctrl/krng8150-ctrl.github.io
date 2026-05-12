@@ -158,8 +158,6 @@ html,body{
 
 <div class="page">
 
-<a class="back" href="weapons.html">← 返回武器介紹</a>
-
 <div class="title">
     <h1>月神系列武器</h1>
     <p>
@@ -320,7 +318,50 @@ html,body{
 ※ 此系列提升命中、額外傷害、血量、魔量、回血與 PVP 額外傷害。<br>
 ※ 後續可銜接戰神系列武器，持續往更高階裝備成長。
 </div>
+<div class="bottom-buttons">
 
+<a href="index.html" class="bottom-btn">
+← 返回官方首頁
+</a>
+
+<a href="weapons.html" class="bottom-btn">
+← 返回武器介紹
+</a>
+
+</div>
+
+<style>
+
+.bottom-buttons{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:40px;
+    margin-bottom:30px;
+    position:relative;
+    z-index:5;
+}
+
+.bottom-btn{
+    display:inline-block;
+    padding:14px 28px;
+    border:1px solid #ffd76a;
+    border-radius:14px;
+    color:#ffd76a;
+    text-decoration:none;
+    font-size:18px;
+    background:rgba(0,0,0,0.45);
+    transition:0.3s;
+}
+
+.bottom-btn:hover{
+    background:rgba(255,215,100,0.12);
+    box-shadow:0 0 18px rgba(255,215,100,0.28);
+}
+
+</style>
 </div>
 
 <!-- 星空背景特效開始 -->
