@@ -1,3 +1,4 @@
-Text.pak
-Sprite13.pak
-Sprite14.pak
+text/test.txt
+Sound/test.txt
+Tile/test.txt
+sprite/test.txt
