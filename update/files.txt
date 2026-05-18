@@ -1,1 +1,1 @@
-text/dailybonus-c.html
+Text.pak
