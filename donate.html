@@ -49,51 +49,7 @@ body{
     radial-gradient(circle at 50% 80%, rgba(0,200,255,0.06), transparent 35%);
 }
 
-/* 流星 */
-.meteor{
-    position:fixed;
-    width:2px;
-    height:120px;
-    background:linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
-    opacity:0.5;
-    transform:rotate(25deg);
-    animation:meteor 8s linear infinite;
-    z-index:1;
-}
 
-.meteor:nth-child(1){
-    left:15%;
-    top:-150px;
-    animation-delay:0s;
-}
-
-.meteor:nth-child(2){
-    left:45%;
-    top:-180px;
-    animation-delay:2s;
-}
-
-.meteor:nth-child(3){
-    left:75%;
-    top:-200px;
-    animation-delay:4s;
-}
-
-@keyframes meteor{
-    0%{
-        transform:translateY(0) translateX(0) rotate(25deg);
-        opacity:0;
-    }
-
-    10%{
-        opacity:0.7;
-    }
-
-    100%{
-        transform:translateY(1200px) translateX(300px) rotate(25deg);
-        opacity:0;
-    }
-}
 
 /* 漂浮粒子 */
 .particles{
