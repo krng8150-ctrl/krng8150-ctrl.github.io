@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>永翼天堂｜贊助系統</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050b16;
+    color:white;
+    font-family:"Microsoft JhengHei";
+    overflow-x:hidden;
+}
+
+/* 背景 */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
+    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
+
+/* 星空特效 */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle,#6ec8ff 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:0.15;
+    z-index:-1;
+}
+
+.container{
+    width:95%;
+    max-width:900px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    font-weight:bold;
+    color:#ffd76b;
+    margin-bottom:30px;
+    text-shadow:0 0 15px rgba(255,215,107,0.6);
+}
+
+.box{
+    background:rgba(10,18,35,0.88);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+.box h2{
+    color:#7fd4ff;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.box p{
+    line-height:2;
+    font-size:18px;
+}
+
+.link-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:18px;
+    margin-top:25px;
+
+    border-radius:15px;
+
+    background:linear-gradient(45deg,#2a7fff,#00c6ff);
+
+    color:white;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.link-btn:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 20px rgba(0,198,255,0.6);
+}
+
+.notice{
+    color:#ffb3b3;
+    margin-top:15px;
+    line-height:2;
+}
+
+.footer{
+    text-align:center;
+    margin-top:50px;
+    color:#aaa;
+    line-height:2;
+    padding-bottom:40px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 28px;
+    border-radius:12px;
+    background:#222f55;
+    color:white;
+    text-decoration:none;
+}
+
+.back-btn:hover{
+    background:#3956a5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        永翼天堂｜自動贊助系統
+    </div>
+
+    <div class="box">
+
+        <h2>贊助說明</h2>
+
+        <p>
+        ✔ 支援自動發放元寶<br>
+        ✔ 付款後系統自動領取<br>
+        ✔ 無需GM手動處理<br>
+        ✔ 支援超商 / ATM / 虛擬帳號
+        </p>
+
+    </div>
+
+    <div class="box">
+
+        <h2>贊助入口</h2>
+
+        <p>
+        點擊下方按鈕前往贊助頁面
+        </p>
+
+       <a class="link-btn"
+href="https://web-hosts.net/%E6%B0%B8%E7%BF%BC%E5%A4%A9%E5%A0%82.html"
+target="_blank">
+
+前往贊助
+
+</a>
+
+        <div class="notice">
+
+        ※ 若付款完成未立即收到元寶，請重新登入遊戲後再領取。<br>
+        ※ 贊助獎勵皆由系統自動發放。
+
+        </div>
+
+    </div>
+
+    <div style="text-align:center;">
+
+        <a class="back-btn" href="index.html">
+        返回官方首頁
+        </a>
+
+    </div>
+
+    <div class="footer">
+
+        本伺服器僅供遊戲交流與免費試玩。<br>
+        如有不合宜之處將第一時間關閉伺服器。
+
+    </div>
+
+</div>
+
+</body>
+</html>
