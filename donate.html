@@ -14,126 +14,277 @@
     box-sizing:border-box;
 }
 
-body{
-    background:#050b16;
-    color:white;
-    font-family:"Microsoft JhengHei";
+html,body{
+    width:100%;
+    min-height:100%;
     overflow-x:hidden;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#07111f;
+    color:#eef7ff;
 }
 
-/* 背景 */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
+body{
     background:
-    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
+    linear-gradient(
+        rgba(3,10,22,0.18),
+        rgba(3,10,22,0.88)
+    ),
     url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
 
     background-size:cover;
-    background-position:center;
-    z-index:-2;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
-/* 星空特效 */
-body::after{
-    content:"";
+/* 柔和流光 */
+.glow-layer{
     position:fixed;
     inset:0;
+    pointer-events:none;
+    z-index:1;
     background:
-    radial-gradient(circle,#6ec8ff 1px,transparent 1px);
-    background-size:40px 40px;
-    opacity:0.15;
-    z-index:-1;
+    radial-gradient(circle at 20% 20%, rgba(0,170,255,0.10), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(0,120,255,0.08), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(0,200,255,0.06), transparent 35%);
+}
+
+/* 流星 */
+.meteor{
+    position:fixed;
+    width:2px;
+    height:120px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+    opacity:0.5;
+    transform:rotate(25deg);
+    animation:meteor 8s linear infinite;
+    z-index:1;
+}
+
+.meteor:nth-child(1){
+    left:15%;
+    top:-150px;
+    animation-delay:0s;
+}
+
+.meteor:nth-child(2){
+    left:45%;
+    top:-180px;
+    animation-delay:2s;
+}
+
+.meteor:nth-child(3){
+    left:75%;
+    top:-200px;
+    animation-delay:4s;
+}
+
+@keyframes meteor{
+    0%{
+        transform:translateY(0) translateX(0) rotate(25deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:0.7;
+    }
+
+    100%{
+        transform:translateY(1200px) translateX(300px) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* 漂浮粒子 */
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+    pointer-events:none;
+}
+
+.particles span{
+    position:absolute;
+    display:block;
+    width:4px;
+    height:4px;
+    background:rgba(255,255,255,0.7);
+    border-radius:50%;
+    animation:float 20s linear infinite;
+}
+
+.particles span:nth-child(1){left:10%;animation-duration:15s;top:100%;}
+.particles span:nth-child(2){left:25%;animation-duration:18s;top:100%;}
+.particles span:nth-child(3){left:40%;animation-duration:22s;top:100%;}
+.particles span:nth-child(4){left:55%;animation-duration:16s;top:100%;}
+.particles span:nth-child(5){left:70%;animation-duration:24s;top:100%;}
+.particles span:nth-child(6){left:85%;animation-duration:19s;top:100%;}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-1200px);
+        opacity:0;
+    }
 }
 
 .container{
     width:95%;
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
-    padding:40px 0;
+    padding-top:60px;
+    position:relative;
+    z-index:2;
 }
 
 .title{
     text-align:center;
-    font-size:42px;
+    font-size:52px;
     font-weight:bold;
-    color:#ffd76b;
-    margin-bottom:30px;
-    text-shadow:0 0 15px rgba(255,215,107,0.6);
+    color:#ffd66b;
+    text-shadow:0 0 25px rgba(255,214,107,0.7);
+    margin-bottom:40px;
 }
 
-.box{
+.panel{
     background:rgba(10,18,35,0.88);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:18px;
-    padding:30px;
+    border-radius:20px;
+    padding:35px;
+    margin-bottom:30px;
+    box-shadow:0 0 25px rgba(0,0,0,0.45);
+}
+
+.panel-title{
+    font-size:30px;
+    color:#7fd6ff;
     margin-bottom:25px;
-    box-shadow:0 0 25px rgba(0,0,0,0.5);
+    font-weight:bold;
 }
 
-.box h2{
-    color:#7fd4ff;
-    margin-bottom:20px;
-    font-size:28px;
+.panel p{
+    font-size:20px;
+    line-height:2.2;
+    color:#e8f5ff;
 }
 
-.box p{
-    line-height:2;
-    font-size:18px;
-}
-
-.link-btn{
+.donate-btn{
     display:block;
     width:100%;
     text-align:center;
-    padding:18px;
-    margin-top:25px;
 
-    border-radius:15px;
+    margin-top:30px;
+    padding:22px;
 
-    background:linear-gradient(45deg,#2a7fff,#00c6ff);
+    font-size:30px;
+    font-weight:bold;
 
     color:white;
     text-decoration:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #0077ff,
+        #00c3ff
+    );
+
+    transition:0.3s;
+}
+
+.donate-btn:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px rgba(0,195,255,0.7);
+}
+
+.notice{
+    margin-top:20px;
+    color:#ffb6b6;
+    font-size:18px;
+    line-height:2;
+}
+
+/* 累積儲值表 */
+.reward-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.reward-table th{
+    background:rgba(0,120,255,0.25);
+    color:#7fd6ff;
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:22px;
+}
+
+.reward-table td{
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.08);
+    line-height:2;
+    font-size:18px;
+    vertical-align:top;
+}
+
+.reward-table tr:nth-child(even){
+    background:rgba(255,255,255,0.03);
+}
+
+.money{
+    color:#ffd66b;
+    font-weight:bold;
     font-size:24px;
+}
+
+.vip{
+    color:#ff7272;
+    font-weight:bold;
+}
+
+.back-box{
+    text-align:center;
+    margin-top:30px;
+}
+
+.back-btn{
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:#223c70;
+    border-radius:14px;
+
+    color:white;
+    text-decoration:none;
+    font-size:20px;
     font-weight:bold;
 
     transition:0.3s;
 }
 
-.link-btn:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 20px rgba(0,198,255,0.6);
-}
-
-.notice{
-    color:#ffb3b3;
-    margin-top:15px;
-    line-height:2;
+.back-btn:hover{
+    background:#3560b6;
 }
 
 .footer{
     text-align:center;
-    margin-top:50px;
-    color:#aaa;
+    margin-top:60px;
+    padding-bottom:50px;
     line-height:2;
-    padding-bottom:40px;
-}
-
-.back-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 28px;
-    border-radius:12px;
-    background:#222f55;
-    color:white;
-    text-decoration:none;
-}
-
-.back-btn:hover{
-    background:#3956a5;
+    color:#b8c7da;
+    font-size:16px;
 }
 
 </style>
@@ -141,51 +292,221 @@ body::after{
 
 <body>
 
+<div class="glow-layer"></div>
+
+<div class="meteor"></div>
+<div class="meteor"></div>
+<div class="meteor"></div>
+
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
 <div class="container">
 
     <div class="title">
         永翼天堂｜自動贊助系統
     </div>
 
-    <div class="box">
+    <div class="panel">
 
-        <h2>贊助說明</h2>
+        <div class="panel-title">
+            贊助說明
+        </div>
 
         <p>
-        ✔ 支援自動發放元寶<br>
-        ✔ 付款後系統自動領取<br>
-        ✔ 無需GM手動處理<br>
-        ✔ 支援超商 / ATM / 虛擬帳號
+        ✔　付款完成後系統自動發放<br>
+        ✔　無需GM手動處理<br>
+        ✔　支援超商 / ATM / 虛擬帳號<br>
+        ✔　24小時皆可自動贊助<br>
+        ✔　累積儲值可額外獲得累積獎勵盒
         </p>
 
     </div>
 
-    <div class="box">
+    <div class="panel">
 
-        <h2>贊助入口</h2>
+        <div class="panel-title">
+            前往贊助
+        </div>
 
         <p>
-        點擊下方按鈕前往贊助頁面
+        點擊下方按鈕即可前往永翼天堂自動贊助頁面。
         </p>
 
-       <a class="link-btn"
-href="https://web-hosts.net/%E6%B0%B8%E7%BF%BC%E5%A4%A9%E5%A0%82.html"
-target="_blank">
+        <a class="donate-btn"
+        href="https://web-hosts.net/%E6%B0%B8%E7%BF%BC%E5%A4%A9%E5%A0%82.html"
+        target="_blank">
 
-前往贊助
+        點我前往贊助
 
-</a>
+        </a>
 
         <div class="notice">
 
-        ※ 若付款完成未立即收到元寶，請重新登入遊戲後再領取。<br>
-        ※ 贊助獎勵皆由系統自動發放。
+        ※ 若付款完成未立即收到元寶，請重新登入遊戲後再次領取。<br>
+        ※ 所有贊助獎勵皆由系統自動發放。
 
         </div>
 
     </div>
 
-    <div style="text-align:center;">
+    <div class="panel">
+
+        <div class="panel-title">
+            累積儲值獎勵
+        </div>
+
+        <table class="reward-table">
+
+            <tr>
+                <th width="20%">累積金額</th>
+                <th>獎勵內容</th>
+            </tr>
+
+            <tr>
+                <td class="money">1000</td>
+                <td>
+                【元寶】100<br>
+                傲慢幣 1000<br>
+                新傲慢幣 1000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">2000</td>
+                <td>
+                【元寶】200<br>
+                傲慢幣 2000<br>
+                新傲慢幣 2000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">3000</td>
+                <td>
+                【元寶】300<br>
+                傲慢幣 3000<br>
+                新傲慢幣 3000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">4000</td>
+                <td>
+                【元寶】400<br>
+                傲慢幣 4000<br>
+                新傲慢幣 4000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">5000</td>
+                <td>
+                【元寶】500<br>
+                傲慢幣 5000<br>
+                新傲慢幣 5000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">6000</td>
+                <td>
+                【元寶】600<br>
+                傲慢幣 6000<br>
+                新傲慢幣 6000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">7000</td>
+                <td>
+                【元寶】700<br>
+                傲慢幣 7000<br>
+                新傲慢幣 7000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">8000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】800<br>
+                傲慢幣 8000<br>
+                新傲慢幣 8000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">9000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】900<br>
+                傲慢幣 9000<br>
+                新傲慢幣 9000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">10000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】1000<br>
+                傲慢幣 10000<br>
+                新傲慢幣 10000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">11000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】1100<br>
+                傲慢幣 11000<br>
+                新傲慢幣 11000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">12000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】1200<br>
+                傲慢幣 12000<br>
+                新傲慢幣 12000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">13000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】1300<br>
+                傲慢幣 13000<br>
+                新傲慢幣 13000
+                </td>
+            </tr>
+
+            <tr>
+                <td class="money">14000</td>
+                <td>
+                <span class="vip">VIP強化卷 1</span><br>
+                【元寶】1400<br>
+                傲慢幣 14000<br>
+                新傲慢幣 14000
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="back-box">
 
         <a class="back-btn" href="index.html">
         返回官方首頁
@@ -196,7 +517,8 @@ target="_blank">
     <div class="footer">
 
         本伺服器僅供遊戲交流與免費試玩。<br>
-        如有不合宜之處將第一時間關閉伺服器。
+        本伺服器擁有對以上聲明的最終解釋權。<br>
+        如有不合宜之處，將第一時間關閉伺服器。
 
     </div>
 
