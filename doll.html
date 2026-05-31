@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>魔法娃娃介紹｜永翼天堂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:"Microsoft JhengHei", Arial, sans-serif;
+    background:#0b0b0b;
+    color:#f5e6b8;
+}
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:30px 15px;
+}
+.title{
+    text-align:center;
+    font-size:32px;
+    color:#ffd36a;
+    margin-bottom:10px;
+}
+.subtitle{
+    text-align:center;
+    color:#d8c48a;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+.section-title{
+    font-size:26px;
+    color:#ffd36a;
+    border-left:6px solid #d6a93a;
+    padding-left:12px;
+    margin:35px 0 18px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
+}
+.card{
+    background:rgba(20,20,20,0.94);
+    border:1px solid #9b7a2f;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 0 18px rgba(255,190,80,0.15);
+}
+.card h3{
+    margin:0 0 10px;
+    color:#ffd36a;
+    font-size:19px;
+}
+.badge{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+.blue{background:#143c7a;color:#b8d8ff;}
+.red{background:#7a1717;color:#ffd0d0;}
+.purple{background:#4d237a;color:#ead0ff;}
+.gold{background:#8b6418;color:#fff0b8;}
+.dragon{background:#5c2f12;color:#ffd7a0;}
+.ability-title{
+    color:#ffe6a0;
+    font-weight:bold;
+    margin:8px 0;
+}
+.ability{
+    line-height:1.8;
+    color:#f7e6b0;
+    font-size:15px;
+}
+.ability div{
+    border-bottom:1px dashed rgba(180,140,60,0.35);
+    padding:4px 0;
+}
+.note{
+    margin-top:30px;
+    padding:18px;
+    border:1px solid #8b6b2a;
+    background:rgba(80,55,10,0.3);
+    border-radius:12px;
+    line-height:1.8;
+    color:#ffe6a0;
+}
+.btn-area{
+    text-align:center;
+    margin-top:35px;
+}
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    margin:8px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#d6a93a,#8b6418);
+    color:#160f05;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">🧸 魔法娃娃介紹</div>
+
+    <div class="subtitle">
+        魔法娃娃可提供角色額外能力加成。<br>
+        不同階級與不同等級的娃娃，能力效果皆不同。<br>
+        本頁完整顯示每隻魔法娃娃的實際能力。
+    </div>
+
+    <div id="dollArea"></div>
+
+    <div class="note">
+        ※ 娃娃能力依照遊戲內設定為主。<br>
+        ※ 有幾項能力就完整顯示幾項能力，不做簡化。<br>
+        ※ 玩家可依照職業與玩法選擇適合自己的魔法娃娃。
+    </div>
+
+    <div class="btn-area">
+        <a href="index.html" class="btn">返回官方首頁</a>
+    </div>
+
+</div>
+
+<script>
+var dolls = [
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：巨人 Lv.1", ability:["體力上限+70"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：巨人 Lv.2", ability:["體力上限+90","昏迷耐性+1"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：巨人 Lv.3", ability:["體力上限+100","昏迷耐性+3"]},
+
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：阿魯巴 Lv.1", ability:["近距離命中+1"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：阿魯巴 Lv.2", ability:["近距離命中+2","近距離攻擊+2"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：阿魯巴 Lv.3", ability:["近距離命中+3","近距離攻擊+3"]},
+
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：飛龍 Lv.1", ability:["4%機率傷害減免+10"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：飛龍 Lv.2", ability:["3%機率傷害減免+15","支撐耐性+1"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：飛龍 Lv.3", ability:["5%機率傷害減免+20","支撐耐性+3"]},
+
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：食人妖精王 Lv.1", ability:["近距離攻擊+2"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：食人妖精王 Lv.2", ability:["近距離攻擊+3","近距離命中+3"]},
+{group:"藍色娃娃", cls:"blue", name:"魔法娃娃：食人妖精王 Lv.3", ability:["近距離攻擊+4","近距離命中+5"]},
+
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：巫妖 Lv.1", ability:["魔攻+2","體力上限+80"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：巫妖 Lv.2", ability:["魔攻+3","體力上限+90"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：巫妖 Lv.3", ability:["魔攻+4","體力上限+100","智力+1"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：巫妖 Lv.4", ability:["魔攻+5","體力上限+110","智力+2"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：巫妖 Lv.5", ability:["魔攻+6","體力上限+120","智力+3"]},
+
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：獨眼巨人 Lv.1", ability:["地屬性防禦+5"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：獨眼巨人 Lv.2", ability:["地屬性防禦+10","火屬性防禦+5"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：獨眼巨人 Lv.3", ability:["地屬性防禦+10","火屬性防禦+10","水屬性防禦+5"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：獨眼巨人 Lv.4", ability:["地屬性防禦+10","火屬性防禦+10","水屬性防禦+10","風屬性防禦+5"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：獨眼巨人 Lv.5", ability:["地屬性防禦+10","火屬性防禦+10","水屬性防禦+10","風屬性防禦+10","精神+1"]},
+
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：騎士范德 Lv.1", ability:["近距離攻擊+2","遠距離攻擊+2","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：騎士范德 Lv.2", ability:["近距離攻擊+3","遠距離攻擊+3","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：騎士范德 Lv.3", ability:["近距離攻擊+4","遠距離攻擊+4","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：騎士范德 Lv.4", ability:["近距離攻擊+5","遠距離攻擊+5","狩獵經驗值+15%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：騎士范德 Lv.5", ability:["近距離攻擊+6","遠距離攻擊+6","狩獵經驗值+15%"]},
+
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：幻象眼魔 Lv.1", ability:["遠距離攻擊+3","魔力恢復量+4","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：幻象眼魔 Lv.2", ability:["遠距離攻擊+4","魔力恢復量+6","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：幻象眼魔 Lv.3", ability:["遠距離攻擊+5","魔力恢復量+8","狩獵經驗值+10%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：幻象眼魔 Lv.4", ability:["遠距離攻擊+6","魔力恢復量+10","狩獵經驗值+15%"]},
+{group:"紅色娃娃", cls:"red", name:"魔法娃娃：幻象眼魔 Lv.5", ability:["遠距離攻擊+7","魔力恢復量+12","狩獵經驗值+15%"]},
+
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：惡魔 Lv.1", ability:["狩獵經驗值+20%","遠距離攻擊+5","遠距離命中+4","昏迷耐性+1"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：惡魔 Lv.2", ability:["狩獵經驗值+20%","遠距離攻擊+6","遠距離命中+5","昏迷耐性+2"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：惡魔 Lv.3", ability:["狩獵經驗值+20%","遠距離攻擊+7","遠距離命中+6","昏迷耐性+3"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：惡魔 Lv.4", ability:["狩獵經驗值+20%","遠距離攻擊+8","遠距離命中+7","昏迷耐性+5"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：惡魔 Lv.5", ability:["狩獵經驗值+20%","遠距離攻擊+9","遠距離命中+8","昏迷耐性+7","4%機率傷害減免+5","5%機率施展「火焰衝擊」"]},
+
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：死亡騎士 Lv.1", ability:["狩獵經驗值+20%","近距離攻擊+6","近距離命中+6","傷害減免+2"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：死亡騎士 Lv.2", ability:["狩獵經驗值+20%","近距離攻擊+7","近距離命中+7","傷害減免+3"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：死亡騎士 Lv.3", ability:["狩獵經驗值+20%","近距離攻擊+8","近距離命中+8","傷害減免+4"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：死亡騎士 Lv.4", ability:["狩獵經驗值+20%","近距離攻擊+9","近距離命中+9","傷害減免+5"]},
+{group:"紫色娃娃", cls:"purple", name:"魔法娃娃：死亡騎士 Lv.5", ability:["狩獵經驗值+20%","近距離攻擊+10","近距離命中+10","傷害減免+5","4%機率傷害減免+10","5%機率施展「地獄火」"]},
+
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：沙悟淨 Lv.1", ability:["遠距離攻擊+2","遠距離命中+2","狩獵經驗值+10%"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：沙悟淨 Lv.2", ability:["遠距離攻擊+3","遠距離命中+3","狩獵經驗值+10%"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：沙悟淨 Lv.3", ability:["遠距離攻擊+4","遠距離命中+4","狩獵經驗值+10%"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：沙悟淨 Lv.4", ability:["遠距離攻擊+5","遠距離命中+5","狩獵經驗值+15%"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：沙悟淨 Lv.5", ability:["防禦-7","遠距離攻擊+7","遠距離命中+7","傷害減免+1","狩獵經驗值+15%","6%機率施展「流沙瀑布」"]},
+
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：豬八戒 Lv.1", ability:["魔法防禦+4","近距離攻擊+2","傷害減免+1"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：豬八戒 Lv.2", ability:["魔法防禦+6","近距離攻擊+3","傷害減免+2"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：豬八戒 Lv.3", ability:["魔法防禦+8","近距離攻擊+4","傷害減免+3"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：豬八戒 Lv.4", ability:["魔法防禦+10","近距離攻擊+5","傷害減免+4"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：豬八戒 Lv.5", ability:["防禦-7","魔法防禦+12","近距離攻擊+6","傷害減免+5","6%機率施展「炎龍彈」"]},
+
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：孫悟空 Lv.1", ability:["狩獵經驗值+20%","近距離攻擊+7","近距離命中+6"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：孫悟空 Lv.2", ability:["狩獵經驗值+20%","近距離攻擊+7","近距離命中+7","3%機率攻擊傷害+15"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：孫悟空 Lv.3", ability:["狩獵經驗值+20%","近距離攻擊+8","近距離命中+8","4%機率攻擊傷害+15"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：孫悟空 Lv.4", ability:["狩獵經驗值+20%","近距離攻擊+9","近距離命中+9","5%機率攻擊傷害+20"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：孫悟空 Lv.5", ability:["防禦-10","狩獵經驗值+20%","近距離攻擊+10","近距離命中+10","5%機率攻擊傷害+20","6%機率施展「金箍震擊」"]},
+
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：唐三藏 Lv.1", ability:["狩獵經驗值+20%","魔攻+6","魔力上限+50","魔法防禦+5"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：唐三藏 Lv.2", ability:["狩獵經驗值+20%","魔攻+7","魔力上限+50","魔法防禦+10"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：唐三藏 Lv.3", ability:["狩獵經驗值+20%","魔攻+8","魔力上限+60","魔法防禦+15"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：唐三藏 Lv.4", ability:["狩獵經驗值+20%","魔攻+9","魔力上限+70","魔法防禦+20"]},
+{group:"金色娃娃", cls:"gold", name:"魔法娃娃：唐三藏 Lv.5", ability:["防禦-10","狩獵經驗值+20%","魔攻+10","魔力上限+80","魔法防禦+25","5%機率迴避攻擊一次"]},
+
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：寶寶-安塔瑞斯", ability:["通暢氣脈術","體魄強健術","防禦-3","魔法防禦+10","體力上限+50","傷害減免+1","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：壹級-安塔瑞斯", ability:["通暢氣脈術","體魄強健術","防禦-4","魔法防禦+12","體力上限+75","傷害減免+2","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：貳級-安塔瑞斯", ability:["通暢氣脈術","體魄強健術","防禦-5","魔法防禦+15","體力上限+90","傷害減免+3","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：傳說-安塔瑞斯", ability:["通暢氣脈術","體魄強健術","防禦-7","魔法防禦+20","體力上限+100","傷害減免+6","6%機率施展「金箍震擊」","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：神話-安塔瑞斯", ability:["通暢氣脈術","體魄強健術","防禦-10","體力上限+150","魔法防禦+25","體力上限+100","傷害減免+8","6%機率施展「金箍震擊」","靈魂昇華","4%機率傷害減免+15","2%機率迴避攻擊一次"]},
+
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：寶寶-法利昂", ability:["每64秒體力恢復30","每64秒魔力恢復5","魔攻+1","魅力+1","通暢氣脈術","體魄強健術"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：壹級-法利昂", ability:["每64秒體力恢復50","每64秒魔力恢復8","魔攻+2","昏迷耐性+5","魅力+2","通暢氣脈術","體魄強健術"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：貳級-法利昂", ability:["每64秒體力恢復60","每64秒魔力恢復12","魔攻+5","昏迷耐性+7","魅力+3","通暢氣脈術","體魄強健術"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：傳說-法利昂", ability:["每32秒體力恢復100","每64秒魔力恢復21","魔攻+7","昏迷耐性+10","魅力+4","通暢氣脈術","體魄強健術","傷害減免+3","6%機率施展「流沙瀑布」"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：神話-法利昂", ability:["每32秒體力恢復150","每64秒魔力恢復21","魔攻+9","昏迷耐性+13","魅力+5","通暢氣脈術","體魄強健術","傷害減免+4","6%機率施展「流沙瀑布」","靈魂昇華","體力上限+50"]},
+
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：寶寶-林德拜爾", ability:["通暢氣脈術","體魄強健術","遠距離命中+2","遠距離攻擊+1","魔力恢復量+1","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：壹級-林德拜爾", ability:["通暢氣脈術","體魄強健術","遠距離命中+4","遠距離攻擊+3","魔力恢復量+4","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：貳級-林德拜爾", ability:["通暢氣脈術","體魄強健術","遠距離命中+5","遠距離攻擊+5","魔力恢復量+6","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：傳說-林德拜爾", ability:["通暢氣脈術","體魄強健術","遠距離命中+6","遠距離攻擊+7","魔力恢復量+8","昏迷耐性+5","防禦-7","6%機率施展「炎龍彈」","暴風神射"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：神話-林德拜爾", ability:["通暢氣脈術","體魄強健術","遠距離命中+8","遠距離攻擊+10","魔力恢復量+10","昏迷耐性+7","防禦-10","6%機率施展「炎龍彈」","暴風神射","靈魂昇華"]},
+
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：寶寶-巴拉卡斯", ability:["通暢氣脈術","體魄強健術","近距離命中+2","近距離攻擊+2","傷害減免+2","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：壹級-巴拉卡斯", ability:["通暢氣脈術","體魄強健術","近距離命中+4","近距離攻擊+4","額外攻擊點數+1","傷害減免+3","4%機率傷害減免+15"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：貳級-巴拉卡斯", ability:["通暢氣脈術","體魄強健術","近距離命中+6","近距離攻擊+5","額外攻擊點數+2","傷害減免+4","6%機率施展「金箍震擊」","4%機率傷害減免+15","防禦-1"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：傳說-巴拉卡斯", ability:["通暢氣脈術","體魄強健術","近距離命中+8","近距離攻擊+7","額外攻擊點數+4","傷害減免+5","6%機率施展「金箍震擊」","4%機率傷害減免+15","防禦-3"]},
+{group:"四龍娃娃", cls:"dragon", name:"魔法娃娃：神話-巴拉卡斯", ability:["通暢氣脈術","體魄強健術","近距離命中+10","近距離攻擊+10","額外攻擊點數+5","傷害減免+6","6%機率施展「金箍震擊」","靈魂昇華","4%機率傷害減免+15","防禦-5"]}
+];
+
+var html = "";
+var currentGroup = "";
+
+for(var i=0;i<dolls.length;i++){
+    var d = dolls[i];
+
+    if(currentGroup != d.group){
+        if(currentGroup != ""){
+            html += "</div>";
+        }
+        currentGroup = d.group;
+        html += "<div class='section-title'>" + d.group + "</div>";
+        html += "<div class='grid'>";
+    }
+
+    html += "<div class='card'>";
+    html += "<span class='badge " + d.cls + "'>" + d.group + "</span>";
+    html += "<h3>" + d.name + "</h3>";
+    html += "<div class='ability-title'>能力：</div>";
+    html += "<div class='ability'>";
+
+    for(var j=0;j<d.ability.length;j++){
+        html += "<div>▪ " + d.ability[j] + "</div>";
+    }
+
+    html += "</div>";
+    html += "</div>";
+}
+
+html += "</div>";
+
+document.getElementById("dollArea").innerHTML = html;
+</script>
+
+</body>
+</html>
