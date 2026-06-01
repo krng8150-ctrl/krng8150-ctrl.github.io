@@ -1,251 +1,110 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>寵物介紹｜永翼天堂</title>
+<section class="pet-section">
+    <h2>🐶 一般寵物圖鑑</h2>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <div class="pet-card">
+        <h3>🐕 牧羊犬</h3>
 
-body{
-    font-family:"Microsoft JhengHei",sans-serif;
-    background:#050b16;
-    color:#ffffff;
-    line-height:1.8;
-}
+        <p><strong>定位：</strong>均衡型物理寵物</p>
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
+        <ul>
+            <li>體力：60</li>
+            <li>魔力：5</li>
+            <li>防禦：-11</li>
+            <li>力量：15</li>
+            <li>體質：12</li>
+            <li>敏捷：15</li>
+            <li>精神：7</li>
+            <li>智力：7</li>
+            <li>魔法防禦：21</li>
+        </ul>
 
-.title{
-    text-align:center;
-    font-size:42px;
-    font-weight:bold;
-    margin-top:30px;
-    margin-bottom:30px;
-}
+        <p><strong>血量成長：</strong>50 ~ 100</p>
+        <p><strong>魔量成長：</strong>20 ~ 50</p>
 
-.section{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:15px;
-    padding:25px;
-    margin-bottom:25px;
-}
+        <div class="evolution">
+            牧羊犬<br>
+            ↓<br>
+            高等牧羊犬<br>
+            ↓<br>
+            黃金龍<br>
+            ↓<br>
+            漆黑死亡騎士<br>
+            ↓<br>
+            炙藍死亡騎士<br>
+            ↓<br>
+            炙炎死亡騎士
+        </div>
+    </div>
 
-.section h2{
-    color:#ffd700;
-    margin-bottom:15px;
-    border-bottom:1px solid rgba(255,255,255,0.15);
-    padding-bottom:10px;
-}
+    <div class="pet-card">
+        <h3>🐱 貓</h3>
 
-.pet-card{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:12px;
-    padding:20px;
-    margin-bottom:20px;
-}
+        <p><strong>定位：</strong>魔法型寵物</p>
 
-.pet-card h3{
-    color:#7fdfff;
-    margin-bottom:10px;
-}
+        <ul>
+            <li>體力：40</li>
+            <li>魔力：30</li>
+            <li>防禦：0</li>
+            <li>力量：9</li>
+            <li>體質：8</li>
+            <li>敏捷：13</li>
+            <li>精神：15</li>
+            <li>智力：15</li>
+            <li>魔法防禦：35</li>
+        </ul>
 
-.evolution{
-    text-align:center;
-    font-size:20px;
-    line-height:2.2;
-    margin-top:20px;
-    margin-bottom:20px;
-}
+        <p><strong>血量成長：</strong>50 ~ 100</p>
+        <p><strong>魔量成長：</strong>20 ~ 50</p>
 
-.stat-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-}
+        <div class="evolution">
+            貓<br>
+            ↓<br>
+            高等貓<br>
+            ↓<br>
+            高等貓熊<br>
+            ↓<br>
+            黃金龍<br>
+            ↓<br>
+            漆黑死亡騎士<br>
+            ↓<br>
+            炙藍死亡騎士<br>
+            ↓<br>
+            炙炎死亡騎士
+        </div>
+    </div>
 
-.stat-table th{
-    background:#1d3355;
-    padding:10px;
-    border:1px solid #2e4d80;
-}
+    <div class="pet-card">
+        <h3>🐻 熊</h3>
 
-.stat-table td{
-    padding:10px;
-    border:1px solid #2e4d80;
-    text-align:center;
-}
+        <p><strong>定位：</strong>高血量生存型寵物</p>
 
-.notice{
-    color:#ffd86a;
-}
+        <ul>
+            <li>體力：100</li>
+            <li>魔力：0</li>
+            <li>防禦：8</li>
+            <li>力量：16</li>
+            <li>體質：16</li>
+            <li>敏捷：8</li>
+            <li>精神：8</li>
+            <li>智力：8</li>
+            <li>魔法防禦：20</li>
+        </ul>
 
-@media(max-width:768px){
+        <p><strong>血量成長：</strong>50 ~ 100</p>
+        <p><strong>魔量成長：</strong>20 ~ 50</p>
 
-.title{
-    font-size:32px;
-}
-
-.stat-table{
-    font-size:14px;
-}
-
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="title">
-🐺 永翼天堂寵物圖鑑
-</div>
-
-<div class="section">
-
-<h2>🐺 寵物系統介紹</h2>
-
-<p>
-永翼天堂擁有完整的寵物養成系統。
-</p>
-
-<p>
-玩家可透過馴服怪物獲得專屬寵物，
-陪伴主人一同練功、打寶與冒險。
-</p>
-
-<p>
-不同寵物擁有不同能力與成長方向，
-透過不斷培養與進化，
-最終皆可成長為死亡騎士系列最終型態。
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>🔥 全寵物最終進化系統</h2>
-
-<div class="evolution">
-
-一般寵物<br>
-↓<br>
-高等寵物<br>
-↓<br>
-黃金龍<br>
-↓<br>
-漆黑死亡騎士<br>
-↓<br>
-炙藍死亡騎士<br>
-↓<br>
-炙炎死亡騎士<br>
-【最終進化】
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>📜 進化需求</h2>
-
-<p>第一次進化：進化果實</p>
-
-<p>第二次以上進化：勝利果實</p>
-
-<p>寵物等級需求：30級</p>
-
-</div>
-
-<div class="section">
-
-<h2>👑 最終進化展示</h2>
-
-<table class="stat-table">
-
-<tr>
-<th>階段</th>
-<th>體力</th>
-<th>魔力</th>
-<th>防禦</th>
-<th>力量</th>
-<th>體質</th>
-<th>敏捷</th>
-<th>精神</th>
-<th>智力</th>
-<th>魔法防禦</th>
-</tr>
-
-<tr>
-<td>黃金龍</td>
-<td>160</td>
-<td>50</td>
-<td>-10</td>
-<td>30</td>
-<td>22</td>
-<td>18</td>
-<td>18</td>
-<td>23</td>
-<td>70</td>
-</tr>
-
-<tr>
-<td>漆黑死亡騎士</td>
-<td>300</td>
-<td>200</td>
-<td>-60</td>
-<td>60</td>
-<td>22</td>
-<td>22</td>
-<td>22</td>
-<td>22</td>
-<td>90</td>
-</tr>
-
-<tr>
-<td>炙藍死亡騎士</td>
-<td>400</td>
-<td>250</td>
-<td>-60</td>
-<td>65</td>
-<td>24</td>
-<td>24</td>
-<td>24</td>
-<td>24</td>
-<td>100</td>
-</tr>
-
-<tr>
-<td>炙炎死亡騎士</td>
-<td>500</td>
-<td>300</td>
-<td>-90</td>
-<td>70</td>
-<td>26</td>
-<td>26</td>
-<td>26</td>
-<td>26</td>
-<td>110</td>
-</tr>
-
-</table>
-
-<br>
-
-<p class="notice">
-炙炎死亡騎士為目前所有可進化寵物的最終型態。
-</p>
-
-</div>
+        <div class="evolution">
+            熊<br>
+            ↓<br>
+            高等熊<br>
+            ↓<br>
+            黃金龍<br>
+            ↓<br>
+            漆黑死亡騎士<br>
+            ↓<br>
+            炙藍死亡騎士<br>
+            ↓<br>
+            炙炎死亡騎士
+        </div>
+    </div>
+</section>
