@@ -1,110 +1,1781 @@
-<section class="pet-section">
-    <h2>🐶 一般寵物圖鑑</h2>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寵物介紹｜永翼天堂</title>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    <div class="pet-card">
-        <h3>🐕 牧羊犬</h3>
+body {
+  margin: 0;
+  font-family: "Microsoft JhengHei", Arial, sans-serif;
+  color: #fff7cf;
+  background:
+    radial-gradient(circle at top, rgba(82,140,210,.25), transparent 40%),
+    linear-gradient(180deg, #07111f 0%, #03070d 100%);
+  line-height: 1.75;
+}
 
-        <p><strong>定位：</strong>均衡型物理寵物</p>
+a {
+  color: inherit;
+}
 
-        <ul>
-            <li>體力：60</li>
-            <li>魔力：5</li>
-            <li>防禦：-11</li>
-            <li>力量：15</li>
-            <li>體質：12</li>
-            <li>敏捷：15</li>
-            <li>精神：7</li>
-            <li>智力：7</li>
-            <li>魔法防禦：21</li>
-        </ul>
+.page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 34px 18px 80px;
+}
 
-        <p><strong>血量成長：</strong>50 ~ 100</p>
-        <p><strong>魔量成長：</strong>20 ~ 50</p>
+.hero {
+  text-align: center;
+  padding: 30px 16px 26px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(218, 168, 54, .45);
+  border-radius: 24px;
+  background: rgba(5, 8, 14, .72);
+  box-shadow: 0 0 35px rgba(0, 120, 255, .18);
+}
 
-        <div class="evolution">
-            牧羊犬<br>
-            ↓<br>
-            高等牧羊犬<br>
-            ↓<br>
-            黃金龍<br>
-            ↓<br>
-            漆黑死亡騎士<br>
-            ↓<br>
-            炙藍死亡騎士<br>
-            ↓<br>
-            炙炎死亡騎士
-        </div>
-    </div>
+.hero h1 {
+  margin: 0 0 12px;
+  color: #ffd86a;
+  font-size: 42px;
+  text-shadow: 0 0 18px rgba(255, 205, 80, .32);
+}
 
-    <div class="pet-card">
-        <h3>🐱 貓</h3>
+.hero p {
+  max-width: 900px;
+  margin: 8px auto;
+  color: #f4eecf;
+  font-size: 17px;
+}
 
-        <p><strong>定位：</strong>魔法型寵物</p>
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px 0 0;
+}
 
-        <ul>
-            <li>體力：40</li>
-            <li>魔力：30</li>
-            <li>防禦：0</li>
-            <li>力量：9</li>
-            <li>體質：8</li>
-            <li>敏捷：13</li>
-            <li>精神：15</li>
-            <li>智力：15</li>
-            <li>魔法防禦：35</li>
-        </ul>
+.quick a {
+  text-decoration: none;
+  padding: 9px 15px;
+  border: 1px solid rgba(255, 210, 90, .55);
+  border-radius: 999px;
+  background: rgba(20, 70, 130, .38);
+  color: #ffffff;
+}
 
-        <p><strong>血量成長：</strong>50 ~ 100</p>
-        <p><strong>魔量成長：</strong>20 ~ 50</p>
+.info-box {
+  margin: 20px 0;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(8, 12, 20, .78);
+  border: 1px solid rgba(218, 168, 54, .4);
+}
 
-        <div class="evolution">
-            貓<br>
-            ↓<br>
-            高等貓<br>
-            ↓<br>
-            高等貓熊<br>
-            ↓<br>
-            黃金龍<br>
-            ↓<br>
-            漆黑死亡騎士<br>
-            ↓<br>
-            炙藍死亡騎士<br>
-            ↓<br>
-            炙炎死亡騎士
-        </div>
-    </div>
+.info-box h2 {
+  margin-top: 0;
+  color: #ffd86a;
+}
 
-    <div class="pet-card">
-        <h3>🐻 熊</h3>
+.evo-main {
+  text-align: center;
+  font-size: 22px;
+  line-height: 2.1;
+  color: #ffffff;
+}
 
-        <p><strong>定位：</strong>高血量生存型寵物</p>
+.final-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
 
-        <ul>
-            <li>體力：100</li>
-            <li>魔力：0</li>
-            <li>防禦：8</li>
-            <li>力量：16</li>
-            <li>體質：16</li>
-            <li>敏捷：8</li>
-            <li>精神：8</li>
-            <li>智力：8</li>
-            <li>魔法防禦：20</li>
-        </ul>
+.table-wrap {
+  overflow-x: auto;
+}
 
-        <p><strong>血量成長：</strong>50 ~ 100</p>
-        <p><strong>魔量成長：</strong>20 ~ 50</p>
+.final-table th,
+.final-table td {
+  border: 1px solid rgba(255, 215, 120, .28);
+  padding: 10px;
+  text-align: center;
+}
 
-        <div class="evolution">
-            熊<br>
-            ↓<br>
-            高等熊<br>
-            ↓<br>
-            黃金龍<br>
-            ↓<br>
-            漆黑死亡騎士<br>
-            ↓<br>
-            炙藍死亡騎士<br>
-            ↓<br>
-            炙炎死亡騎士
-        </div>
-    </div>
+.final-table th {
+  background: rgba(35, 85, 150, .55);
+  color: #fff;
+}
+
+.section {
+  margin-top: 34px;
+}
+
+.section h2 {
+  font-size: 30px;
+  color: #ffd86a;
+  padding-left: 14px;
+  border-left: 6px solid #ffd86a;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pet-card {
+  min-height: 100%;
+  border: 1px solid rgba(218, 168, 54, .65);
+  border-radius: 18px;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(15,18,22,.92), rgba(8,10,14,.88));
+  box-shadow: 0 0 22px rgba(0,0,0,.38);
+}
+
+.pet-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tag,
+.level {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.tag {
+  background: #104f9c;
+  color: #e9f4ff;
+}
+
+.level {
+  background: rgba(255, 216, 106, .16);
+  color: #ffd86a;
+  border: 1px solid rgba(255, 216, 106, .35);
+}
+
+.pet-card h3 {
+  margin: 8px 0 10px;
+  font-size: 24px;
+  color: #ffd86a;
+}
+
+.role {
+  color: #fff3c2;
+  margin: 0 0 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.stats div {
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.045);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  color: #bcdfff;
+  font-size: 13px;
+}
+
+.stats b {
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.growth {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 216, 106, .28);
+}
+
+.growth p {
+  margin: 4px 0;
+}
+
+.route {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 216, 106, .28);
+}
+
+.route b {
+  color: #ffd86a;
+}
+
+.route p {
+  margin: 8px 0 0;
+  color: #fff;
+  text-align: center;
+  line-height: 1.95;
+}
+
+.back {
+  display: inline-block;
+  margin: 34px 0 0;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #155bb8, #67cfff);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.note {
+  color: #fff1ad;
+}
+
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 22px 12px 60px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pet-card {
+    padding: 18px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <h1>🐺 永翼天堂寵物圖鑑</h1>
+  <p>玩家可透過馴服怪物獲得專屬寵物，陪伴主人練功、打寶與冒險。</p>
+  <p>所有可進化寵物皆可透過培養持續成長，最終進化為死亡騎士系列最終型態。</p>
+  <nav class="quick">
+    <a href="#一般寵物">一般寵物</a>
+    <a href="#龍族寵物">龍族寵物</a>
+    <a href="#高等寵物">高等寵物</a>
+    <a href="#最終進化系列">最終進化系列</a>
+  </nav>
+</header>
+
+<section class="info-box">
+  <h2>🔥 全寵物最終進化系統</h2>
+  <div class="evo-main">
+    一般寵物<br>
+    ↓<br>
+    高等寵物<br>
+    ↓<br>
+    黃金龍<br>
+    ↓<br>
+    漆黑死亡騎士<br>
+    ↓<br>
+    炙藍死亡騎士<br>
+    ↓<br>
+    炙炎死亡騎士【最終進化】
+  </div>
 </section>
+
+<section class="info-box">
+  <h2>📜 進化需求</h2>
+  <p>第一次進化：<b>進化果實</b></p>
+  <p>第二次以上進化：<b>勝利果實</b></p>
+  <p>寵物等級需求：<b>30級</b></p>
+</section>
+
+<section class="info-box">
+  <h2>📖 能力說明</h2>
+  <p><b>體力：</b>寵物生命值。</p>
+  <p><b>魔力：</b>寵物魔法值。</p>
+  <p><b>防禦：</b>數值越低，防禦能力越高。</p>
+  <p><b>力量：</b>影響物理攻擊能力。</p>
+  <p><b>體質：</b>影響生命成長與生存能力。</p>
+  <p><b>敏捷：</b>影響命中與迴避能力。</p>
+  <p><b>精神：</b>影響魔法抗性能力。</p>
+  <p><b>智力：</b>影響魔法能力。</p>
+  <p><b>魔法防禦：</b>抵抗魔法攻擊能力。</p>
+  <p class="note"><b>血量成長 / 魔量成長：</b>代表寵物每提升 1 級時，額外增加的體力與魔力範圍。</p>
+</section>
+
+<section class="info-box">
+  <h2>👑 最終進化能力展示</h2>
+  <div class="table-wrap">
+    <table class="final-table">
+      <tr>
+        <th>寵物</th><th>體力</th><th>魔力</th><th>防禦</th><th>力量</th><th>體質</th><th>敏捷</th><th>精神</th><th>智力</th><th>魔法防禦</th><th>血量成長</th><th>魔量成長</th>
+      </tr>
+      <tr><td>黃金龍</td><td>160</td><td>50</td><td>-10</td><td>30</td><td>22</td><td>18</td><td>18</td><td>23</td><td>70</td><td>75</td><td>40</td></tr>
+      <tr><td>漆黑死亡騎士</td><td>300</td><td>200</td><td>-60</td><td>60</td><td>22</td><td>22</td><td>22</td><td>22</td><td>90</td><td>95</td><td>50</td></tr>
+      <tr><td>炙藍死亡騎士</td><td>400</td><td>250</td><td>-60</td><td>65</td><td>24</td><td>24</td><td>24</td><td>24</td><td>100</td><td>115</td><td>60</td></tr>
+      <tr><td>炙炎死亡騎士</td><td>500</td><td>300</td><td>-90</td><td>70</td><td>26</td><td>26</td><td>26</td><td>26</td><td>110</td><td>135</td><td>70</td></tr>
+    </table>
+  </div>
+</section>
+
+
+<section class="section" id="一般寵物">
+<h2>一般寵物</h2>
+<div class="grid">
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 牧羊犬</h3>
+        <p class="role"><b>定位：</b>均衡型物理寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>-11</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>12</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>7</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>牧羊犬<br>高等牧羊犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐱 貓</h3>
+        <p class="role"><b>定位：</b>魔法型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>9</b></div>
+          <div><span>體質</span><b>8</b></div>
+          <div><span>敏捷</span><b>13</b></div>
+          <div><span>精神</span><b>15</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>貓<br>高等貓<br>高等貓熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐻 熊</h3>
+        <p class="role"><b>定位：</b>高血量生存型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>100</b></div>
+          <div><span>魔力</span><b>0</b></div>
+          <div><span>防禦</span><b>8</b></div>
+          <div><span>力量</span><b>16</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>8</b></div>
+          <div><span>精神</span><b>8</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>20</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>熊<br>高等熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 杜賓狗</h3>
+        <p class="role"><b>定位：</b>高攻擊型物理寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>16</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>6</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>杜賓狗<br>高等杜賓狗<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐺 狼</h3>
+        <p class="role"><b>定位：</b>均衡型攻擊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>-2</b></div>
+          <div><span>力量</span><b>13</b></div>
+          <div><span>體質</span><b>13</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>狼<br>高等狼<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦝 浣熊</h3>
+        <p class="role"><b>定位：</b>均衡型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>20</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>12</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>浣熊<br>高等浣熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐶 小獵犬</h3>
+        <p class="role"><b>定位：</b>均衡型魔法寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>11</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>13</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>小獵犬<br>高等小獵犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 聖伯納犬</h3>
+        <p class="role"><b>定位：</b>生存型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>3</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>13</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>14</b></div>
+          <div><span>智力</span><b>13</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>聖伯納犬<br>高等聖伯納犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦊 狐狸</h3>
+        <p class="role"><b>定位：</b>魔法型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>30</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>狐狸<br>高等狐狸<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐰 暴走兔</h3>
+        <p class="role"><b>定位：</b>魔法型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>9</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>9</b></div>
+          <div><span>精神</span><b>16</b></div>
+          <div><span>智力</span><b>16</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>暴走兔<br>高等暴走兔<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 哈士奇</h3>
+        <p class="role"><b>定位：</b>高血量敏捷型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>100</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>17</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>7</b></div>
+          <div><span>魔法防禦</span><b>20</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>哈士奇<br>高等哈士奇<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 柯利</h3>
+        <p class="role"><b>定位：</b>生存型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>80</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>6</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>柯利<br>高等柯利<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐯 虎男</h3>
+        <p class="role"><b>定位：</b>物理攻擊型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>80</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>-10</b></div>
+          <div><span>力量</span><b>16</b></div>
+          <div><span>體質</span><b>15</b></div>
+          <div><span>敏捷</span><b>13</b></div>
+          <div><span>精神</span><b>9</b></div>
+          <div><span>智力</span><b>7</b></div>
+          <div><span>魔法防禦</span><b>20</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>虎男<br>真．虎男<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高麗幼犬</h3>
+        <p class="role"><b>定位：</b>魔法型幼犬寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>-10</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>15</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高麗幼犬<br>高麗犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高麗犬</h3>
+        <p class="role"><b>定位：</b>魔法型犬類寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>13</b></div>
+          <div><span>體質</span><b>13</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>16</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高麗犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 尖嘴</h3>
+        <p class="role"><b>定位：</b>均衡型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>50</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>12</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>10</b></div>
+          <div><span>魔法防禦</span><b>30</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>尖嘴<br>高等尖嘴<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐼 貓熊</h3>
+        <p class="role"><b>定位：</b>特殊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>10</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>12</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>12</b></div>
+          <div><span>魔法防禦</span><b>32</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>貓熊<br>高等貓熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐵 猴子</h3>
+        <p class="role"><b>定位：</b>靈巧型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>50</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>12</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>10</b></div>
+          <div><span>魔法防禦</span><b>30</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>猴子<br>高等猴子<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦘 袋鼠</h3>
+        <p class="role"><b>定位：</b>特殊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>10</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>12</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>12</b></div>
+          <div><span>魔法防禦</span><b>32</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>袋鼠<br>高等袋鼠<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">一般寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>💀 骷髏</h3>
+        <p class="role"><b>定位：</b>死亡騎士前置寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>30</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>6</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>骷髏<br>骷髏鬥士<br>死亡騎士<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+</div>
+</section>
+
+<section class="section" id="龍族寵物">
+<h2>龍族寵物</h2>
+<div class="grid">
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">龍族寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐉 淘氣幼龍</h3>
+        <p class="role"><b>定位：</b>物理型龍族寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>500</b></div>
+          <div><span>魔力</span><b>100</b></div>
+          <div><span>防禦</span><b>-75</b></div>
+          <div><span>力量</span><b>25</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>14</b></div>
+          <div><span>智力</span><b>12</b></div>
+          <div><span>魔法防禦</span><b>70</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>淘氣幼龍<br>高等淘氣幼龍<br>高等淘氣龍<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">龍族寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐉 頑皮幼龍</h3>
+        <p class="role"><b>定位：</b>魔法型龍族寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>500</b></div>
+          <div><span>魔力</span><b>200</b></div>
+          <div><span>防禦</span><b>-75</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>14</b></div>
+          <div><span>智力</span><b>18</b></div>
+          <div><span>魔法防禦</span><b>70</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>50 ～ 100</p>
+          <p><b>魔量成長：</b>20 ～ 50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>頑皮幼龍<br>高等頑皮幼龍<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">龍族寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐉 高等淘氣幼龍</h3>
+        <p class="role"><b>定位：</b>高等物理型龍族寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>1000</b></div>
+          <div><span>魔力</span><b>150</b></div>
+          <div><span>防禦</span><b>-80</b></div>
+          <div><span>力量</span><b>35</b></div>
+          <div><span>體質</span><b>20</b></div>
+          <div><span>敏捷</span><b>18</b></div>
+          <div><span>精神</span><b>18</b></div>
+          <div><span>智力</span><b>16</b></div>
+          <div><span>魔法防禦</span><b>120</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等淘氣幼龍<br>高等淘氣龍<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">龍族寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐉 高等頑皮幼龍</h3>
+        <p class="role"><b>定位：</b>高等魔法型龍族寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>1000</b></div>
+          <div><span>魔力</span><b>250</b></div>
+          <div><span>防禦</span><b>-80</b></div>
+          <div><span>力量</span><b>20</b></div>
+          <div><span>體質</span><b>20</b></div>
+          <div><span>敏捷</span><b>18</b></div>
+          <div><span>精神</span><b>18</b></div>
+          <div><span>智力</span><b>22</b></div>
+          <div><span>魔法防禦</span><b>120</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等頑皮幼龍<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+</div>
+</section>
+
+<section class="section" id="高等寵物">
+<h2>高等寵物</h2>
+<div class="grid">
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐺 高等狼</h3>
+        <p class="role"><b>定位：</b>高等攻擊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>-2</b></div>
+          <div><span>力量</span><b>18</b></div>
+          <div><span>體質</span><b>13</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等狼<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等牧羊犬</h3>
+        <p class="role"><b>定位：</b>高等物理寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>-11</b></div>
+          <div><span>力量</span><b>20</b></div>
+          <div><span>體質</span><b>12</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>7</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等牧羊犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等杜賓狗</h3>
+        <p class="role"><b>定位：</b>高等攻擊型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>21</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>6</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等杜賓狗<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等哈士奇</h3>
+        <p class="role"><b>定位：</b>高等生存型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>100</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>17</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>7</b></div>
+          <div><span>智力</span><b>7</b></div>
+          <div><span>魔法防禦</span><b>20</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等哈士奇<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐻 高等熊</h3>
+        <p class="role"><b>定位：</b>高等高血量寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>100</b></div>
+          <div><span>魔力</span><b>0</b></div>
+          <div><span>防禦</span><b>8</b></div>
+          <div><span>力量</span><b>21</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>8</b></div>
+          <div><span>精神</span><b>8</b></div>
+          <div><span>智力</span><b>8</b></div>
+          <div><span>魔法防禦</span><b>20</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等柯利</h3>
+        <p class="role"><b>定位：</b>高等生存寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>80</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>6</b></div>
+          <div><span>魔法防禦</span><b>21</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等柯利<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等聖伯納犬</h3>
+        <p class="role"><b>定位：</b>高等生存型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>3</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>13</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>14</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等聖伯納犬<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦊 高等狐狸</h3>
+        <p class="role"><b>定位：</b>高等魔法寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>30</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>15</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>15</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等狐狸<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐰 高等暴走兔</h3>
+        <p class="role"><b>定位：</b>高等魔法寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>14</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>9</b></div>
+          <div><span>精神</span><b>16</b></div>
+          <div><span>智力</span><b>16</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等暴走兔<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐱 高等貓</h3>
+        <p class="role"><b>定位：</b>高等魔法寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>40</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>14</b></div>
+          <div><span>體質</span><b>8</b></div>
+          <div><span>敏捷</span><b>13</b></div>
+          <div><span>精神</span><b>15</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等貓<br>高等貓熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦝 高等浣熊</h3>
+        <p class="role"><b>定位：</b>高等均衡寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>20</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>20</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>12</b></div>
+          <div><span>智力</span><b>14</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等浣熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐼 高等貓熊</h3>
+        <p class="role"><b>定位：</b>高等特殊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>100</b></div>
+          <div><span>魔力</span><b>30</b></div>
+          <div><span>防禦</span><b>-11</b></div>
+          <div><span>力量</span><b>16</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>16</b></div>
+          <div><span>精神</span><b>16</b></div>
+          <div><span>智力</span><b>16</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等貓熊<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐕 高等尖嘴</h3>
+        <p class="role"><b>定位：</b>高等敏捷寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>80</b></div>
+          <div><span>魔力</span><b>15</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>21</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>18</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等尖嘴<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐯 真．虎男</h3>
+        <p class="role"><b>定位：</b>特殊高等物理寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>90</b></div>
+          <div><span>魔力</span><b>15</b></div>
+          <div><span>防禦</span><b>10</b></div>
+          <div><span>力量</span><b>19</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>15</b></div>
+          <div><span>魔法防禦</span><b>35</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>真．虎男<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐵 高等猴子</h3>
+        <p class="role"><b>定位：</b>高等靈巧型寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>50</b></div>
+          <div><span>魔力</span><b>5</b></div>
+          <div><span>防禦</span><b>0</b></div>
+          <div><span>力量</span><b>12</b></div>
+          <div><span>體質</span><b>10</b></div>
+          <div><span>敏捷</span><b>12</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>10</b></div>
+          <div><span>魔法防禦</span><b>30</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等猴子<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🦘 高等袋鼠</h3>
+        <p class="role"><b>定位：</b>高等特殊寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>60</b></div>
+          <div><span>魔力</span><b>10</b></div>
+          <div><span>防禦</span><b>5</b></div>
+          <div><span>力量</span><b>10</b></div>
+          <div><span>體質</span><b>12</b></div>
+          <div><span>敏捷</span><b>10</b></div>
+          <div><span>精神</span><b>10</b></div>
+          <div><span>智力</span><b>12</b></div>
+          <div><span>魔法防禦</span><b>32</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>高等袋鼠<br>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">高等寵物</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>💀 骷髏鬥士</h3>
+        <p class="role"><b>定位：</b>死亡騎士前置高等寵物</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>500</b></div>
+          <div><span>魔力</span><b>200</b></div>
+          <div><span>防禦</span><b>-80</b></div>
+          <div><span>力量</span><b>60</b></div>
+          <div><span>體質</span><b>16</b></div>
+          <div><span>敏捷</span><b>14</b></div>
+          <div><span>精神</span><b>14</b></div>
+          <div><span>智力</span><b>18</b></div>
+          <div><span>魔法防禦</span><b>70</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>55 ～ 150</p>
+          <p><b>魔量成長：</b>30 ～ 60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>骷髏鬥士<br>死亡騎士<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+</div>
+</section>
+
+<section class="section" id="最終進化系列">
+<h2>最終進化系列</h2>
+<div class="grid">
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">最終進化系列</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🐉 黃金龍</h3>
+        <p class="role"><b>定位：</b>全寵物進入死亡騎士系列前的重要階段</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>160</b></div>
+          <div><span>魔力</span><b>50</b></div>
+          <div><span>防禦</span><b>-10</b></div>
+          <div><span>力量</span><b>30</b></div>
+          <div><span>體質</span><b>22</b></div>
+          <div><span>敏捷</span><b>18</b></div>
+          <div><span>精神</span><b>18</b></div>
+          <div><span>智力</span><b>23</b></div>
+          <div><span>魔法防禦</span><b>70</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>75</p>
+          <p><b>魔量成長：</b>40</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>黃金龍<br>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">最終進化系列</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>⚔️ 漆黑死亡騎士</h3>
+        <p class="role"><b>定位：</b>死亡騎士系列第一階段</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>300</b></div>
+          <div><span>魔力</span><b>200</b></div>
+          <div><span>防禦</span><b>-60</b></div>
+          <div><span>力量</span><b>60</b></div>
+          <div><span>體質</span><b>22</b></div>
+          <div><span>敏捷</span><b>22</b></div>
+          <div><span>精神</span><b>22</b></div>
+          <div><span>智力</span><b>22</b></div>
+          <div><span>魔法防禦</span><b>90</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>95</p>
+          <p><b>魔量成長：</b>50</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>漆黑死亡騎士<br>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">最終進化系列</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>🔥 炙藍死亡騎士</h3>
+        <p class="role"><b>定位：</b>死亡騎士系列進階型態</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>400</b></div>
+          <div><span>魔力</span><b>250</b></div>
+          <div><span>防禦</span><b>-60</b></div>
+          <div><span>力量</span><b>65</b></div>
+          <div><span>體質</span><b>24</b></div>
+          <div><span>敏捷</span><b>24</b></div>
+          <div><span>精神</span><b>24</b></div>
+          <div><span>智力</span><b>24</b></div>
+          <div><span>魔法防禦</span><b>100</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>115</p>
+          <p><b>魔量成長：</b>60</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>炙藍死亡騎士<br>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <div class="pet-top">
+          <span class="tag">最終進化系列</span>
+          <span class="level">等級 5</span>
+        </div>
+        <h3>👑 炙炎死亡騎士</h3>
+        <p class="role"><b>定位：</b>全寵物最終型態</p>
+
+        <div class="stats">
+          <div><span>體力</span><b>500</b></div>
+          <div><span>魔力</span><b>300</b></div>
+          <div><span>防禦</span><b>-90</b></div>
+          <div><span>力量</span><b>70</b></div>
+          <div><span>體質</span><b>26</b></div>
+          <div><span>敏捷</span><b>26</b></div>
+          <div><span>精神</span><b>26</b></div>
+          <div><span>智力</span><b>26</b></div>
+          <div><span>魔法防禦</span><b>110</b></div>
+        </div>
+
+        <div class="growth">
+          <p><b>血量成長：</b>135</p>
+          <p><b>魔量成長：</b>70</p>
+        </div>
+
+        <div class="route">
+          <b>進化路線</b>
+          <p>炙炎死亡騎士【最終進化】</p>
+        </div>
+      </article>
+
+</div>
+</section>
+
+
+<a class="back" href="index.html">返回首頁</a>
+
+<!-- 你自己的星空背景特效可以貼在這裡 -->
+<!-- 你自己的流星特效可以貼在這裡 -->
+
+</div>
+</body>
+</html>
