@@ -2,269 +2,133 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+<title>永翼天堂｜公告列表</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+* { box-sizing: border-box; }
 
-html,body{
-    width:100%;
-    min-height:100%;
-    overflow-x:hidden;
-    font-family:"Microsoft JhengHei", Arial, sans-serif;
-    background:#07111f;
-    color:#eef7ff;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #eef7ff;
+    background: #07111f;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
 }
 
-body{
-    background:
-    linear-gradient(rgba(3,10,22,0.25),rgba(3,10,22,0.92)),
-    url("026AF631-4F86-4F4E-B158-561B2E193C5B.png");
-    background-size:cover;
-    background-position:center top;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+body {
+    background: #07111f url("026AF631-4F86-4F4E-B158-561B2E193C5B.png") center top no-repeat;
+    background-size: cover;
 }
 
-.wrapper{
-    max-width:1180px;
-    margin:auto;
-    padding:55px 20px 80px;
+.wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    background: rgba(7, 17, 31, 0.90);
 }
 
-.main-title{
-    text-align:center;
-    font-size:58px;
-    font-weight:bold;
-    margin-bottom:15px;
-    text-shadow:0 0 12px #8fd2ff,0 0 28px #2d7dff;
+h1 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: normal;
 }
 
-.sub-title{
-    text-align:center;
-    font-size:22px;
-    color:#dcefff;
-    margin-bottom:42px;
+.notice-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.panel{
-    background:rgba(8,18,38,0.82);
-    border:1px solid rgba(180,220,255,0.18);
-    border-radius:20px;
-    padding:28px;
-    margin-bottom:28px;
-    backdrop-filter:blur(6px);
-    box-shadow:0 0 18px rgba(0,0,0,0.35), inset 0 0 12px rgba(255,255,255,0.03);
+.notice-list li {
+    margin: 0;
+    border-bottom: 1px solid #29445c;
 }
 
-.section-title{
-    font-size:30px;
-    margin-bottom:18px;
-    padding-bottom:12px;
-    border-bottom:1px solid rgba(180,220,255,0.18);
-    text-shadow:0 0 10px #70c4ff;
+.notice-list a {
+    display: block;
+    padding: 9px 6px;
+    color: #eef7ff;
+    text-decoration: none;
+    line-height: 1.4;
 }
 
-.notice-list{
-    display:grid;
-    gap:16px;
+.notice-list a:hover,
+.notice-list a:focus {
+    background: #18334d;
+    color: #ffffff;
 }
 
-.notice-card{
-    display:block;
-    text-decoration:none;
-    color:#eef7ff;
-    padding:20px;
-    border-radius:16px;
-    background:rgba(255,255,255,0.045);
-    border:1px solid rgba(180,220,255,0.14);
-    transition:0.25s;
+.date {
+    display: inline-block;
+    width: 58px;
+    color: #bddcff;
+    font-size: 14px;
+    vertical-align: middle;
 }
 
-.notice-card:hover{
-    transform:translateY(-3px);
-    background:rgba(120,190,255,0.10);
-    box-shadow:0 0 20px rgba(80,160,255,0.25);
+.tag {
+    display: inline-block;
+    width: 58px;
+    color: #8fd8ff;
+    font-size: 13px;
+    vertical-align: middle;
 }
 
-.notice-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    margin-bottom:10px;
+.tag-ended {
+    color: #b8c2cc;
 }
 
-.notice-title{
-    font-size:22px;
-    font-weight:bold;
-    text-shadow:0 0 8px #6fc8ff;
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
 }
 
-.notice-date{
-    color:#b9ddff;
-    font-size:15px;
-    white-space:nowrap;
+.more {
+    margin: 12px 6px 0;
+    font-size: 13px;
 }
 
-.notice-text{
-    line-height:1.8;
-    font-size:16px;
-    color:#dcefff;
+.more a {
+    color: #a6d9ff;
 }
 
-.tag{
-    display:inline-block;
-    margin-right:8px;
-    padding:4px 10px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.tag-new{
-    background:rgba(255,80,80,0.20);
-    color:#ff9a9a;
-    border:1px solid rgba(255,120,120,0.35);
-}
-
-.tag-open{
-    background:rgba(255,210,90,0.18);
-    color:#ffd36a;
-    border:1px solid rgba(255,210,90,0.35);
-}
-
-.tag-update{
-    background:rgba(90,180,255,0.18);
-    color:#8fd8ff;
-    border:1px solid rgba(90,180,255,0.35);
-}
-
-.tag-event{
-    background:rgba(180,120,255,0.18);
-    color:#d0b5ff;
-    border:1px solid rgba(180,120,255,0.35);
-}
-
-.note{
-    font-size:17px;
-    line-height:2;
-    color:#e8f5ff;
-}
-
-.back-wrap{
-    text-align:center;
-    margin-top:30px;
-}
-
-.back-btn{
-    display:inline-block;
-    margin:6px;
-    padding:13px 30px;
-    border-radius:14px;
-    text-decoration:none;
-    color:#ffffff;
-    background:rgba(120,190,255,0.12);
-    border:1px solid rgba(180,220,255,0.22);
-    text-shadow:0 0 8px #6fc8ff;
-}
-
-.back-btn:hover{
-    background:rgba(120,190,255,0.22);
-}
-
-@media(max-width:768px){
-    .main-title{font-size:40px;}
-    .sub-title{font-size:18px;}
-    .panel{padding:20px;}
-    .notice-top{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+@media (max-width: 440px) {
+    .wrapper { padding: 10px; }
+    .date { width: 53px; }
+    .tag { width: 52px; }
+    .title { font-size: 15px; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="wrapper">
+    <h1>公告列表</h1>
 
+    <ul class="notice-list">
+        <li>
+            <a href="notice-download.html">
+                <span class="date">2026</span>
+                <span class="tag">最新公告</span>
+                <span class="title">古龍降臨・改版儲值活動</span>
+            </a>
+        </li>
 
-<div class="section-title">公告列表</div>
+        <li>
+            <a href="notice-open.html">
+                <span class="date">2026</span>
+                <span class="tag tag-ended">已結束</span>
+                <span class="title">端午節儲值活動</span>
+            </a>
+        </li>
+    </ul>
 
-<div class="notice-list">
-
-<a class="notice-card" href="notice-open.html">
-    <div class="notice-top">
-        <div class="notice-title">
-            <span class="tag tag-new">NEW</span>
-            <span class="tag tag-open">已結束</span>
-            端午節儲值活動
-        </div>
-        <div class="notice-date">2026 / 已結束</div>
-    </div>
-    <div class="notice-text">
-        <div class="notice-text">
-端午節儲值活動正式開跑！單筆儲值最高可獲得粽神遺落的飾品袋×25、100%神力碎片×5，活動至07/01上午06:00截止。
-</div>。
-    </div>
-</a>
-
-<a class="notice-card" href="notice-download.html">
-    <div class="notice-top">
-        <div class="notice-title">
-            <span class="tag tag-update">最新公告</span>
-           古龍降臨 改版儲值活動
-        </div>
-        <div class="notice-date">2026 /最新公告 </div>
-    </div>
-    <div class="notice-text">
-      🐉 太古龍神降臨・限時儲值活動 🐉<br>
-活動期間內儲值即可獲得【太古龍神】系列限定獎勵，豪華回饋等你領取，與龍神一同征戰永翼大陸！
-    </div>
-</a>
-
-<a class="notice-card" href="notice-system.html">
-    <div class="notice-top">
-        <div class="notice-title">
-            <span class="tag tag-update">無</span>
-            未公告項目
-        </div>
-        <div class="notice-date">無</div>
-    </div>
-    <div class="notice-text">
-        無內容內。
-    </div>
-</a>
-
-<a class="notice-card" href="notice-event.html">
-    <div class="notice-top">
-        <div class="notice-title">
-            <span class="tag tag-event">無</span>
-            未公告項目
-        </div>
-        <div class="notice-date">無</div>
-    </div>
-    <div class="notice-text">
-     無內容內。
-    </div>
-</a>
-
-</div>
-</div>
-
-<div class="panel">
-<div class="section-title">公告說明</div>
-<div class="note">
-✔ 玩家請以官方網站或LINE群公告內容為準。
-</div>
-</div>
-
-<div class="back-wrap">
-<a class="back-btn" href="index.html">返回官方首頁</a>
-</div>
-
+    <p class="more">
+        <a href="index.html">前往官方網站查看完整資訊 ›</a>
+    </p>
 </div>
 
 </body>
