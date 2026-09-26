@@ -12,14 +12,14 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
-    font-family: "Microsoft JhengHei", Arial, sans-serif;
-    color: #eef7ff;
     background: #07111f;
+    color: #eef7ff;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
 }
 
 body {
@@ -31,7 +31,6 @@ body {
 
 .wrapper {
     width: 100%;
-    min-height: 375px;
     padding: 0 10px;
     background: #102238;
     background: rgba(7, 17, 31, 0.55);
@@ -39,29 +38,28 @@ body {
 
 .layout {
     width: 100%;
-    height: 375px;
+    min-height: 360px;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
-.left-panel {
-    width: 54%;
-    padding: 10px 12px 8px 4px;
+.left-panel,
+.right-panel {
+    width: 50%;
+    padding: 10px 12px;
     vertical-align: top;
-    border-right: 2px solid #79b8d9;
 }
 
-.right-panel {
-    width: 46%;
-    padding: 10px;
-    vertical-align: top;
+.left-panel {
+    border-right: 2px solid #79b8d9;
 }
 
 h1 {
     margin: 0 0 8px;
+    color: #e5f6ff;
     font-size: 17px;
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.4;
 }
 
 .notice-list {
@@ -78,9 +76,9 @@ h1 {
 .notice-list a,
 .notice-list .empty {
     display: block;
-    padding: 3px 0;
-    font-size: 14px;
-    line-height: 1.4;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.45;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -109,43 +107,24 @@ h1 {
     color: #b8c2cc;
 }
 
-.notice-list .empty {
+.empty {
     color: #8399ab;
 }
 
-.more {
-    margin: 8px 0 0;
+.website-link {
+    margin: 10px 0 0;
     font-size: 12px;
 }
 
-.more a,
-.back-link {
+.website-link a {
     color: #a6d9ff;
     text-decoration: none;
 }
 
-.more a:hover,
-.back-link:hover {
+.website-link a:hover,
+.website-link a:focus {
     color: #ffffff;
     text-decoration: underline;
-}
-
-/* 點公告後，右側才顯示內容 */
-#detail-area {
-    display: none;
-}
-
-.detail-top {
-    margin: 0 0 7px;
-    font-size: 13px;
-}
-
-#detail-frame {
-    display: block;
-    width: 100%;
-    height: 320px;
-    border: 0;
-    background: rgba(7, 17, 31, 0.75);
 }
 
 @media (max-width: 700px) {
@@ -153,12 +132,9 @@ h1 {
         padding: 0 6px;
     }
 
-    .left-panel {
-        padding: 8px 8px 8px 2px;
-    }
-
+    .left-panel,
     .right-panel {
-        padding: 8px;
+        padding: 8px 7px;
     }
 
     h1 {
@@ -167,88 +143,73 @@ h1 {
 
     .notice-list a,
     .notice-list .empty {
-        padding: 3px 0;
+        padding: 4px 0;
         font-size: 12px;
-    }
-
-    #detail-frame {
-        height: 325px;
     }
 }
 </style>
-
-<script>
-function showDetail() {
-    document.getElementById("detail-area").style.display = "block";
-}
-</script>
 </head>
 
 <body>
 <div class="wrapper">
     <table class="layout" role="presentation">
         <tr>
+            <!-- 左邊：公告 1～8 -->
             <td class="left-panel">
                 <h1>永翼天堂｜最新公告</h1>
 
                 <ul class="notice-list">
-                    <!-- 公告 1 -->
+                    <!-- 公告 1：已發布 -->
                     <li>
-                        <a href="notice-download.html"
-                           target="detail-frame"
-                           onclick="showDetail()">
+                        <a href="notice-download.html">
                             <span class="date">[2026]</span>
                             <span class="latest">最新公告</span>
                             古龍降臨・改版儲值活動
                         </a>
                     </li>
 
-                    <!-- 公告 2 -->
+                    <!-- 公告 2：已發布 -->
                     <li>
-                        <a href="notice-open.html"
-                           target="detail-frame"
-                           onclick="showDetail()">
+                        <a href="notice-open.html">
                             <span class="date">[2026]</span>
                             <span class="ended">已結束</span>
                             端午節儲值活動
                         </a>
                     </li>
 
-                    <!-- 公告 3～9：新增公告時再換成連結 -->
-                    <li><span class="empty">[--/--] 敬請期待 3</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 4</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 5</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 6</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 7</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 8</span></li>
-                    <li><span class="empty">[--/--] 敬請期待 9</span></li>
+                    <!-- 公告 3～8：未來新增公告的入口 -->
+                    <li><span class="empty">[--/--] 公告位置 3</span></li>
+                    <li><span class="empty">[--/--] 公告位置 4</span></li>
+                    <li><span class="empty">[--/--] 公告位置 5</span></li>
+                    <li><span class="empty">[--/--] 公告位置 6</span></li>
+                    <li><span class="empty">[--/--] 公告位置 7</span></li>
+                    <li><span class="empty">[--/--] 公告位置 8</span></li>
                 </ul>
 
-                <p class="more">
-                    <a href="https://www.yong-yi.uk/announcement.html"
-                       target="_blank">
-                        前往官方網站查看完整資訊 ›
+                <p class="website-link">
+                    <a href="https://www.yong-yi.uk/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        ‹ 返回官方網站
                     </a>
                 </p>
             </td>
 
+            <!-- 右邊：公告 9～16 -->
             <td class="right-panel">
-                <div id="detail-area">
-                    <p class="detail-top">
-                        <a class="back-link"
-                           href="https://www.yong-yi.uk/announcement.html"
-                           target="_blank">
-                            ‹ 返回官網公告
-                        </a>
-                    </p>
+                <h1>更多公告</h1>
 
-                    <iframe
-                        id="detail-frame"
-                        name="detail-frame"
-                        title="公告詳細內容"
-                        src="about:blank">
-                    </iframe>
-                </div>
+                <ul class="notice-list">
+                    <!-- 公告 9～16：未來新增公告的入口 -->
+                    <li><span class="empty">[--/--] 公告位置 9</span></li>
+                    <li><span class="empty">[--/--] 公告位置 10</span></li>
+                    <li><span class="empty">[--/--] 公告位置 11</span></li>
+                    <li><span class="empty">[--/--] 公告位置 12</span></li>
+                    <li><span class="empty">[--/--] 公告位置 13</span></li>
+                    <li><span class="empty">[--/--] 公告位置 14</span></li>
+                    <li><span class="empty">[--/--] 公告位置 15</span></li>
+                    <li><span class="empty">[--/--] 公告位置 16</span></li>
+                </ul>
             </td>
         </tr>
     </table>
