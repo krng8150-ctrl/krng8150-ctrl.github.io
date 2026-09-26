@@ -16,9 +16,9 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100%;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
     color: #eef7ff;
     background: #07111f;
-    font-family: "Microsoft JhengHei", Arial, sans-serif;
 }
 
 body {
@@ -27,99 +27,75 @@ body {
 }
 
 .wrapper {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 10px;
-    background: #0a192b;
-    background: rgba(7, 17, 31, 0.88);
+    width: 100%;
+    min-height: 100%;
+    padding: 8px 14px;
+    background: #07111f;
+    background: rgba(7, 17, 31, 0.82);
 }
 
 h1 {
-    margin: 0 4px 6px;
-    color: #e4f5ff;
-    font-size: 20px;
+    margin: 0 0 6px;
+    color: #e5f6ff;
+    font-size: 17px;
     font-weight: normal;
+    line-height: 1.3;
 }
 
-/* 三欄固定排列，適合登入器公告視窗 */
-.notice-grid {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 5px;
-}
-
-.notice-grid td {
-    width: 33.333%;
+.notice-list {
+    margin: 0;
     padding: 0;
-    vertical-align: top;
+    list-style: none;
 }
 
-/* 每格整塊都能點擊 */
-.notice-card {
+.notice-list li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.45;
+}
+
+.notice-list a,
+.notice-list .empty {
     display: block;
-    min-height: 78px;
-    padding: 8px 10px;
-    border: 1px solid #31516c;
-    background: #10263d;
-    background: rgba(16, 38, 61, 0.92);
-    color: #eef7ff;
+    width: 100%;
+    padding: 2px 4px;
+    font-size: 14px;
+    line-height: 1.45;
     text-decoration: none;
-    line-height: 1.4;
-    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-a.notice-card:hover,
-a.notice-card:focus {
-    border-color: #94dcff;
-    background: #1b3d5a;
-    color: #ffffff;
+.notice-list a {
+    color: #eef7ff;
 }
 
-a.notice-card:focus {
-    outline: 2px solid #94dcff;
-}
-
-.notice-meta {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 12px;
+.notice-list a:hover,
+.notice-list a:focus {
+    color: #91deff;
+    text-decoration: underline;
 }
 
 .date {
-    margin-right: 6px;
-    color: #b3cee6;
+    color: #b6d8f2;
 }
 
-.tag {
+.latest {
     color: #8fe0ff;
 }
 
-.tag-ended {
+.ended {
     color: #b8c2cc;
 }
 
-.notice-title {
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-/* 尚未新增公告的預留位置 */
-.notice-empty {
-    border-color: #243b50;
-    background: #0c1c2e;
-    background: rgba(12, 28, 46, 0.75);
-}
-
-.notice-empty .tag,
-.notice-empty .notice-title {
-    color: #8298ad;
+.notice-list .empty {
+    color: #8499aa;
 }
 
 .more {
-    margin: 7px 5px 2px;
-    font-size: 13px;
+    margin: 7px 4px 0;
+    font-size: 12px;
 }
 
 .more a {
@@ -129,34 +105,21 @@ a.notice-card:focus {
 
 .more a:hover,
 .more a:focus {
-    color: #ffffff;
     text-decoration: underline;
 }
 
-/* 較窄視窗仍維持九宮格 */
-@media (max-width: 600px) {
+@media (max-width: 440px) {
     .wrapper {
-        padding: 6px;
+        padding: 7px 8px;
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    .notice-grid {
-        border-spacing: 3px;
-    }
-
-    .notice-card {
-        padding: 7px 6px;
-    }
-
-    .notice-title {
+    .notice-list a,
+    .notice-list .empty {
         font-size: 13px;
-    }
-
-    .notice-meta {
-        font-size: 11px;
     }
 }
 </style>
@@ -164,114 +127,34 @@ a.notice-card:focus {
 
 <body>
 <div class="wrapper">
-    <h1>永翼天堂｜公告列表</h1>
+    <h1>永翼天堂｜最新公告</h1>
 
-    <table class="notice-grid" role="presentation">
-        <tbody>
+    <ul class="notice-list">
+        <!-- 公告 1 -->
+        <li>
+            <a href="notice-download.html">
+                <span class="date">[2026]</span>
+                <span class="latest">最新公告</span> 古龍降臨・改版儲值活動
+            </a>
+        </li>
 
-            <!-- 第一排：公告 1～3 -->
-            <tr>
-                <td>
-                    <!-- 公告 1 -->
-                    <a class="notice-card" href="notice-download.html">
-                        <span class="notice-meta">
-                            <span class="date">2026</span>
-                            <span class="tag">最新公告</span>
-                        </span>
-                        <span class="notice-title">古龍降臨・改版儲值活動</span>
-                    </a>
-                </td>
+        <!-- 公告 2 -->
+        <li>
+            <a href="notice-open.html">
+                <span class="date">[2026]</span>
+                <span class="ended">已結束</span> 端午節儲值活動
+            </a>
+        </li>
 
-                <td>
-                    <!-- 公告 2 -->
-                    <a class="notice-card" href="notice-open.html">
-                        <span class="notice-meta">
-                            <span class="date">2026</span>
-                            <span class="tag tag-ended">已結束</span>
-                        </span>
-                        <span class="notice-title">端午節儲值活動</span>
-                    </a>
-                </td>
-
-                <td>
-                    <!-- 公告 3：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- 第二排：公告 4～6 -->
-            <tr>
-                <td>
-                    <!-- 公告 4：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-
-                <td>
-                    <!-- 公告 5：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-
-                <td>
-                    <!-- 公告 6：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- 第三排：公告 7～9 -->
-            <tr>
-                <td>
-                    <!-- 公告 7：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-
-                <td>
-                    <!-- 公告 8：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-
-                <td>
-                    <!-- 公告 9：預留 -->
-                    <div class="notice-card notice-empty">
-                        <span class="notice-meta">
-                            <span class="tag">敬請期待</span>
-                        </span>
-                        <span class="notice-title">公告準備中</span>
-                    </div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
+        <!-- 公告 3～9：有新公告時，改成上面的 a 連結格式 -->
+        <li><span class="empty">[--/--] 公告位置 3</span></li>
+        <li><span class="empty">[--/--] 公告位置 4</span></li>
+        <li><span class="empty">[--/--] 公告位置 5</span></li>
+        <li><span class="empty">[--/--] 公告位置 6</span></li>
+        <li><span class="empty">[--/--] 公告位置 7</span></li>
+        <li><span class="empty">[--/--] 公告位置 8</span></li>
+        <li><span class="empty">[--/--] 公告位置 9</span></li>
+    </ul>
 
     <p class="more">
         <a href="index.html">前往官方網站查看完整資訊 ›</a>
