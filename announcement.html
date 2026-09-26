@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>永翼天堂｜公告列表</title>
+<title>永翼天堂｜最新公告</title>
 
 <style>
 * {
@@ -16,30 +16,52 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100%;
+    overflow-x: hidden;
     font-family: "Microsoft JhengHei", Arial, sans-serif;
     color: #eef7ff;
     background: #07111f;
 }
 
 body {
-    background: #07111f url("026AF631-4F86-4F4E-B158-561B2E193C5B.png") center top no-repeat;
+    background: #07111f
+        url("026AF631-4F86-4F4E-B158-561B2E193C5B.png")
+        center top no-repeat;
     background-size: cover;
 }
 
 .wrapper {
     width: 100%;
-    min-height: 100%;
-    padding: 8px 14px;
-    background: #07111f;
-    background: rgba(7, 17, 31, 0.82);
+    min-height: 375px;
+    padding: 0 10px;
+    background: #102238;
+    background: rgba(7, 17, 31, 0.55);
+}
+
+.layout {
+    width: 100%;
+    height: 375px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.left-panel {
+    width: 54%;
+    padding: 10px 12px 8px 4px;
+    vertical-align: top;
+    border-right: 2px solid #79b8d9;
+}
+
+.right-panel {
+    width: 46%;
+    padding: 10px;
+    vertical-align: top;
 }
 
 h1 {
-    margin: 0 0 6px;
-    color: #e5f6ff;
+    margin: 0 0 8px;
     font-size: 17px;
     font-weight: normal;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 .notice-list {
@@ -51,17 +73,14 @@ h1 {
 .notice-list li {
     margin: 0;
     padding: 0;
-    line-height: 1.45;
 }
 
 .notice-list a,
 .notice-list .empty {
     display: block;
-    width: 100%;
-    padding: 2px 4px;
+    padding: 3px 0;
     font-size: 14px;
-    line-height: 1.45;
-    text-decoration: none;
+    line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -69,6 +88,7 @@ h1 {
 
 .notice-list a {
     color: #eef7ff;
+    text-decoration: none;
 }
 
 .notice-list a:hover,
@@ -90,75 +110,148 @@ h1 {
 }
 
 .notice-list .empty {
-    color: #8499aa;
+    color: #8399ab;
 }
 
 .more {
-    margin: 7px 4px 0;
+    margin: 8px 0 0;
     font-size: 12px;
 }
 
-.more a {
+.more a,
+.back-link {
     color: #a6d9ff;
     text-decoration: none;
 }
 
 .more a:hover,
-.more a:focus {
+.back-link:hover {
+    color: #ffffff;
     text-decoration: underline;
 }
 
-@media (max-width: 440px) {
+/* 點公告後，右側才顯示內容 */
+#detail-area {
+    display: none;
+}
+
+.detail-top {
+    margin: 0 0 7px;
+    font-size: 13px;
+}
+
+#detail-frame {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+    background: rgba(7, 17, 31, 0.75);
+}
+
+@media (max-width: 700px) {
     .wrapper {
-        padding: 7px 8px;
+        padding: 0 6px;
+    }
+
+    .left-panel {
+        padding: 8px 8px 8px 2px;
+    }
+
+    .right-panel {
+        padding: 8px;
     }
 
     h1 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .notice-list a,
     .notice-list .empty {
-        font-size: 13px;
+        padding: 3px 0;
+        font-size: 12px;
+    }
+
+    #detail-frame {
+        height: 325px;
     }
 }
 </style>
+
+<script>
+function showDetail() {
+    document.getElementById("detail-area").style.display = "block";
+}
+</script>
 </head>
 
 <body>
 <div class="wrapper">
-    <h1>永翼天堂｜最新公告</h1>
+    <table class="layout" role="presentation">
+        <tr>
+            <td class="left-panel">
+                <h1>永翼天堂｜最新公告</h1>
 
-    <ul class="notice-list">
-        <!-- 公告 1 -->
-        <li>
-            <a href="notice-download.html">
-                <span class="date">[2026]</span>
-                <span class="latest">最新公告</span> 古龍降臨・改版儲值活動
-            </a>
-        </li>
+                <ul class="notice-list">
+                    <!-- 公告 1 -->
+                    <li>
+                        <a href="notice-download.html"
+                           target="detail-frame"
+                           onclick="showDetail()">
+                            <span class="date">[2026]</span>
+                            <span class="latest">最新公告</span>
+                            古龍降臨・改版儲值活動
+                        </a>
+                    </li>
 
-        <!-- 公告 2 -->
-        <li>
-            <a href="notice-open.html">
-                <span class="date">[2026]</span>
-                <span class="ended">已結束</span> 端午節儲值活動
-            </a>
-        </li>
+                    <!-- 公告 2 -->
+                    <li>
+                        <a href="notice-open.html"
+                           target="detail-frame"
+                           onclick="showDetail()">
+                            <span class="date">[2026]</span>
+                            <span class="ended">已結束</span>
+                            端午節儲值活動
+                        </a>
+                    </li>
 
-        <!-- 公告 3～9：有新公告時，改成上面的 a 連結格式 -->
-        <li><span class="empty">[--/--] 公告位置 3</span></li>
-        <li><span class="empty">[--/--] 公告位置 4</span></li>
-        <li><span class="empty">[--/--] 公告位置 5</span></li>
-        <li><span class="empty">[--/--] 公告位置 6</span></li>
-        <li><span class="empty">[--/--] 公告位置 7</span></li>
-        <li><span class="empty">[--/--] 公告位置 8</span></li>
-        <li><span class="empty">[--/--] 公告位置 9</span></li>
-    </ul>
+                    <!-- 公告 3～9：新增公告時再換成連結 -->
+                    <li><span class="empty">[--/--] 公告位置 3</span></li>
+                    <li><span class="empty">[--/--] 公告位置 4</span></li>
+                    <li><span class="empty">[--/--] 公告位置 5</span></li>
+                    <li><span class="empty">[--/--] 公告位置 6</span></li>
+                    <li><span class="empty">[--/--] 公告位置 7</span></li>
+                    <li><span class="empty">[--/--] 公告位置 8</span></li>
+                    <li><span class="empty">[--/--] 公告位置 9</span></li>
+                </ul>
 
-    <p class="more">
-        <a href="index.html">前往官方網站查看完整資訊 ›</a>
-    </p>
+                <p class="more">
+                    <a href="https://www.yong-yi.uk/announcement.html"
+                       target="_blank">
+                        前往官方網站查看完整資訊 ›
+                    </a>
+                </p>
+            </td>
+
+            <td class="right-panel">
+                <div id="detail-area">
+                    <p class="detail-top">
+                        <a class="back-link"
+                           href="https://www.yong-yi.uk/announcement.html"
+                           target="_blank">
+                            ‹ 返回官網公告
+                        </a>
+                    </p>
+
+                    <iframe
+                        id="detail-frame"
+                        name="detail-frame"
+                        title="公告詳細內容"
+                        src="about:blank">
+                    </iframe>
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
